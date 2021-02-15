@@ -1,0 +1,8 @@
+{
+    "name": "White Fox",
+    "short_name": "WF",
+    "start_url": "/index.html",
+    "scope": "/app/",
+    "display": "standalone",
+    "orientation": "landscape"
+  }
