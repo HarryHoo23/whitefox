@@ -4,5 +4,4 @@
     "start_url": "/index.html",
     "scope": "/app/",
     "display": "standalone",
-    "orientation": "landscape"
   }
