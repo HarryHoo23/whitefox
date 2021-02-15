@@ -40,7 +40,8 @@
     <script type="text/javascript">
 		(function(document,navigator,standalone) {
 			// prevents links from apps from oppening in mobile safari
-			// this javascript must be the first script in your <head>
+            // this javascript must be the first script in your <head>
+            console.log('script');
 			if ((standalone in navigator) && navigator[standalone]) {
 				var curnode, location=document.location, stop=/^(a|html)$/i;
 				document.addEventListener('click', function(e) {
