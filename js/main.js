@@ -1,14 +1,1 @@
-window.addEventListener('DOMContentLoaded', function() {
-    var page = document.getElementById('page'),
-        nav = window.navigator,
-        ua = nav.userAgent,
-        isFullScreen = nav.standalone;
-    if (ua.indexOf('Android') !== -1) {
-        // 56对应的是Android Browser导航栏的高度
-        page.style.height = window.innerHeight + 56 + 'px';
-    } else if (/iPhone|iPod|iPad/.test(ua)) {
-        // 60对应的是Safari导航栏的高度
-        page.style.height = window.innerHeight + (isFullScreen ? 0 : 60) + 'px'
-    }
-    setTimeout(scrollTo, 0, 0, 1);
-}, false);
+(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(chref=d.href).replace(e.href,"").indexOf("#")&&(!/^[a-z\+\.\-]+:/i.test(chref)||chref.indexOf(e.protocol+"//"+e.host)===0)&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone");

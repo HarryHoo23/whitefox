@@ -16,7 +16,11 @@
 
     <meta name=”apple-mobile-web-app-capable” content=”yes”>    
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="viewport" content="width=device-width initial-scale=1"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.5,user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="White Fox">
+
+
+
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-touch-icon-72x72.png">
@@ -33,7 +37,32 @@
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="./assets/favicons/manifest.json">
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
-
+    <script type="text/javascript">
+		(function(document,navigator,standalone) {
+			// prevents links from apps from oppening in mobile safari
+			// this javascript must be the first script in your <head>
+			if ((standalone in navigator) && navigator[standalone]) {
+				var curnode, location=document.location, stop=/^(a|html)$/i;
+				document.addEventListener('click', function(e) {
+					curnode=e.target;
+					while (!(stop).test(curnode.nodeName)) {
+						curnode=curnode.parentNode;
+					}
+					// Condidions to do this only on links to your own app
+					// if you want all links, use if('href' in curnode) instead.
+					if(
+						'href' in curnode && // is a link
+						(chref=curnode.href).replace(location.href,'').indexOf('#') && // is not an anchor
+						(	!(/^[a-z\+\.\-]+:/i).test(chref) ||                       // either does not have a proper scheme (relative links)
+							chref.indexOf(location.protocol+'//'+location.host)===0 ) // or is in the same protocol and domain
+					) {
+						e.preventDefault();
+						location.href = curnode.href;
+					}
+				},false);
+			}
+		})(document,window.navigator,'standalone');
+	</script>
 
 </head>
 <body>
