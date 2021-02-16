@@ -5,21 +5,130 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
     height: 100%;
-    width: 100%;
-    margin: 0;
 }
+
+
+/* Header */
+.sunday-navbar {
+    position: fixed;
+    height: 0%;
+}
+
+.sunday-navbar-active {
+    height: 40%;
+    background-color: #fff;
+}
+
+.menu-box {
+    width: 90%;
+    margin: auto;
+}
+
+#mobile-nav {
+    width: 80%;
+    padding-top: 2rem;
+}
+
+.nav-link {
+    width: 33%;
+    font-size: 16px;
+    color:#656565;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    border-bottom: 1px solid #8C968F;
+}
+
+ul.nav li.nav-link:last-child {
+    border-bottom: none;
+}
+
+.menu-title {
+    color: #656565;
+    font-size: 21px;
+    border-bottom: 3px solid #8C968F;
+}
+
+.nav-wrapper {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 5rem;
+}
+
+.nav-bottom-row {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    background: linear-gradient(#707070,#707070) top center no-repeat;
+    background-size: 100% 1px;
+}
+
+.btn-left-box span {
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.sunday-navbar-active .btn-left-box span {
+    color: #A0A8A2;
+}
+
+.btn-left-box span::before {
+    content: url("../assets/img/icons/arrow.svg");
+    margin-right: 0.8rem;
+}
+
+.sunday-navbar-active .btn-left-box span::before,
+.sunday-navbar-active .btn-right-box span img {
+    filter: invert(68%) sepia(12%) saturate(123%) hue-rotate(83deg) brightness(94%) contrast(92%);
+}
+
+.btn-right-box span {
+    margin: 0 0.6rem;
+}
+
 
 #home-page,
 #home-modal {
     height: 100vh;
-    width: 100vw;
-    background-image: url("../assets/img/Bg\ Image.png");
+    width: 100%;
+    background: linear-gradient(rgba(121, 131, 124, 0.7), rgba(121, 131, 124, 0.7)), url("../assets/img/Bg\ Image.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#home-modal {
-    filter: brightness(0.5);
+#home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.overlay_home {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay_home img {
+    max-width: 260px;
+}
+
+
+
+/* #home-modal {
+    filter: brightness(0.5);
+} */

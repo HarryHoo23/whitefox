@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
     <title>Document</title>
 
-    
+
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="./assets/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name=”apple-mobile-web-app-capable” content=”yes”>    
+    <meta name=”apple-mobile-web-app-capable” content=”yes”>
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="White Fox">
 
@@ -36,17 +38,51 @@
     <link rel="icon" type="image/png" href="./assets/favicons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="./assets/favicons/manifest.json">
     <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
-
 </head>
-<body>
-    <section id="home-page">
-        <p>Whitefox</p>
-        <p>new file</p>
-    </section>
 
-    <section id="home-modal">
-        
-    </section>
+<body>
+    <header>
+        <nav class="sunday-navbar fixed-bottom">
+            <div class="menu-box">
+                <div id="mobile-nav">
+                    <div id="mobile-nav-content">
+                        <ul class="nav navbar-nav">
+                            <li><a class="nav-link menu-title" href="#home">About</a></li>
+                            <li><a class="nav-link" href="#team">Introduction</a></li>
+                            <li><a class="nav-link" href="#services">Collaborators</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-wrapper">
+                <!-- Mobile Menu -->
+
+                <div class="nav-bottom-row">
+                    <div class="btn-left-box">
+                        <span id="scroll-down">SCROLL</span>
+                    </div>
+                    <div class="btn-right-box">
+                        <span id="nav-phone-btn"><img src="./assets/img/icons/phone.svg" alt="phone"></span>
+                        <span id="nav-open-btn"><img src="./assets//img/icons/menu-btn.svg" alt="menu-btn"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div id="fullpage">
+        <section id="home-page" class="section">
+            <div class="overlay_home">
+                <img src="./assets/img/icons/sunday.svg" alt="Sunday" />
+            </div>
+        </section>
+
+        <section id="home-modal" class="section">
+
+        </section>
+    </div>
+
 
     <!-- <div class="container-fluid">
         <div class="row">
@@ -54,7 +90,9 @@
         </div>
     </div> -->
 </body>
+<script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
 <script src="./js/main.js"></script>
-<script src="./js/jquery-3.5.1.min.js"></script>
 <script src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/fullpage.min.js"></script>
+
 </html>
