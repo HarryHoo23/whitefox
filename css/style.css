@@ -235,7 +235,7 @@ p.home-modal-title::before {
 }
 
 .creative-top-box {
-    height: 100vh;
+    height: 80vh;
     background: url('../assets/img/3luxury-bathrooms-vanities.png');
     background-size: cover;
     padding: 5rem;
