@@ -11,9 +11,20 @@ $(document).ready(function () {
         fullpage_api.moveSectionUp();
     });
 
-    $('#nav-open-btn').click(function () {
-        $('.sunday-navbar').toggleClass("sunday-navbar-active");
-    })
+    $(document).mouseup(function (e) {
+        var container = $('.sunday-navbar');
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if ($('.sunday-navbar').hasClass('sunday-navbar-active')) {
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                $('.sunday-navbar').toggleClass("sunday-navbar-active");                      
+            }
+        }        
+
+        $('#nav-open-btn').click(function () {
+            $('.sunday-navbar').toggleClass("sunday-navbar-active");
+        })
+    });
 
 
 

@@ -24,10 +24,10 @@
 
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png">
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-touch-icon-76x76.png"> -->
     <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-touch-icon-144x144.png">
@@ -204,7 +204,7 @@
                         <div class="col-md-8 sunday-title">
                             <p>Sunday, <br>every day.</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 sunday-paragraph">
                             <p>
                                 Fully formed, these seven luxury apartments deliver the nuances of Sunday, every day.
                                 Seamlessly
@@ -232,30 +232,32 @@
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
-                                    alt="First slide">
+                        <div class="carousel-inner everyday-carousel">
+                            <div class="carousel-item row active">
+                                <div class="sunday-carousel-first-img">
+                                    <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
+                                        alt="First slide">
+                                </div>
+
+                                <div class="sunday-carousel-img-container">
+                                    <div class="sunday-carousel-img">
+                                            <img class="d-block w-100" src="./assets/img/20029_103.png" alt="First slide">
+                                        </div>
+                                        <div class="sunday-carousel-img">
+                                            <img class="d-block w-100" src="./assets/img/bw-house.png" alt="First slide">
+                                        </div>
+                                </div>
+                                
                             </div>
-                            <div class="carousel-item">
+                            <!-- <div class="carousel-item row">
                                 <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
                                     alt="Second slide">
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item row">
                                 <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
                                     alt="Third slide">
-                            </div>
+                            </div> -->
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
 
@@ -539,6 +541,7 @@
             </div>
         </section>
 
+        <!--  Floor plan section -->
         <section id="floor-plan" class="section">
             <div class="floor-plan-container">
                 <p class="floor-plan-title">Floor plans</p>

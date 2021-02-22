@@ -334,6 +334,11 @@ p.home-modal-title::before {
     position: relative;
 }
 
+.everyday-section .sunday-title p {
+    position: sticky;
+    top: 10rem;
+}
+
 .sunday-title p::before {
     content: "";
     position: absolute;
@@ -342,6 +347,11 @@ p.home-modal-title::before {
     background-color: #fff;
     opacity: 0.25;
     top: -20%;
+}
+
+.everyday-section .sunday-title p::before {
+    background-color: #e0e0e0;
+    opacity: 0.7;
 }
 
 .scrollable-content{
@@ -356,6 +366,22 @@ p.home-modal-title::before {
     padding: 5rem;
 }
 
+.sunday-paragraph {
+    display: flex;
+    align-items: flex-end;
+    height: 60vh;
+}
+
+
+/* Everyday Carousel */
+
+.everyday-carousel .carousel-item {
+    position: relative;
+}
+
+.sunday-carousel-img-container {
+    display: flex;
+}
 
 
 #sunday-partners .row {
