@@ -524,7 +524,7 @@ p.home-modal-title::before {
 .layout-box {
     border: 1px solid #fff;
     padding: 1rem;
-    height: calc(35vh - 10px);
+    height: calc(20vw - 10px);
     width: calc(20vw - 10px);
     display: flex;
     flex-direction: column;
