@@ -516,8 +516,6 @@
     <script src="./js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="./js/fullpage.min.js"></script>
-    <!-- <script type="text/javascript" src="./js/fullpage.parallax.limited.min.js"></script>
-    <script type="text/javascript" src="./js/fullpage.extensions.min.js"></script> -->
 
     <script src="./js/main.js"></script>
 
@@ -525,9 +523,11 @@
         var myFullpage = new fullpage('#fullpage', {
             scrollOverflow: true,
             navigation: true,
+            slidesNavigation: false,
             scrollBar: true,
             verticalCentered: false,
-            scrollOverflowReset: true,
+            scrollOverflowReset: true,            
+            scrollingSpeed: 1000,
             normalScrollElements: '#sunday-everyday, #sunday-partners'
         });
     </script>
