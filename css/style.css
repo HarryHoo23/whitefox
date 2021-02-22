@@ -3,6 +3,7 @@ body {
     height: 100%;
     font-family: 'degular', sans-serif;
     font-weight: 400;
+    overflow: hidden;
 }
 
 p {
@@ -32,7 +33,7 @@ p {
     padding-top: 2rem;
 }
 
-.nav-link {
+#mobile-nav-content .nav-link {
     width: 33%;
     font-size: 16px;
     color: #656565;
@@ -42,6 +43,9 @@ p {
     border-bottom: 1px solid #e5e5e5;
 }
 
+#scroll-down {
+    text-transform: uppercase;
+}
 
 ul.nav li:last-child .nav-link {
     border-bottom: none;
@@ -53,6 +57,37 @@ ul.nav li:last-child .nav-link {
     border-bottom: 3px solid #8C968F;
 }
 
+/* Nav top bar */
+.nav-wrapper-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 5rem;
+    z-index: 2;
+    display: none;
+}
+
+.nav-top-row {
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding-top: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.nav-top-row svg {
+    transform: rotate(-180deg);
+    margin-right: 0.8rem;
+}
+
+#scroll-up {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Nav bottom bar */
 .nav-wrapper {
     width: 100%;
     position: fixed;
@@ -61,13 +96,13 @@ ul.nav li:last-child .nav-link {
 }
 
 .nav-bottom-row {
-    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding-top: 2rem;
-    background: linear-gradient(#707070, #707070) top center no-repeat;
-    background-size: 100% 1px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 .btn-left-box span {
@@ -85,8 +120,7 @@ ul.nav li:last-child .nav-link {
     color: #A0A8A2;
 }
 
-.btn-left-box span::before {
-    content: url("../assets/img/icons/arrow.svg");
+#menu-arrow {
     margin-right: 0.8rem;
 }
 
@@ -185,8 +219,6 @@ p.home-modal-title::before {
 /* Section 3 */
 
 #sunday-everyday {
-    padding-left: 5rem;
-    padding-right: 5rem;
     background-color: #f8f8f8;
 }
 
@@ -202,7 +234,7 @@ p.home-modal-title::before {
     position: absolute;
     width: 33px;
     height: 1px;
-    background-color: #88918B;
+    background-color: #fff;
     opacity: 0.25;
     top: -20%;
 }
@@ -215,12 +247,10 @@ p.home-modal-title::before {
     height: 100vh;
   }
 
-/* .carousel-item {
-    display: flex;
-} */
-/* #home-modal {
-    filter: brightness(0.5);
-} */
+.everyday-section {
+    padding: 5rem;
+}
+
 
 
 #sunday-partners .row {
@@ -234,9 +264,13 @@ p.home-modal-title::before {
     padding-left: 0px;
 }
 
+#sunday-partners .sunday-title {
+    padding-top: 5rem;
+}
+
 .creative-top-box {
     height: 100vh;
-    background: url('../assets/img/3luxury-bathrooms-vanities.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/chanel-bg.png");   
     background-size: cover;
     padding: 5rem;
     position: relative;
@@ -245,7 +279,7 @@ p.home-modal-title::before {
 .creative-section .sunday-title p {
     color: #fff;
     position: sticky;
-    top: 5rem;
+    top: 10rem;
 }
 
 
@@ -267,7 +301,162 @@ p.home-modal-title::before {
 .partner-tabs {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 80vh;
+    padding: 5rem;
+    padding-top: 0;
+    position: relative;
+}
+
+.nav-pills .nav-link {
+    border-bottom: none;
+    padding-right: 5rem;
+    padding-left: 0;
+}
+
+#v-pills-tab {
+    padding-top: 5rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: transparent;
+}
+
+.partner-title {
+    font-size: 21px;
+    line-height: 24px;
+    color: #656565;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.partner-job-title {
+    font-size: 16px;
+    line-height: 21px;
+    color: #656565;
+    font-weight: 400;
+}
+
+.slide-progress-bar {
+    width: 100%;
+    background-color: #bababa;
+    opacity: 0.2;
+    transition: width 10s linear;
+    display: inline-block;
+    vertical-align: middle;
+    height: 2px;
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 2px;
+    background: red;
+    border-radius: 2px;
+    transition: width 250ms ease-in-out;
+}
+
+.tab-content {
+    position: absolute;
+    right: 0;
+    background-color: #CCC8C2;
+    height: calc(80vh - 5rem);
+    padding-top: 6rem;
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+}
+
+.tab-content p {
+    color: #656565;
 }
 
 
+.welcome-home {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/bg-Image-house.png");
+    background-size: cover;
+    padding: 5rem;
+    padding-bottom: 0;
+    height: 100vh;
+}
+
+.welcome-tabs {
+    height: 100%;
+    position: relative;
+}
+
+.welcome-tabs .nav-pills .nav-link {
+    max-width: 250px;
+    padding: 0.5rem 0;
+}
+
+.welcome-tabs .nav-pills .nav-link.active .welcome-tab-box{
+    background-color: #F6F7FA;
+    transition: 0.2s linear;
+}
+
+.welcome-tabs .nav-pills .nav-link.active .welcome-tab-box .welcome-title{
+    color: #656565;
+}
+
+.welcome-tabs .nav {
+    padding-top: 5rem;
+}
+
+.welcome-home-title {
+    position: absolute;
+    right: 0;
+    top: 5rem;
+}
+
+.welcome-home-title p {
+    color: #fff;
+    text-align: right;
+}
+
+.welcome-home-title p::before {
+    background-color: #fff;
+    right: 0;
+}
+
+.welcome-title {
+    color: #F6F7FA;
+    border: 1px solid #F6F7FA;
+    max-width: 250px;
+    padding: 10px;
+}
+
+.welcome-tabs .tab-content {
+    background-color: #F6F7FA;
+    opacity: 0.9;
+    height: 40vh;
+    padding-top: 5rem;
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+    bottom: 0;
+    color: #656565;
+    z-index: 200;
+}
+
+.welcome-tab-content-hidden {
+    bottom: -33vh !important;
+}
+
+.welcome-tab-content-hidden .drop-down-btn {
+    transform: rotate(-180deg);
+}
+
+.drop-down-btn {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: brightness(0.5);
+    cursor: pointer;
+}
+
+.drop-down-btn img {
+    width: 20px;
+}
+
+#floor-plan {
+    background-color: #656565;
+    height: 100vh;
+}
