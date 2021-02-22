@@ -494,7 +494,65 @@ p.home-modal-title::before {
 }
 
 #floor-plan {
-    background-color: #656565;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/chair-bg-image.png");    
     height: 100vh;
 }
 
+.floor-plan-container {
+    padding: 5rem;
+    position: relative;
+    height: 100%;
+}
+
+.floor-plan-title {
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+.layout-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    left: 5rem;
+    bottom: 5rem;
+
+}
+
+.layout-box {
+    border: 1px solid #fff;
+    padding: 1rem;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease-in-out;
+}
+
+.layout-container :hover .layout-box {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+.layout-container :hover .layout-box .layout p, 
+.layout-container :hover .layout-box .layout-type{
+    color: #656565;
+    opacity: 0.8;
+}
+
+.layout p{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.layout-type {
+    color: #fff;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    font-size: 26px;
+    font-weight: 300;
+}
