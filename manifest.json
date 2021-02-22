@@ -1,6 +1,6 @@
 {
-    "name": "White Fox",
-    "short_name": "WF",
+    "name": "White Fox Sunday",
+    "short_name": "Sunday",
     "start_url": "/index.html",
     "scope": "/app/",
     "display": "standalone"
