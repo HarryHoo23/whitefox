@@ -494,7 +494,8 @@ p.home-modal-title::before {
 }
 
 #floor-plan {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/chair-bg-image.png");    
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/chair-bg-image.png");
+    background-size: cover;    
     height: 100vh;
 }
 
