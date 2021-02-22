@@ -152,4 +152,10 @@ $(document).ready(function () {
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
     })
+
+
+    // $(this).ekkoLightbox({
+    //     alwaysShowClose: true,
+    //     showArrows: false
+    // });
 });
