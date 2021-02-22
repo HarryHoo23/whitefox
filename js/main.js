@@ -22,6 +22,10 @@ $(document).ready(function () {
     var sunday_partner = $('#sunday-partners').offset().top;
     var sunday_welcome_home = $('#sunday-welcome-home').offset().top;
     var floor_plan = $('#floor-plan').offset().top;
+
+    var home_modal_position = $("#home-modal").position();
+
+
     $(window).on('scroll', function () { 
         var scrollPosition = $(this).scrollTop() + 1;
         // Section home modal
@@ -84,13 +88,13 @@ $(document).ready(function () {
     
 
 
-
+    console.log('position', home_modal_position);
 
     
-    console.log('home-modal', home_modal);
-    console.log('everyday-height', everyday_height);
-    console.log('sunday-partner', sunday_partner);
-    console.log('sunday-welcome-home section', sunday_welcome_home);
+    // console.log('home-modal', home_modal);
+    // console.log('everyday-height', everyday_height);
+    // console.log('sunday-partner', sunday_partner);
+    // console.log('sunday-welcome-home section', sunday_welcome_home);
 
     // switch (height) {
     //     case 0:

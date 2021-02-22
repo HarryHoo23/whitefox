@@ -364,7 +364,7 @@ p.home-modal-title::before {
     padding-left: 5rem !important;
 }
 
-.tab-content p {
+.partners-tab-content  {
     color: #656565;
 }
 
@@ -430,6 +430,7 @@ p.home-modal-title::before {
     padding-top: 5rem;
     padding-right: 5rem !important;
     padding-left: 5rem !important;
+    padding-bottom: 5rem;
     bottom: 0;
     color: #656565;
     z-index: 200;
