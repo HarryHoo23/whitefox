@@ -366,11 +366,11 @@ p.home-modal-title::before {
     padding: 5rem;
 }
 
-.sunday-paragraph {
+/* .sunday-paragraph {
     display: flex;
     align-items: flex-end;
     height: 60vh;
-}
+} */
 
 
 /* Everyday Carousel */
@@ -379,10 +379,20 @@ p.home-modal-title::before {
     position: relative;
 }
 
-.sunday-carousel-img-container {
+.carousel-img-everyday-first-img {
+    position: relative;
+    margin-bottom: -10rem;
+    border: 10px solid #f8f8f8;
+}
+
+.carousel-img-container {
+    max-height: 60vh;
     display: flex;
 }
 
+.second-img {
+    margin-right: 10px;
+}
 
 #sunday-partners .row {
     margin-left: 0px;
@@ -705,4 +715,261 @@ p.home-modal-title::before {
 
 .ekko-lightbox-nav-overlay {
     display: none;
+}
+
+
+
+
+
+
+/* Doorstep section */
+#doorstep {
+    background-color: #FAFAFA;
+}
+
+.doorstep-section {
+    padding-bottom: 5rem;
+}
+
+.doorstep-container-top .sunday-title {
+    margin-top: 10rem;
+    margin-left: 5rem;
+}
+
+#doorstep .sunday-title p::before {
+    background-color: #e0e0e0;
+    opacity: 0.7;
+}
+
+.title {
+    font-weight: 600;
+    color: #656565;
+}
+
+.paragraph {
+    color: #656565;
+}
+
+.doorstep-content-box {
+    padding-top: 2rem;
+    padding-right: 5rem;
+    margin-left: 5rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 8rem;
+}
+
+.doorstep-img-container-right,
+.doorstep-img-container-left {
+    position: relative;
+    display: flex;
+    height: 100vh;
+}
+
+.doorstep-img-container-right .first-img {
+    position: absolute;
+    right: 0;
+}
+
+.doorstep-img-container-right img.first-img,
+.doorstep-img-container-left img.first-img{
+    height: 100%;
+}
+
+.doorstep-img-container-right .second-img {
+    position: absolute;
+    top: -200px;
+}
+
+.doorstep-img-container-left .first-img {
+    position: absolute;
+    left: 0;
+}
+
+.doorstep-img-container-left .second-img {
+    position: absolute;
+    left: 20rem;
+    top: -5rem;
+}
+
+.empty-space {
+    height: 20rem;
+}
+
+.doorstep-accordion-box.right {
+    margin-right: 5rem;
+}
+
+.doorstep-accordion-box.left {
+    margin-left: 5rem;
+}
+
+.btn-link {
+    width: 100%;
+    text-align: left;
+}
+
+.card-header {
+    border-bottom: none;
+}
+
+.card {
+    border: none;
+}
+
+.collapse.show {
+    border-top: 1px solid #e0e0e0;
+}
+
+.right .sunday-title p::before {
+    right: 0;
+}
+
+.right .btn-link {
+    text-align: right;
+}
+
+
+
+/* Video section */
+
+#bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: black;
+    background-position: center center;
+    background-size: contain;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+/* Contact us section */
+#contact-us {
+    padding: 5rem;
+}
+
+#contact-us .sunday-title p::before {
+    background-color: #88918B;
+}
+
+.contact-container {
+    height: 100%;
+    padding-top: 5rem;
+    position: relative;
+}
+
+.contacts {
+    position: absolute;
+    bottom: 0;   
+}
+
+.sale-member-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sale-img-box {
+    width: 40%;
+}
+
+.sale-info {
+    width: 60%;
+    padding-right: 5rem;
+    padding-left: 3rem;
+}
+
+.sale-member-container img {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.sale-name {
+    font-size: 21px;
+    font-weight: 600;
+    color: #656565;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #8C968F;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.sale-job-title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #656565;
+    border-bottom: 1px solid rgba(143,143,143,0.43);
+}
+
+.sale-intro {
+    max-height: 9rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    overflow-y: scroll;
+}
+
+.sale-intro p {
+    color: #656565;
+}
+
+ul.sale-contact {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+ul.sale-contact li {
+    color: #656565;
+}
+
+ul.sale-contact li a{
+    color: #656565;
+    text-decoration: underline;
+}
+
+.contact-btn-container {
+    width: 100%;
+    display: flex;
+}
+
+.contact-btn-container button{
+    text-transform: uppercase;
+    flex: 1 1 auto;
+    border-color: #8C968F;
+    border-radius: 0px;
+}
+
+.email:hover {
+    background-color: #8C968F;
+    border: #8C968F;
+}
+
+.call {
+    background-color: #8C968F;
+    color: #fff;
+}
+
+.call:hover {
+    background-color: #fff;
+    border-color: #8C968F;
+    color: #8C968F;
 }

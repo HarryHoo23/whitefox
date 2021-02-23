@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/raq7xgr.css">
     <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"> -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 
@@ -226,28 +226,23 @@
 
                         </div>
                     </div>
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner everyday-carousel">
-                            <div class="carousel-item row active">
-                                <div class="sunday-carousel-first-img">
-                                    <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
+                            <div class="carousel-item active">
+                                <img class="carousel-img-everyday-first-img"
+                                    src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
+                                <br>
+                                <div class="carousel-img-container">
+                                    <img class="carousel-img-everyday w-100 second-img" src="./assets/img/20029_103.png"
                                         alt="First slide">
+                                    <img class="carousel-img-everyday w-100 img-responsive"
+                                        src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
                                 </div>
-
-                                <div class="sunday-carousel-img-container">
-                                    <div class="sunday-carousel-img">
-                                            <img class="d-block w-100" src="./assets/img/20029_103.png" alt="First slide">
-                                        </div>
-                                        <div class="sunday-carousel-img">
-                                            <img class="d-block w-100" src="./assets/img/bw-house.png" alt="First slide">
-                                        </div>
-                                </div>
-                                
                             </div>
                             <!-- <div class="carousel-item row">
                                 <img class="d-block" src="./assets/img/3luxury-bathrooms-vanities.png"
@@ -587,13 +582,444 @@
         </section>
 
         <section id="fixture" class="section">
+        </section>
+
+        <!-- Doorstep section -->
+        <section id="doorstep" class="section">
+            <div class="scrollable-content doorstep-section">
+
+                <!-- Section 1 -->
+                <div class="doorstep-container-top row">
+                    <div class="col-md-4">
+                        <div class="sunday-title">
+                            <p>ON YOUR <br>DOORSTEP.</p>
+                        </div>
+
+                        <div class="doorstep-content-box">
+                            <p class="title">Monday to sunday</p>
+                            <p class="paragraph">From Toorak to Hawksburn Village, and the Yarra River to Chapel Street,
+                                Sunday invites
+                                you to discover new favourites alongside old rituals, as Melbourne’s leafy inner
+                                southeast unfolds on your doorstep.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 doorstep-img-container-right">
+                        <img class="first-img" src="./assets/img/wine.png" alt="wine-img">
+                        <img class="second-img" src="./assets/img/food-image.png" alt="img">
+                    </div>
+                </div>
+
+                <div class="empty-space"></div>
+
+                <!-- Accordion on the right, section 2 -->
+                <div class="doorstep-container-mid row">
+                    <div class="col-md-8 doorstep-img-container-left">
+                        <img class="first-img" src="./assets/img/wine.png" alt="wine-img">
+                        <img class="second-img" src="./assets/img/food-image.png" alt="img">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="doorstep-accordion-box right">
+                            <div class="sunday-title text-right">
+                                <p>A SLOW START, OR FAST HEART RATE - <br> IT’S YOUR CHOICE</p>
+                            </div>
+
+                            <div id="slow-start-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#doorstep-collapseOne" aria-expanded="true"
+                                                aria-controls="doorstep-collapseOne">
+                                                Barry’s Bootcamp
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="doorstep-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#slow-start-accordion">
+                                        <div class="card-body">
+                                            With the likes of David Beckham, Harry Styles and Jessica Alba worshiping at
+                                            its altar, Barry’s is a cult  55-minute high-intensity interval training
+                                            workout straight out of Hollywood — God help us. Dipping your toe in for the
+                                            first time? Interested in breaking a sweat without breaking the bank? Ask
+                                            for the $75.00 First Timer 3 Class Pack.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#doorstep-collapseTwo" aria-expanded="false"
+                                                aria-controls="doorstep-collapseTwo">
+                                                Tivoli Road Bakery
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="doorstep-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#slow-start-accordion">
+                                        <div class="card-body">
+                                            Bread might be the name of the game at Tivoli Road Bakery, but anything from
+                                            their buttery croissants to flaky sausage rolls certainty has our name
+                                            written all over it. And as for their infamous hot cross buns, well, they
+                                            certainty can’t be missed — and to ensure that you don’t, be sure to get in
+                                            early.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#doorstep-collapseThree" aria-expanded="false"
+                                                aria-controls="doorstep-collapseThree">
+                                                Kanteen
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="doorstep-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#slow-start-accordion">
+                                        <div class="card-body">
+                                            If you know, you know — Kanteen is a veteran for pedal-pushers and
+                                            slow-strollers alike. Set amongst the Yarra’s idyllic riverside, the
+                                            indoor-outdoor café serves up delicious eats and lush views year-round.
+                                            Whilst you wait, say hello to Mark — he’s been behind the coffee machine
+                                            since he opened Kanteen in 2002, and has no intention of running out for
+                                            milk anytime soon.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#doorstep-collapseFour" aria-expanded="false"
+                                                aria-controls="doorstep-collapseFour">
+                                                Lawson Grove Shop
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="doorstep-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#slow-start-accordion">
+                                        <div class="card-body">
+                                            Ensuring the locals remain caffeinated since 1930, this humble and historic
+                                            coffee shop has never strayed from its old fashioned values — community,
+                                            charm and cabinets of delicious food. Join sleepy neighbours for speciality
+                                            coffee to in-house baked goods to take home lasagnes. And in the months
+                                            where the local streets turn to fields of auburn, a free lemon or twelve.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="empty-space"></div>
+
+                <!-- accordion on the left, section 3. -->
+                <div class="doorstep-container-mid row">
+                    <div class="col-md-4">
+                        <div class="doorstep-accordion-box left">
+                            <div class="sunday-title text-left">
+                                <p>PLACES TO STOP BY, <br> OR STAY FOR A LITTLE WHILE</p>
+                            </div>
+
+                            <div id="stop-by-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#stop-by-collapseOne" aria-expanded="true"
+                                                aria-controls="stop-by-collapseOne">
+                                                Royal Botanic Gardens
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="stop-by-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#stop-by-accordion">
+                                        <div class="card-body">
+                                            Whether it’s a lap around The Tan or lapping up the 38 hectares of pristine
+                                            garden, this lush oasis in the heart of Melbourne offers two speeds to move
+                                            your body to. Trade star-gazing for popcorn grazing in the summer months as
+                                            the Moonlight Cinema lights up the gardens at night. Don’t forget to bring
+                                            the essentials: a full-bodied red and plenty of cosy blankets.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#stop-by-collapseTwo" aria-expanded="false"
+                                                aria-controls="stop-by-collapseTwo">
+                                                Chapel Street Precinct
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="stop-by-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#stop-by-accordion">
+                                        <div class="card-body">
+                                            From The Como Centre to The Jam Factory, this famed thoroughfare is
+                                            jam-packed (pardon the pun) with shops, cafes, restaurants and bars to lose
+                                            yourself amongst new finds. Want to get lost in a local legend? Head to
+                                            Boston Sub for more than your average late night fry run. Hop in the freezer
+                                            for a taste of the tropics on Chapel.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#stop-by-collapseThree" aria-expanded="false"
+                                                aria-controls="stop-by-collapseThree">
+                                                The Stables of Como
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="stop-by-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#stop-by-accordion">
+                                        <div class="card-body">
+                                            Ideal for an aperitif after exploring the historic Como House, The Stables
+                                            brings a relaxed farmhouse feel with its sunny and secluded courtyard to
+                                            this posh Melbourne neighbourhood. Their elegant high tea is a standout, and
+                                            their subversive ‘guy tea’ has husbands digging in. A delicious win-win
+                                            indeed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#stop-by-collapseFour" aria-expanded="false"
+                                                aria-controls="stop-by-collapseFour">
+                                                Prahran Market
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="stop-by-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#stop-by-accordion">
+                                        <div class="card-body">
+                                            A place to fill a hamper, fuel a dinner party or fix the perfect platter.
+                                            Here you’ll find everything from fresh produce to artisanal bread,
+                                            sustainable seafood to meat and poultry — all the ingredients to make every
+                                            moment (and mouthful) memorable. Visit Pino’s for perfect produce at an even
+                                            better price. Be sure to pick up their weekly $30 market box for the best in
+                                            season before they sell out.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 doorstep-img-container-right">
+                        <img class="first-img" src="./assets/img/wine.png" alt="wine-img">
+                        <img class="second-img" src="./assets/img/food-image.png" alt="img">
+                    </div>
+
+                </div>
+
+                <!-- Accordion on the right, section 4 -->
+                <div class="empty-space"></div>
+                <div class="doorstep-container-mid row">
+                    <div class="col-md-8 doorstep-img-container-left">
+                        <img class="first-img" src="./assets/img/wine.png" alt="wine-img">
+                        <img class="second-img" src="./assets/img/food-image.png" alt="img">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="doorstep-accordion-box right">
+                            <div class="sunday-title text-right">
+                                <p>THE MOMENTS BETWEEN <br> DUSK AND DAWN</p>
+                            </div>
+
+                            <div id="dusk-dawn-accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse"
+                                                data-target="#dusk-dawn-collapseOne" aria-expanded="true"
+                                                aria-controls="dusk-dawn-collapseOne">
+                                                Bar Carolina
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="dusk-dawn-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                        data-parent="#dusk-dawn-accordion">
+                                        <div class="card-body">
+                                            With terrazzo floors, textual floorboards and handmade azure leadlights,
+                                            this little slice of Rome runs on Italian time — and we’ll happily adjust to
+                                            the time difference. And for a dinner and a show in one, be sure to close
+                                            off your evening with their classic Bomba Carolina — bellissimo.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#dusk-dawn-collapseTwo" aria-expanded="false"
+                                                aria-controls="dusk-dawn-collapseTwo">
+                                                Entrecôte
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="dusk-dawn-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-parent="#dusk-dawn-accordion">
+                                        <div class="card-body">
+                                            The brief: grilled, grass-fed Black Angus porterhouse, with house sauce,
+                                            vinaigrette-drizzled garden salad and bottomless pommes frites. No time to
+                                            dine in? Keep your eye out for their local steak-frites Mitraillette
+                                            special. This go-to favourite is even better on-the-go.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#dusk-dawn-collapseThree" aria-expanded="false"
+                                                aria-controls="dusk-dawn-collapseThree">
+                                                Atlas Dining
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="dusk-dawn-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#dusk-dawn-accordion">
+                                        <div class="card-body">
+                                            A culinary journey, when overseas ones are off the menu — for the time
+                                            being. Atlas’ cuisine changes every four months, and the menu weekly. Not on
+                                            the menu, but you have to ask about their take-home Atlas meal kits. Travel
+                                            the world from the comfort of your kitchen? Tickets, booked. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" data-toggle="collapse"
+                                                data-target="#dusk-dawn-collapseFour" aria-expanded="false"
+                                                aria-controls="dusk-dawn-collapseFour">
+                                                France-Soir
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="dusk-dawn-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                        data-parent="#dusk-dawn-accordion">
+                                        <div class="card-body">
+                                            A Melbourne institution, this idyllic French bistro has been dishing up
+                                            traditional cuisine, Parisian charm and a certain je ne sais quoi since
+                                            1986. Be sure to ask for their Escargots de Bourgogne à l’ail for the
+                                            ultimate authentic experience. Bonne chance et bon appétit!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video-bg" class="section">
+            <video data-autoplay loop muted id="bg-video">
+                <source src="./video/solo.mp4" type="video/mp4">
+                <source src="./video/solo.webm" type="video/webm">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="home-modal-box">
+                <div class="home-modal-content">
+                    <p class="home-modal-title">FOR WHEN YOU NEED EIGHT DAYS IN A WEEK </p>
+                    <p>Combining the buzz of South Yarra, with the village of Toorak and the convenience of Hawksburn,
+                        this is a lifestyle that will have you trading snoozes for sneakers on Sunday — and every day.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="map-section" class="section">
+
+        </section>
+
+        <section id="contact-us" class="section">
+
+
+            <div class="contact-container">
+                <div class="sunday-title">
+                    <p>Get in touch <br>with us.</p>
+                </div>
+                <div class="row contacts">
+                    <div class="col-md-6 sale-member-container">
+                        <div class="sale-img-box">
+                            <img src="./assets/img/Fox.png" alt="Fox">
+                            <div class="contact-btn-container">
+                                <button class="email btn btn-outline-secondary">Email</button>
+                                <button class="call btn btn-outline-secondary">call</button>
+                            </div>
+                        </div>
+                        <div class="sale-info">
+                            <h5 class="sale-name">Marty Fox</h5>
+                            <p class="sale-job-title">Managing Director</p>
+
+                            <div class="sale-intro">
+                                <p>Marty started WHITEFOX in February 2017, but it was nothing like an overnight
+                                    success.
+                                    Throughout Marty’s 11 year real estate journey, the appeal of an agency that was
+                                    bolder
+                                    in not just the way it looked, but how it operated both behind the scenes, and in
+                                    the
+                                    art of the deal, drove him then and still does today. </p>
+                            </div>
+                            <ul class="sale-contact">
+                                <li>0438 808 859</li>
+                                <li>marty@whitefoxrealestate.com.au</li>
+                                <li><a href="#">Instagram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 sale-member-container">
+                        <div class="sale-img-box">
+                            <img src="./assets/img/lana.png" alt="Fox">
+                            <div class="contact-btn-container">
+                                <button class="email btn btn-outline-secondary">Email</button>
+                                <button class="call btn btn-outline-secondary">call</button>
+                            </div>
+                        </div>
+                        <div class="sale-info">
+                            <h5 class="sale-name">Lana Samuels</h5>
+                            <p class="sale-job-title">Director of Sales Development</p>
+
+                            <div class="sale-intro">
+                                <p>You know when Lana walks into the room. Oozing flare, style, and energy. Knowing
+                                    exactly what you are going to say, before you even think it. She’s across
+                                    everything: from listing, to negotiating and closing, to overseeing the operation of
+                                    both Stonnington and South Melbourne offices.
+                                </p>
+                            </div>
+                            <ul class="sale-contact">
+                                <li>0435 165 633</li>
+                                <li>lana@whitefoxrealestate.com.au</li>
+                                <li><a href="#">Instagram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </section>
     </div>
 
     <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js">
+    </script>
     <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="./js/fullpage.min.js"></script>
 
@@ -601,14 +1027,14 @@
 
     <script type="text/javascript">
         var myFullpage = new fullpage('#fullpage', {
-            scrollOverflow: true,
+            // scrollOverflow: true,
             navigation: true,
             slidesNavigation: false,
             scrollBar: true,
             verticalCentered: false,
             scrollOverflowReset: true,
             scrollingSpeed: 1000,
-            normalScrollElements: '#sunday-everyday, #sunday-partners'
+            normalScrollElements: '#sunday-everyday, #sunday-partners, #doorstep'
         });
 
         $(document).on('click', '[data-toggle="lightbox"]', function (event) {
