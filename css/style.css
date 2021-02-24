@@ -3,7 +3,7 @@ body {
     height: 100%;
     font-family: 'degular', sans-serif;
     font-weight: 400;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 p {
@@ -44,6 +44,10 @@ p {
     opacity: 1;
     border-radius: 0;
     margin: 0;
+}
+
+#fp-nav.fp-right {
+    right: 5rem;
 }
 
 
@@ -718,9 +722,26 @@ p.home-modal-title::before {
 }
 
 
+/* Fixtures Section */
+#fixtures {
+    background: url('../assets/img/bg\ –\ Fixtures.png');
+}
+
+.fixtures-row {
+    height: 100%;
+}
+
+.fixtures-container {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
 
 
 
+
+.vs-img, .vertical-fx-img {
+    border: 1px solid black;
+}
 
 /* Doorstep section */
 #doorstep {

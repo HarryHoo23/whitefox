@@ -4,5 +4,7 @@
 			"path": "/Users/harry/Desktop/WhiteFox"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
 }

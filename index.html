@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.typekit.net/raq7xgr.css">
     <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"> -->
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 
@@ -581,7 +584,18 @@
 
         </section>
 
-        <section id="fixture" class="section">
+        <section id="fixtures" class="section">
+            <div class="row fixtures-row">
+                <div class="col-md-6 fixtures-container">
+                    <p class="floor-plan-title" style="color: #656565;">Fixtures</p>
+                </div>
+
+                <div class="col-md-3 vs-img"></div>
+                <div class="col-md-3 vertical-fx-img">
+
+                </div>
+                
+            </div>
         </section>
 
         <!-- Doorstep section -->
@@ -945,11 +959,11 @@
         </section>
 
         <section id="map-section" class="section">
-
         </section>
 
-        <section id="contact-us" class="section">
 
+        <!-- Contact us Section Last Section -->
+        <section id="contact-us" class="section">
 
             <div class="contact-container">
                 <div class="sunday-title">
@@ -1022,6 +1036,7 @@
     </script>
     <script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
     <script type="text/javascript" src="./js/fullpage.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="./js/main.js"></script>
 
@@ -1042,6 +1057,28 @@
             $(this).ekkoLightbox({
                 alwaysShowClose: true
             });
+        });
+
+        const swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'vertical',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
         });
     </script>
 </body>

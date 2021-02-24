@@ -33,8 +33,7 @@ $(document).ready(function () {
     var sunday_partner = $('#sunday-partners').offset().top;
     var sunday_welcome_home = $('#sunday-welcome-home').offset().top;
     var floor_plan = $('#floor-plan').offset().top;
-    var fixture = $('#fixture').offset().top;
-    var home_modal_position = $("#home-modal").position();
+    var fixture = $('#fixtures').offset().top;
 
 
     $(window).on('scroll', function () {
