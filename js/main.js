@@ -34,7 +34,7 @@ $(document).ready(function () {
     var sunday_welcome_home = $('#sunday-welcome-home').offset().top;
     var floor_plan = $('#floor-plan').offset().top;
     var fixture = $('#fixtures').offset().top;
-
+    // var doorstep = $('#doorstep').offset().top;
 
     $(window).on('scroll', function () {
         var scrollPosition = $(this).scrollTop() + 1;
@@ -95,6 +95,10 @@ $(document).ready(function () {
             $('#menu-arrow-down path').css('fill', 'rgba(255,255,255,0.5)');
             $('.nav-wrapper-top').css('display', 'block');
             $('.nav-top-row').css('border-bottom', '1px solid rgba(255,255,255,0.5)');
+            
+            
+            
+            
             // Section 1, home banner
         } else {
             $('#scroll-down').text('Scroll');
@@ -106,25 +110,6 @@ $(document).ready(function () {
             $('.nav-wrapper').css('display', ' block');
         }
     })
-
-
-
-
-    console.log('position', home_modal_position);
-
-
-    // console.log('home-modal', home_modal);
-    // console.log('everyday-height', everyday_height);
-    // console.log('sunday-partner', sunday_partner);
-    // console.log('sunday-welcome-home section', sunday_welcome_home);
-
-    // switch (height) {
-    //     case 0:
-    //         height > home_modal && height <sunday_welcome_home;
-    //         alert('right');
-    // }
-
-    // Automatically tabs changing function.
 
 
     $('[data-widget="tab-slider"]').each(function (i, el) {
@@ -163,9 +148,57 @@ $(document).ready(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
     })
 
+    
+            
 
-    // $(this).ekkoLightbox({
-    //     alwaysShowClose: true,
-    //     showArrows: false
-    // });
+
+
+    // showModal();
+
+    // var galleryThumbs;
+    // var galleryMain;
+
+    // var openModalBtn = $('.ss-box');
+    // openModalBtn.on('click', function (e) {
+    //     e.preventDefault();
+
+    //     openModalBtn.on('show.bs.modal', function () { 
+    //          galleryThumbs = new Swiper(".gallery-thumbs", {
+    //             centeredSlides: true,
+    //             centeredSlidesBounds: true,
+    //             slidesPerView: 3,
+    //             watchOverflow: true,
+    //             watchSlidesVisibility: true,
+    //             watchSlidesProgress: true,
+    //             direction: 'vertical'
+    //         });
+                        
+    //         galleryMain = new Swiper(".gallery-main", {
+    //         watchOverflow: true,
+    //         watchSlidesVisibility: true,
+    //         watchSlidesProgress: true,
+    //         preventInteractionOnTransition: true,
+    //         navigation: {
+    //             nextEl: '.swiper-button-next',
+    //             prevEl: '.swiper-button-prev',
+    //         },
+    //         effect: 'fade',
+    //             fadeEffect: {
+    //             crossFade: true
+    //         },
+    //         thumbs: {
+    //             swiper: galleryThumbs
+    //         }
+    //         });
+    
+    //         galleryMain.on('slideChangeTransitionStart', function() {
+    //         galleryThumbs.slideTo(galleryMain.activeIndex);
+    //         });
+    
+    //         galleryThumbs.on('transitionStart', function(){
+    //         galleryMain.slideTo(galleryThumbs.activeIndex);
+    //         });
+    //      })
+    // })      
+
 });
