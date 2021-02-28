@@ -13,6 +13,9 @@ $(document).ready(function () {
 
     $(document).mouseup(function (e) {
         var container = $('.sunday-navbar');
+        $('#nav-open-btn').click(function () {
+            $('.sunday-navbar').toggleClass("sunday-navbar-active");
+        })
 
         // if the target of the click isn't the container nor a descendant of the container
         if ($('.sunday-navbar').hasClass('sunday-navbar-active')) {
@@ -21,9 +24,7 @@ $(document).ready(function () {
             }
         }        
 
-        $('#nav-open-btn').click(function () {
-            $('.sunday-navbar').toggleClass("sunday-navbar-active");
-        })
+       
     });
 
 
@@ -74,7 +75,8 @@ $(document).ready(function () {
             // Section 6 Welcome home sunday section
         } else if (scrollPosition > sunday_welcome_home && scrollPosition < floor_plan) {
             // Nav-bottom bar
-            $('.nav-wrapper').css('display', 'none');
+            $('#scroll-down').text('Residencies');
+            $('.nav-bottom-row').css('border-top', '1px solid rgba(255,255,255,0.3)');
 
             // Nav-top bar
             $('#scroll-up').css('color', 'rgba(255,255,255,0.5');
@@ -148,6 +150,17 @@ $(document).ready(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
     })
 
-    
+    // Floorplan swiper
+    var swiper = new Swiper('.floorplan-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
         
 });
