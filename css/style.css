@@ -1157,8 +1157,13 @@ p.home-modal-title::before {
     position: relative;
 }
 
-.map {
+.mapcontainer {
     position: relative;
+    height: 100%;
+    background-color: #e0e0e0;
+}
+
+#map {
     height: 100%;
     background-color: #e0e0e0;
 }
