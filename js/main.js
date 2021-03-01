@@ -1,6 +1,22 @@
 $(document).ready(function () {
     "use strict";
 
+    var myFullpage = new fullpage('#fullpage', {
+        // scrollOverflow: true,
+        navigation: true,
+        anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
+            'sd-fixtures', 'sd-doorstep', 'sd-video', 'sd-map', 'sd-contact-us'
+        ],
+        slidesNavigation: false,
+        scrollBar: true,
+        verticalCentered: false,
+        scrollOverflowReset: true,
+        scrollingSpeed: 800,
+        autoScrolling: true,
+        normalScrollElements: '#sunday-everyday, #sunday-partners,#fixtures, #doorstep, #contact-us',
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 15,
+    });
     // Click to show menu
     // Click to Scroll down
     $(document).on('click', '.scroll-down-box', function () {
@@ -35,19 +51,28 @@ $(document).ready(function () {
     var sunday_welcome_home = $('#sunday-welcome-home').offset().top;
     var floor_plan = $('#floor-plan').offset().top;
     var fixture = $('#fixtures').offset().top;
-    // var doorstep = $('#doorstep').offset().top;
+    var doorstep = $('#doorstep').offset().top;
+    var video_bg = $('#video-bg').offset().top;
+    var map_section = $('#map-section').offset().top;
+    var contact_us =$('#contact-us').offset().top;
+
+    if ($('#home-modal').hasClass('active')) {
+        $('.nav-wrapper-top ').css('display', 'block');
+    }
 
     $(window).on('scroll', function () {
         var scrollPosition = $(this).scrollTop() + 1;
         // Section home modal
         if (scrollPosition > home_modal && scrollPosition < everyday_height) {
+            $('.scroll-down-box').css('opacity', '1');
             $('#scroll-down').text('1. sunday every day');
-            $('#scroll-up').text('Video');
+            $('#scroll-up').text('home');
             $('.nav-bottom-row').css('border-top', '1px solid #fff');
             $('.nav-wrapper-top ').css('display', 'block');
             // Section sunday everyday
         } else if (scrollPosition > everyday_height && scrollPosition < sunday_partner) {
             // nav-bottom bar
+            $('.scroll-down-box').css('opacity', '1');
             $('#scroll-down').text('2. creative partners');
             $('#scroll-down').css('color', '#A0A8A2');
             $('.nav-bottom-row').css('border-top', '1px solid #8C968F');
@@ -65,6 +90,7 @@ $(document).ready(function () {
             // Nav-bottom bar
             $('#scroll-down').text('Residencies');
             $('.nav-bottom-row').css('border-top', '1px solid rgba(255,255,255,0.3)');
+            $('.scroll-down-box').css('opacity', '1');
 
             // Nav-top bar
             $('#scroll-up').css('color', 'rgba(255,255,255,0.5)');
@@ -75,7 +101,8 @@ $(document).ready(function () {
             // Section 6 Welcome home sunday section
         } else if (scrollPosition > sunday_welcome_home && scrollPosition < floor_plan) {
             // Nav-bottom bar
-            $('#scroll-down').text('Residencies');
+            $('.scroll-down-box').css('opacity', '1');
+            $('#scroll-down').text('Floor plan');
             $('.nav-bottom-row').css('border-top', '1px solid rgba(255,255,255,0.3)');
 
             // Nav-top bar
@@ -88,6 +115,7 @@ $(document).ready(function () {
         } else if (scrollPosition > floor_plan && scrollPosition < fixture) {
 
             // Nav-bottom bar
+            $('.scroll-down-box').css('opacity', '1');
             $('#scroll-down').text('duplex | fixtures');
             $('.nav-bottom-row').css('border-top', '1px solid rgba(255,255,255,0.3)');
 
@@ -98,11 +126,80 @@ $(document).ready(function () {
             $('.nav-wrapper-top').css('display', 'block');
             $('.nav-top-row').css('border-bottom', '1px solid rgba(255,255,255,0.5)');
             
+            // Section Fixture
+        } else if (scrollPosition > fixture && scrollPosition < doorstep) {  
+            $('.scroll-down-box').css('opacity', '1');  
+            $('#scroll-down').text('neighbourhood');
+            $('#scroll-down').css('color', '#656565');
+            $('.nav-bottom-row').css('border-top', '1px solid #656565');
+            $('#menu-arrow path').css('fill', '#656565');
+            $('.btn-right-box svg path').css('fill', '#656565');
+
+            // Nav-top bar
+            $('#scroll-up').css('color', 'rgba(101,101,101, 0.3)');
+            $('#scroll-up').text('4. Floorplans');
+            $('#menu-arrow-down path').css('fill', 'rgba(101,101,101, 0.3)');
+            $('.nav-wrapper-top').css('display', 'block');
+            $('.nav-top-row').css('border-bottom', '1px solid rgba(101,101,101, 0.3)');
+
+
+            // Section doorstep
+        }else if (scrollPosition > doorstep && scrollPosition < video_bg) {
+            $('.scroll-down-box').css('opacity', '1');
+            $('#scroll-down').text('Video Background');
+            $('#scroll-down').css('color', '#656565');
+            $('.nav-bottom-row').css('border-top', '1px solid #656565');
+            $('#menu-arrow path').css('fill', '#656565');
+            $('.btn-right-box svg path').css('fill', '#656565');
+        
+            // Nav-top bar
+            $('#scroll-up').css('color', 'rgba(101,101,101, 0.3)');
+            $('#scroll-up').text('5. Fixtures');
+            $('#menu-arrow-down path').css('fill', 'rgba(101,101,101, 0.3)');
+            $('.nav-wrapper-top').css('display', 'block');
+            $('.nav-top-row').css('border-bottom', '1px solid rgba(101,101,101, 0.3)');
             
+        
+        } else if (scrollPosition > video_bg && scrollPosition < map_section) {
+            // Video section
+            $('#scroll-down').text('Map');
+            $('.scroll-down-box').css('opacity', '1'); 
             
+            // Nav-top bar
+            $('#scroll-up').css('color', 'rgba(255,255,255, 0.5)');
+            $('#scroll-up').text('6. neighbourhood');
+            $('#menu-arrow-down path').css('fill', 'rgba(255,255,255, 0.5)');
+            $('.nav-wrapper-top').css('display', 'block');
+            $('.nav-top-row').css('border-bottom', '1px solid rgba(255,255,255, 0.5)');
+
+        } else if (scrollPosition > map_section && scrollPosition < contact_us){
+            // Maps section
+            $('#scroll-down').text('Contact us');
+            $('.scroll-down-box').css('opacity', '1'); 
             
-            // Section 1, home banner
+            // Nav-top bar
+            $('#scroll-up').css('color', 'rgba(255,255,255, 0.5)');
+            $('#scroll-up').text('7. Video Background');
+            $('#menu-arrow-down path').css('fill', 'rgba(255,255,255, 0.5)');
+            $('.nav-wrapper-top').css('display', 'block');
+            $('.nav-top-row').css('border-bottom', '1px solid rgba(255,255,255, 0.5)');
+         
+        } else if (scrollPosition > contact_us ) {
+            // Section last one, contact us
+            $('.scroll-down-box').css('opacity', '0');            
+            $('.nav-bottom-row').css('border-top', '1px solid #8C968F');
+            $('#menu-arrow path').css('fill', '#8C968F');
+            $('.btn-right-box svg path').css('fill', '#8C968F');
+            
+            // Nav-top bar
+            $('#scroll-up').css('color', 'rgba(101,101,101, 0.3)');
+            $('#scroll-up').text('8. Maps');
+            $('#menu-arrow-down path').css('fill', 'rgba(101,101,101, 0.3)');
+            $('.nav-wrapper-top').css('display', 'block');
+            $('.nav-top-row').css('border-bottom', '1px solid rgba(101,101,101, 0.3)');
         } else {
+            // Section 1, home banner
+            $('.scroll-down-box').css('opacity', '1');
             $('#scroll-down').text('Scroll');
             $('#scroll-down').css('color', '#fff');
             $('.nav-bottom-row').css('border-top', '1px solid rgba(255,255,255,0.3)');
