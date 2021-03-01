@@ -627,7 +627,7 @@ p.home-modal-title::before {
 
 .welcome-home-title {
     position: absolute;
-    right: 0;
+    right: 5rem;
     top: 5rem;
 }
 
@@ -1120,10 +1120,6 @@ p.home-modal-title::before {
     opacity: 0.95;
 }
 
-#video-bg .home-modal-title {
-    font-weight: 600;
-}
-
 #video-bg .home-modal-title::before {
     background-color: #fff;
 }
@@ -1131,6 +1127,17 @@ p.home-modal-title::before {
 #video-bg .home-modal-content {
     padding-left: 8rem;
     padding-right: 8rem;
+}
+
+#video-bg .home-modal-content p {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+#video-bg p.home-modal-title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
 }
 
 #bg-video {
