@@ -281,12 +281,14 @@ function initMap(lat, lng) {
        lng
     };
 
-    if (myLatLng.lat !== undefined || myLatLng.lng !== undefined) {
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: myLatLng,
-        });
-    }
+    const uluru = { lat: -31.56391, lng: 147.154312 };
+
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: uluru,
+    });
+    
 
     const image = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/marker.svg?alt=media&token=cd4f760a-2182-4e93-bf2b-3eace89f0dc1';
  

@@ -861,6 +861,7 @@ p.home-modal-title::before {
 /* Fixtures Section */
 #fixtures {
     background: linear-gradient(rgba(228, 224, 217, 0.5), rgba(228, 224, 217, 0.5)), url("../assets/img/bg\ –\ Fixtures.png");
+    height: 100vh !important;
 }
 
 .fixtures-row {
