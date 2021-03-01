@@ -458,10 +458,16 @@ p.home-modal-title::before {
 
 .second-img {
     width: 66%;
+    padding-right: 15px;
+}
+
+.sd-third-img-box {
+    width: 34%;
 }
 
 .third-img {
     height: 100%;
+    width: 100%;
 }
 
 .sd-third-img-box .expand-icon {
@@ -809,7 +815,7 @@ p.home-modal-title::before {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 2000;
     border-bottom: none;
 }
 

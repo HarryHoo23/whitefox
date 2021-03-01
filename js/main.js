@@ -11,6 +11,7 @@ $(document).ready(function () {
         scrollBar: true,
         verticalCentered: false,
         scrollOverflowReset: true,
+        scrollHorizontally: true,
         scrollingSpeed: 800,
         autoScrolling: true,
         normalScrollElements: '#sunday-everyday, #sunday-partners,#fixtures, #doorstep, #contact-us',
