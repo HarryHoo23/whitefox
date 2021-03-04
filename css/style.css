@@ -1320,6 +1320,9 @@ p.home-modal-title::before {
     height: 100%;
     padding-top: 60px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* .contacts {
