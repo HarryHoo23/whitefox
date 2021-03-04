@@ -13,39 +13,38 @@ $(document).ready(function () {
         scrollHorizontally: true,
         scrollingSpeed: 800,
         autoScrolling: true,
-        normalScrollElements: '.scrollable-content, .vs-img, .sale-intro',
+        normalScrollElements: '.scrollable-content, .vs-img, #doorstep, .sale-intro',
         touchSensitivity: 15,
         fitToSectionDelay: 500,
         fitToSection: true,
 
 
-        // afterLoad: function (origin, destination, direction) { 
-        //     var div = $('#sunday-everyday .scrollable-content');
-        //     var partnersDiv = $('#sunday-partners .scrollable-content');
-        //     var canScroll = false;
-        //     var ptCanScroll = false;
-		// 	$('.menu-arrow-box').on('click', function (e) {
-        //         if(origin.index == 1 && direction == "down" && canScroll == false 
-        //         || origin.index ==3 && direction == "up" && canScroll == false){
-        //             div.scrollTop(0);
-        //             e.stopPropagation();
-        //             div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
-        //             canScroll = true;
-                    
-        //         }
+        afterLoad: function (origin, destination, direction) { 
+            var div = $('#sunday-everyday .scrollable-content');
+            var partnersDiv = $('#sunday-partners .scrollable-content');
+            var canScroll = false;
+            var ptCanScroll = false;
+			$('.menu-arrow-box').on('click', function (e) {
+                if(origin.index == 1 && direction == "down" && canScroll == false 
+                || origin.index ==3 && direction == "up" && canScroll == false){
+                    e.stopPropagation();
+                    div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
+                    canScroll = true;
+                }
 
-        //         if(origin.index == 2 && direction == "down" && ptCanScroll == false 
-        //         || origin.index == 4 && direction == "up" && ptCanScroll == false){        
-        //             partnersDiv.scrollTop(0);
-        //             e.stopPropagation();
-        //             partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
-        //             ptCanScroll = true;
-        //         }
-        //     });
+                if(origin.index == 2 && direction == "down" && ptCanScroll == false 
+                || origin.index == 4 && direction == "up" && ptCanScroll == false){
+                    e.stopPropagation();
+                    partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
+                    ptCanScroll = true;
+                }
+            });
 
-        // }
+            div.scrollTop(0);
+            partnersDiv.scrollTop(0);
+        }
     });
-
+    // Click to show menu
     // Click to Scroll down
     $(document).on('click', '.scroll-down-box', function () {
         fullpage_api.moveSectionDown();
@@ -239,50 +238,50 @@ $(document).ready(function () {
     })
 
 
-    setInterval(changeTab, 20000);
-    $('a#v-pills-home-tab').removeClass('active');
-    $('a#v-pills-settings-tab').addClass('active');
+    // setInterval(changeTab, 20000);
+    // $('a#v-pills-home-tab').removeClass('active');
+    // $('a#v-pills-settings-tab').addClass('active');
     
-    function changeTab() {
-        $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-        var tabs = $('.partner-tabs .nav-link');
-        var active = tabs.filter('.active');
-        var nextTab = active.next('a');
-        var toClick = nextTab.length ? nextTab : tabs.eq(0);
+    // function changeTab() {
+    //     $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //     var tabs = $('.partner-tabs .nav-link');
+    //     var active = tabs.filter('.active');
+    //     var nextTab = active.next('a');
+    //     var toClick = nextTab.length ? nextTab : tabs.eq(0);
 
-        var pagination = $('.tab-pagination-bullets');
+    //     var pagination = $('.tab-pagination-bullets');
 
-        $('a#v-pills-home-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(0).addClass('bullets-active');
-            progressBar(0);
-        }) 
+    //     $('a#v-pills-home-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(0).addClass('bullets-active');
+    //         progressBar(0);
+    //     }) 
 
-        $('a#v-pills-profile-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(1).addClass('bullets-active');
-            progressBar(1);
-        }) 
+    //     $('a#v-pills-profile-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(1).addClass('bullets-active');
+    //         progressBar(1);
+    //     }) 
 
-        $('a#v-pills-messages-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(2).addClass('bullets-active');
-            progressBar(2);
-        }) 
+    //     $('a#v-pills-messages-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(2).addClass('bullets-active');
+    //         progressBar(2);
+    //     }) 
 
-        $('a#v-pills-settings-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(3).addClass('bullets-active');
-            progressBar(3);
-        }) 
+    //     $('a#v-pills-settings-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(3).addClass('bullets-active');
+    //         progressBar(3);
+    //     }) 
 
-        toClick.trigger('click');   
-    }
-    changeTab();
+    //     toClick.trigger('click');   
+    // }
+    // changeTab();
     function progressBar(n) {
         var bar = $('.progress-bar-fill');
         bar.eq(n).css({"width":"100%", 
