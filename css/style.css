@@ -917,7 +917,8 @@ p.home-modal-title::before {
     padding: 0;
     right: 3rem;
     top: 1rem;
-    z-index: 2001;
+    width: 70px;
+    height: 70px;
 }
 
 .modal-title {
