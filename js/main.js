@@ -238,9 +238,9 @@ $(document).ready(function () {
     })
 
 
-    setInterval(changeTab, 20000);
-    $('a#v-pills-home-tab').removeClass('active');
-    $('a#v-pills-settings-tab').addClass('active');
+    // setInterval(changeTab, 20000);
+    // $('a#v-pills-home-tab').removeClass('active');
+    // $('a#v-pills-settings-tab').addClass('active');
     
     // function changeTab() {
     //     $('.progress-bar-fill').css({"width":"0", "transition": "none"});
