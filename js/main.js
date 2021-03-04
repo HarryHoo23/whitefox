@@ -335,10 +335,10 @@ $(document).ready(function () {
     clickAccordion("stop-by-accordion");
     clickAccordion("dusk-dawn-accordion");
 
-    // function progressBar(n) {
-    //     var bar = $('.progress-bar-fill');
-    //     bar.eq(n).css({"width":"100%", "transition": "20s linear"});
-    // };
+    function progressBar(n) {
+        var bar = $('.progress-bar-fill');
+        bar.eq(n).css({"width":"100%", "-webkit-transition": "width 20s linear"});
+    };
 
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
