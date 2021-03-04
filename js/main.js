@@ -242,47 +242,52 @@ $(document).ready(function () {
     $('a#v-pills-home-tab').removeClass('active');
     $('a#v-pills-settings-tab').addClass('active');
     
-    function changeTab() {
-        $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-        var tabs = $('.partner-tabs .nav-link');
-        var active = tabs.filter('.active');
-        var nextTab = active.next('a');
-        var toClick = nextTab.length ? nextTab : tabs.eq(0);
+    // function changeTab() {
+    //     $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //     var tabs = $('.partner-tabs .nav-link');
+    //     var active = tabs.filter('.active');
+    //     var nextTab = active.next('a');
+    //     var toClick = nextTab.length ? nextTab : tabs.eq(0);
 
-        var pagination = $('.tab-pagination-bullets');
+    //     var pagination = $('.tab-pagination-bullets');
 
-        $('a#v-pills-home-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(0).addClass('bullets-active');
-            progressBar(0);
-        }) 
+    //     $('a#v-pills-home-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(0).addClass('bullets-active');
+    //         progressBar(0);
+    //     }) 
 
-        $('a#v-pills-profile-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(1).addClass('bullets-active');
-            progressBar(1);
-        }) 
+    //     $('a#v-pills-profile-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(1).addClass('bullets-active');
+    //         progressBar(1);
+    //     }) 
 
-        $('a#v-pills-messages-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(2).addClass('bullets-active');
-            progressBar(2);
-        }) 
+    //     $('a#v-pills-messages-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(2).addClass('bullets-active');
+    //         progressBar(2);
+    //     }) 
 
-        $('a#v-pills-settings-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(3).addClass('bullets-active');
-            progressBar(3);
-        }) 
+    //     $('a#v-pills-settings-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(3).addClass('bullets-active');
+    //         progressBar(3);
+    //     }) 
 
-        toClick.trigger('click');   
-    }
-
-    changeTab();
+    //     toClick.trigger('click');   
+    // }
+    // changeTab();
+    // function progressBar(n) {
+    //     var bar = $('.progress-bar-fill');
+    //     bar.eq(n).css({"width":"100%", 
+    //     "transition": "width 20s ease-in-out",
+    //     "-webkit-transition": "width 20s ease-in-out"});
+    // };
 
     function clickAccordion(id) {
         var accordionBtn = $('#'+ id + " " + '.btn');   
@@ -335,10 +340,7 @@ $(document).ready(function () {
     clickAccordion("stop-by-accordion");
     clickAccordion("dusk-dawn-accordion");
 
-    function progressBar(n) {
-        var bar = $('.progress-bar-fill');
-        bar.eq(n).css({"width":"100%", "-webkit-transition": "width 20s linear"});
-    };
+    
 
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
