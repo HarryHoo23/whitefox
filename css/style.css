@@ -1038,6 +1038,7 @@ p.home-modal-title::before {
 
 .doorstep-section {
     padding-bottom: 5rem;
+    background-color: #FAFAFA !important;
 }
 
 .doorstep-container-top .sunday-title {
@@ -1090,8 +1091,8 @@ p.home-modal-title::before {
 .doorstep-img-container-right .second-img {
     position: absolute;
     top: -7rem;
-    border-right: 15px solid #f8f8f8;
-    border-bottom: 15px solid #f8f8f8;
+    border-right: 15px solid #FAFAFA;
+    border-bottom: 15px solid #FAFAFA;
     padding-right: 0px;
 }
 
@@ -1317,15 +1318,16 @@ p.home-modal-title::before {
 
 .contact-container {
     height: 100%;
-    padding-top: 5rem;
+    padding-top: 60px;
     position: relative;
 }
 
 .contacts {
     position: absolute;
     bottom: 0;
-    top: 50%;
+    /* top: 50%;
     transform: translateY(-30%);
+    -webkit-transform: translateY(-30%); */
 }
 
 .sale-member-container {
