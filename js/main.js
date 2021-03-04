@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     var myFullpage = new fullpage('#fullpage', {
-        // scrollOverflow: true,
+        scrollOverflow: true,
         navigation: true,
         anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-video', 'sd-map', 'sd-contact-us'
@@ -15,34 +15,35 @@ $(document).ready(function () {
         scrollingSpeed: 800,
         autoScrolling: true,
         normalScrollElements: '#sunday-everyday, #sunday-partners, .vs-img, #doorstep, .sale-intro',
-        touchSensitivity: 5,
+        touchSensitivity: 15,
+        fitToSectionDelay: 500,
+        fitToSection: true,
 
 
+        // afterLoad: function (origin, destination, direction) { 
+        //     var div = $('#sunday-everyday .scrollable-content');
+        //     var partnersDiv = $('#sunday-partners .scrollable-content');
+        //     var canScroll = false;
+        //     var ptCanScroll = false;
+		// 	$('.menu-arrow-box').on('click', function (e) {
+        //         if(origin.index == 1 && direction == "down" && canScroll == false 
+        //         || origin.index ==3 && direction == "up" && canScroll == false){
+        //             e.stopPropagation();
+        //             div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
+        //             canScroll = true;
+        //         }
 
-        afterLoad: function (origin, destination, direction) { 
-            var div = $('#sunday-everyday .scrollable-content');
-            var partnersDiv = $('#sunday-partners .scrollable-content');
-            var canScroll = false;
-            var ptCanScroll = false;
-			$('.menu-arrow-box').on('click', function (e) {
-                if(origin.index == 1 && direction == "down" && canScroll == false 
-                || origin.index ==3 && direction == "up" && canScroll == false){
-                    e.stopPropagation();
-                    div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
-                    canScroll = true;
-                }
+        //         if(origin.index == 2 && direction == "down" && ptCanScroll == false 
+        //         || origin.index == 4 && direction == "up" && ptCanScroll == false){
+        //             e.stopPropagation();
+        //             partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
+        //             ptCanScroll = true;
+        //         }
+        //     });
 
-                if(origin.index == 2 && direction == "down" && ptCanScroll == false 
-                || origin.index == 4 && direction == "up" && ptCanScroll == false){
-                    e.stopPropagation();
-                    partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
-                    ptCanScroll = true;
-                }
-            });
-
-            div.scrollTop(0);
-            partnersDiv.scrollTop(0);
-        }
+        //     div.scrollTop(0);
+        //     partnersDiv.scrollTop(0);
+        // }
     });
     // Click to show menu
     // Click to Scroll down
@@ -238,107 +239,107 @@ $(document).ready(function () {
     })
 
 
-    setInterval(changeTab, 20000);
-    $('a#v-pills-home-tab').removeClass('active');
-    $('a#v-pills-settings-tab').addClass('active');
+    // setInterval(changeTab, 20000);
+    // $('a#v-pills-home-tab').removeClass('active');
+    // $('a#v-pills-settings-tab').addClass('active');
     
-    function changeTab() {
-        $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-        var tabs = $('.partner-tabs .nav-link');
-        var active = tabs.filter('.active');
-        var nextTab = active.next('a');
-        var toClick = nextTab.length ? nextTab : tabs.eq(0);
+    // function changeTab() {
+    //     $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //     var tabs = $('.partner-tabs .nav-link');
+    //     var active = tabs.filter('.active');
+    //     var nextTab = active.next('a');
+    //     var toClick = nextTab.length ? nextTab : tabs.eq(0);
 
-        var pagination = $('.tab-pagination-bullets');
+    //     var pagination = $('.tab-pagination-bullets');
 
-        $('a#v-pills-home-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(0).addClass('bullets-active');
-            progressBar(0);
-        }) 
+    //     $('a#v-pills-home-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(0).addClass('bullets-active');
+    //         progressBar(0);
+    //     }) 
 
-        $('a#v-pills-profile-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(1).addClass('bullets-active');
-            progressBar(1);
-        }) 
+    //     $('a#v-pills-profile-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(1).addClass('bullets-active');
+    //         progressBar(1);
+    //     }) 
 
-        $('a#v-pills-messages-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(2).addClass('bullets-active');
-            progressBar(2);
-        }) 
+    //     $('a#v-pills-messages-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(2).addClass('bullets-active');
+    //         progressBar(2);
+    //     }) 
 
-        $('a#v-pills-settings-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
-            pagination.removeClass('bullets-active');
-            pagination.eq(3).addClass('bullets-active');
-            progressBar(3);
-        }) 
+    //     $('a#v-pills-settings-tab').click(function() {
+    //         $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+    //         pagination.removeClass('bullets-active');
+    //         pagination.eq(3).addClass('bullets-active');
+    //         progressBar(3);
+    //     }) 
 
-        toClick.trigger('click');   
-    }
+    //     toClick.trigger('click');   
+    // }
 
-    changeTab();
+    // changeTab();
 
-    function clickAccordion(id) {
-        var accordionBtn = $('#'+ id + " " + '.btn');   
-        switch (id) {
-            case "stop-by-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-            case "slow-start-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-            case "dusk-dawn-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-        }
-    }
-    clickAccordion("slow-start-accordion");
-    clickAccordion("stop-by-accordion");
-    clickAccordion("dusk-dawn-accordion");
+    // function clickAccordion(id) {
+    //     var accordionBtn = $('#'+ id + " " + '.btn');   
+    //     switch (id) {
+    //         case "stop-by-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //         case "slow-start-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //         case "dusk-dawn-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //     }
+    // }
+    // clickAccordion("slow-start-accordion");
+    // clickAccordion("stop-by-accordion");
+    // clickAccordion("dusk-dawn-accordion");
 
-    function progressBar(n) {
-        var bar = $('.progress-bar-fill');
-        bar.eq(n).css({"width":"100%", "transition": "20s linear"});
-    };
+    // function progressBar(n) {
+    //     var bar = $('.progress-bar-fill');
+    //     bar.eq(n).css({"width":"100%", "transition": "20s linear"});
+    // };
 
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
