@@ -1322,13 +1322,13 @@ p.home-modal-title::before {
     position: relative;
 }
 
-.contacts {
+/* .contacts {
     position: absolute;
     bottom: 0;
     /* top: 50%;
     transform: translateY(-30%);
     -webkit-transform: translateY(-30%); */
-}
+
 
 .sale-member-container {
     display: flex;
