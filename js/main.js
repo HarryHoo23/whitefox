@@ -288,7 +288,6 @@ $(document).ready(function () {
         "transition": "width 20s ease-in-out",
         "-webkit-transition": "width 20s ease-in-out"});
     };
-    progressBar(1);
 
     function clickAccordion(id) {
         var accordionBtn = $('#'+ id + " " + '.btn');   
