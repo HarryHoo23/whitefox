@@ -241,7 +241,7 @@ $(document).ready(function () {
     $('a#v-pills-settings-tab').addClass('active');
     
     function changeTab() {
-        $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+        // $('.progress-bar-fill').css({"width":"0", "transition": "none"});
         var tabs = $('.partner-tabs .nav-link');
         var active = tabs.filter('.active');
         var nextTab = active.next('a');
@@ -249,31 +249,31 @@ $(document).ready(function () {
         var pagination = $('.tab-pagination-bullets');
 
         $('a#v-pills-home-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+            // $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(0).addClass('bullets-active');
-            progressBar(0);
+            // progressBar(0);
         }) 
 
         $('a#v-pills-profile-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+            // $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(1).addClass('bullets-active');
-            progressBar(1);
+            // progressBar(1);
         }) 
 
         $('a#v-pills-messages-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+            // $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(2).addClass('bullets-active');
-            progressBar(2);
+            // progressBar(2);
         }) 
 
         $('a#v-pills-settings-tab').click(function() {
-            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+            // $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(3).addClass('bullets-active');
-            progressBar(3);
+            // progressBar(3);
         }) 
         toClick.trigger('click');  
         // clearInterval(automaticChangeTab); 
@@ -281,12 +281,12 @@ $(document).ready(function () {
     changeTab();
     // var int = setInterval(changeTab, 20000);
     
-    function progressBar(n) {
-        var bar = $('.progress-bar-fill');
-        bar.eq(n).css({"width":"100%", 
-        "transition": "width 20s linear",
-        "-webkit-transition": "width 20s linear"});
-    };
+    // function progressBar(n) {
+    //     var bar = $('.progress-bar-fill');
+    //     bar.eq(n).css({"width":"100%", 
+    //     "transition": "width 20s linear",
+    //     "-webkit-transition": "width 20s linear"});
+    // };
 
     function clickAccordion(id) {
         var accordionBtn = $('#'+ id + " " + '.btn');   
