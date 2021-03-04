@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     var myFullpage = new fullpage('#fullpage', {
-        // scrollOverflow: true,
+        scrollOverflow: true,
         navigation: true,
         anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-video', 'sd-map', 'sd-contact-us'
@@ -13,10 +13,37 @@ $(document).ready(function () {
         scrollOverflowReset: true,
         scrollHorizontally: true,
         scrollingSpeed: 800,
-        autoScrolling: false,
-        normalScrollElements: '#sunday-everyday, #sunday-partners,#fixtures, #doorstep, #contact-us',
+        autoScrolling: true,
+        normalScrollElements: '.everyday-section, #sunday-partners, .vs-img, #doorstep, .sale-intro',
         touchSensitivity: 15,
         normalScrollElementTouchThreshold: 15,
+
+
+
+        afterLoad: function (origin, destination, direction) { 
+            var div = $('#sunday-everyday .scrollable-content');
+            var partnersDiv = $('#sunday-partners .scrollable-content');
+            var canScroll = false;
+            var ptCanScroll = false;
+			$('.menu-arrow-box').on('click', function (e) {
+                if(origin.index == 1 && direction == "down" && canScroll == false 
+                || origin.index ==3 && direction == "up" && canScroll == false){
+                    e.stopPropagation();
+                    div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
+                    canScroll = true;
+                }
+
+                if(origin.index == 2 && direction == "down" && ptCanScroll == false 
+                || origin.index == 4 && direction == "up" && ptCanScroll == false){
+                    e.stopPropagation();
+                    partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
+                    ptCanScroll = true;
+                }
+            });
+
+            div.scrollTop(0);
+            partnersDiv.scrollTop(0);
+        }
     });
     // Click to show menu
     // Click to Scroll down
@@ -28,20 +55,20 @@ $(document).ready(function () {
         fullpage_api.moveSectionUp();
     });
 
-    $(document).mouseup(function (e) {
-        var container = $('.sunday-navbar');
-        $('#nav-open-btn').click(function () {
-            $('.sunday-navbar').toggleClass("sunday-navbar-active");
-        })
+    var container = $('.sunday-navbar');
+    $('#nav-open-btn').click(function () {
+        $('.sunday-navbar').toggleClass("sunday-navbar-active");
+        $('#menubar-overlay').toggleClass("nav-open");
+    })
 
+    $(document).mouseup(function (e) {
         // if the target of the click isn't the container nor a descendant of the container
         if ($('.sunday-navbar').hasClass('sunday-navbar-active')) {
             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                $('.sunday-navbar').toggleClass("sunday-navbar-active");                      
+                $('.sunday-navbar').toggleClass("sunday-navbar-active");  
+                $('#menubar-overlay').toggleClass("nav-open");                    
             }
         }        
-
-       
     });
 
 
@@ -212,37 +239,103 @@ $(document).ready(function () {
     })
 
 
-    $('[data-widget="tab-slider"]').each(function (i, el) {
+    setInterval(changeTab, 20000);
+    $('a#v-pills-home-tab').removeClass('active');
+    $('a#v-pills-settings-tab').addClass('active');
+    
+    function changeTab() {
+        $('.progress-bar-fill').css({"width":"0", "transition": "none"});
+        var tabs = $('.partner-tabs .nav-link');
+        var active = tabs.filter('.active');
+        var nextTab = active.next('a');
+        var toClick = nextTab.length ? nextTab : tabs.eq(0);
 
-        const $container = $(this);
-        const $sliderLinks = $container.find('.nav-link');
-        const panelCount = $sliderLinks.length;
-        const delay = 10000; // milleseconds
-        let index = 0;
+        var pagination = $('.tab-pagination-bullets');
 
-        function nextTabSliderPanel() {
-            $sliderLinks.eq(index++ % panelCount).trigger('click');
-            setTimeout(nextTabSliderPanel, delay);
+        $('a#v-pills-home-tab').click(function() {
+            pagination.removeClass('bullets-active');
+            pagination.eq(0).addClass('bullets-active');
+            progressBar(0);
+        }) 
+
+        $('a#v-pills-profile-tab').click(function() {
+            pagination.removeClass('bullets-active');
+            pagination.eq(1).addClass('bullets-active');
+            progressBar(1);
+        }) 
+
+        $('a#v-pills-messages-tab').click(function() {
+            pagination.removeClass('bullets-active');
+            pagination.eq(2).addClass('bullets-active');
+            progressBar(2);
+        }) 
+
+        $('a#v-pills-settings-tab').click(function() {
+            pagination.removeClass('bullets-active');
+            pagination.eq(3).addClass('bullets-active');
+            progressBar(3);
+        }) 
+
+        toClick.trigger('click');   
+    }
+
+    changeTab();
+
+    function clickAccordion(id) {
+        var accordionBtn = $('#'+ id + " " + '.btn');   
+        switch (id) {
+            case "stop-by-accordion":
+                accordionBtn.eq(0).click(function() {
+                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(1).click(function() {
+                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(2).click(function() {
+                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(3).click(function() {
+                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                break;
+            case "slow-start-accordion":
+                accordionBtn.eq(0).click(function() {
+                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(1).click(function() {
+                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(2).click(function() {
+                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(3).click(function() {
+                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                break;
+            case "dusk-dawn-accordion":
+                accordionBtn.eq(0).click(function() {
+                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(1).click(function() {
+                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(2).click(function() {
+                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                accordionBtn.eq(3).click(function() {
+                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+                })
+                break;
         }
-        nextTabSliderPanel(); // Start the slider.
-    });
+    }
+    clickAccordion("slow-start-accordion");
+    clickAccordion("stop-by-accordion");
+    clickAccordion("dusk-dawn-accordion");
 
-
-
-    // Progress bar
-    function progressBar() {
-        var size = 0;
-        var interval = setInterval(function () {
-            size = size + 10;
-            $('.progress-bar-fill').css('width', size + '%');
-            if (size >= 100) {
-                clearInterval(interval);
-                size = 0;
-                $('.progress-bar-fill').css('width', size + '%');
-            }
-        }, 1000);
+    function progressBar(n) {
+        var bar = $('.progress-bar-fill');
+        bar.eq(n).css({"width":"100%", "transition": "20s linear"});
     };
-    progressBar();
 
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
@@ -260,6 +353,14 @@ $(document).ready(function () {
           clickable: true,
         },
       });
+
+    var menuSwiper = new Swiper ('.menu-carousel-container', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+    });
 });
 
 
