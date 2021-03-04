@@ -19,31 +19,31 @@ $(document).ready(function () {
         fitToSection: true,
 
 
-        afterLoad: function (origin, destination, direction) { 
-            var div = $('#sunday-everyday .scrollable-content');
-            var partnersDiv = $('#sunday-partners .scrollable-content');
-            var canScroll = false;
-            var ptCanScroll = false;
-			$('.menu-arrow-box').on('click', function (e) {
-                if(origin.index == 1 && direction == "down" && canScroll == false 
-                || origin.index ==3 && direction == "up" && canScroll == false){
-                    div.scrollTop(0);
-                    e.stopPropagation();
-                    div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
-                    canScroll = true;
+        // afterLoad: function (origin, destination, direction) { 
+        //     var div = $('#sunday-everyday .scrollable-content');
+        //     var partnersDiv = $('#sunday-partners .scrollable-content');
+        //     var canScroll = false;
+        //     var ptCanScroll = false;
+		// 	$('.menu-arrow-box').on('click', function (e) {
+        //         if(origin.index == 1 && direction == "down" && canScroll == false 
+        //         || origin.index ==3 && direction == "up" && canScroll == false){
+        //             div.scrollTop(0);
+        //             e.stopPropagation();
+        //             div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
+        //             canScroll = true;
                     
-                }
+        //         }
 
-                if(origin.index == 2 && direction == "down" && ptCanScroll == false 
-                || origin.index == 4 && direction == "up" && ptCanScroll == false){        
-                    partnersDiv.scrollTop(0);
-                    e.stopPropagation();
-                    partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
-                    ptCanScroll = true;
-                }
-            });
+        //         if(origin.index == 2 && direction == "down" && ptCanScroll == false 
+        //         || origin.index == 4 && direction == "up" && ptCanScroll == false){        
+        //             partnersDiv.scrollTop(0);
+        //             e.stopPropagation();
+        //             partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
+        //             ptCanScroll = true;
+        //         }
+        //     });
 
-        }
+        // }
     });
 
     // Click to Scroll down
