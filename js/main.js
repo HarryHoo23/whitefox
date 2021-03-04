@@ -13,7 +13,7 @@ $(document).ready(function () {
         scrollOverflowReset: true,
         scrollHorizontally: true,
         scrollingSpeed: 800,
-        autoScrolling: true,
+        // autoScrolling: true,
         normalScrollElements: '.everyday-section, #sunday-partners, .vs-img, #doorstep, .sale-intro',
         touchSensitivity: 5,
 
