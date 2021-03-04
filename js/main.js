@@ -13,7 +13,7 @@ $(document).ready(function () {
         scrollHorizontally: true,
         scrollingSpeed: 800,
         autoScrolling: true,
-        normalScrollElements: '#sunday-everyday, #sunday-partners, .vs-img, #doorstep, .sale-intro',
+        normalScrollElements: '.scrollable-content, .vs-img, .sale-intro',
         touchSensitivity: 15,
         fitToSectionDelay: 500,
         fitToSection: true,
@@ -27,24 +27,25 @@ $(document).ready(function () {
 			$('.menu-arrow-box').on('click', function (e) {
                 if(origin.index == 1 && direction == "down" && canScroll == false 
                 || origin.index ==3 && direction == "up" && canScroll == false){
+                    div.scrollTop(0);
                     e.stopPropagation();
                     div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
                     canScroll = true;
+                    
                 }
 
                 if(origin.index == 2 && direction == "down" && ptCanScroll == false 
-                || origin.index == 4 && direction == "up" && ptCanScroll == false){
+                || origin.index == 4 && direction == "up" && ptCanScroll == false){        
+                    partnersDiv.scrollTop(0);
                     e.stopPropagation();
                     partnersDiv.animate({ scrollTop: partnersDiv.prop("scrollHeight")}, 1000);
                     ptCanScroll = true;
                 }
             });
 
-            div.scrollTop(0);
-            partnersDiv.scrollTop(0);
         }
     });
-    // Click to show menu
+
     // Click to Scroll down
     $(document).on('click', '.scroll-down-box', function () {
         fullpage_api.moveSectionDown();
