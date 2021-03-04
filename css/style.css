@@ -1066,9 +1066,9 @@ p.home-modal-title::before {
     margin-left: 5rem;
     border-top: 1px solid #e0e0e0;
     margin-top: 8rem;
-    /* position: sticky;
+    position: sticky;
     top: 5rem;
-    height: 10vh; */
+    height: 10vh;
 }
 
 .doorstep-img-container-right,

@@ -284,56 +284,56 @@ $(document).ready(function () {
 
     changeTab();
 
-    function clickAccordion(id) {
-        var accordionBtn = $('#'+ id + " " + '.btn');   
-        switch (id) {
-            case "stop-by-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-            case "slow-start-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-            case "dusk-dawn-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
-                })
-                break;
-        }
-    }
-    clickAccordion("slow-start-accordion");
-    clickAccordion("stop-by-accordion");
-    clickAccordion("dusk-dawn-accordion");
+    // function clickAccordion(id) {
+    //     var accordionBtn = $('#'+ id + " " + '.btn');   
+    //     switch (id) {
+    //         case "stop-by-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#stop-by .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //         case "slow-start-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#slow-start .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //         case "dusk-dawn-accordion":
+    //             accordionBtn.eq(0).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(1).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(2).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             accordionBtn.eq(3).click(function() {
+    //                 $('#dusk-dawn .first-img').attr("src", "./assets/img/Bg Image.png");        
+    //             })
+    //             break;
+    //     }
+    // }
+    // clickAccordion("slow-start-accordion");
+    // clickAccordion("stop-by-accordion");
+    // clickAccordion("dusk-dawn-accordion");
 
     function progressBar(n) {
         var bar = $('.progress-bar-fill');
