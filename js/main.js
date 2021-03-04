@@ -282,12 +282,13 @@ $(document).ready(function () {
     //     toClick.trigger('click');   
     // }
     // changeTab();
-    // function progressBar(n) {
-    //     var bar = $('.progress-bar-fill');
-    //     bar.eq(n).css({"width":"100%", 
-    //     "transition": "width 20s ease-in-out",
-    //     "-webkit-transition": "width 20s ease-in-out"});
-    // };
+    function progressBar(n) {
+        var bar = $('.progress-bar-fill');
+        bar.eq(n).css({"width":"100%", 
+        "transition": "width 20s ease-in-out",
+        "-webkit-transition": "width 20s ease-in-out"});
+    };
+    progressBar(1);
 
     function clickAccordion(id) {
         var accordionBtn = $('#'+ id + " " + '.btn');   
