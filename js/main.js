@@ -2,7 +2,7 @@ $(document).ready(function () {
     "use strict";
 
     var myFullpage = new fullpage('#fullpage', {
-        scrollOverflow: true,
+        // scrollOverflow: true,
         navigation: true,
         anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-video', 'sd-map', 'sd-contact-us'
@@ -15,8 +15,7 @@ $(document).ready(function () {
         scrollingSpeed: 800,
         autoScrolling: true,
         normalScrollElements: '.everyday-section, #sunday-partners, .vs-img, #doorstep, .sale-intro',
-        touchSensitivity: 15,
-        normalScrollElementTouchThreshold: 15,
+        touchSensitivity: 5,
 
 
 
