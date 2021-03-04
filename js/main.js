@@ -253,24 +253,28 @@ $(document).ready(function () {
         var pagination = $('.tab-pagination-bullets');
 
         $('a#v-pills-home-tab').click(function() {
+            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(0).addClass('bullets-active');
             progressBar(0);
         }) 
 
         $('a#v-pills-profile-tab').click(function() {
+            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(1).addClass('bullets-active');
             progressBar(1);
         }) 
 
         $('a#v-pills-messages-tab').click(function() {
+            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(2).addClass('bullets-active');
             progressBar(2);
         }) 
 
         $('a#v-pills-settings-tab').click(function() {
+            $('.progress-bar-fill').css({"width":"0", "transition": "none"});
             pagination.removeClass('bullets-active');
             pagination.eq(3).addClass('bullets-active');
             progressBar(3);
