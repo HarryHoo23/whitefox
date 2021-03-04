@@ -26,7 +26,7 @@ $(document).ready(function () {
             var ptCanScroll = false;
 			$('.menu-arrow-box').on('click', function (e) {
                 if(origin.index == 1 && direction == "down" && canScroll == false 
-                || origin.index ==3 && direction == "up" && canScroll == false){
+                || origin.index == 3 && direction == "up" && canScroll == false){
                     e.stopPropagation();
                     div.animate({ scrollTop: div.prop("scrollHeight")}, 1000);
                     canScroll = true;
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
             div.scrollTop(0);
             partnersDiv.scrollTop(0);
-        }
+        },
     });
     // Click to show menu
     // Click to Scroll down
@@ -70,8 +70,6 @@ $(document).ready(function () {
         }        
     });
 
-
-
     var home_modal = $("#home-modal").offset().top;
     var everyday_height = $('#sunday-everyday').offset().top;
     var sunday_partner = $('#sunday-partners').offset().top;
@@ -88,6 +86,7 @@ $(document).ready(function () {
     }
 
     $(window).on('scroll', function () {
+        
         var scrollPosition = $(this).scrollTop() + 1;
         // Section home modal
         if (scrollPosition > home_modal && scrollPosition < everyday_height) {
@@ -237,7 +236,7 @@ $(document).ready(function () {
         }
     })
 
-    
+
     $('a#v-pills-home-tab').removeClass('active');
     $('a#v-pills-settings-tab').addClass('active');
     
@@ -280,7 +279,7 @@ $(document).ready(function () {
         // clearInterval(automaticChangeTab); 
     }
     changeTab();
-    var int = window.setInterval(changeTab, 20000);
+    // var int = setInterval(changeTab, 20000);
     
     function progressBar(n) {
         var bar = $('.progress-bar-fill');
