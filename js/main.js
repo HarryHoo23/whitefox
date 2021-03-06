@@ -4,14 +4,21 @@ $(document).ready(function () {
 
     
     $(window).on('load', function () { // makes sure that whole site is loaded
+        $('#status').fadeOut();
+        $('#loader').delay(350).fadeOut('slow');
         $('#preloader').addClass('show');
         setTimeout(function (){ 
             $('#preloader').removeClass('show');
-            
+            $('.overlay_home img').addClass('animate__animated animate__bounceInRight homeShow')        
+
         }, 2000);
         setTimeout(function (){ 
-            $('.overlay_home img').addClass('animate__animated animate__bounceInUp homeShow')        
-        }, 4000);
+            $('.overlay_home img').addClass('animate__animated animate__bounceOutLeft')        
+        }, 5000);
+        setTimeout(function (){ 
+            $('#home-bg-video').addClass('animate__animated animate__bounceInRight homeShow')        
+        }, 6000);
+
     });
     // hello();
 
@@ -41,14 +48,14 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-intro')) {                           
                 $('#scroll-down').text('sunday every day');
                 $('#scroll-up').text('home');
-                $('.home-modal-box').addClass('animate__animated animate__backInUp')
+                $('.home-modal-box').addClass('animate__animated animate__backInUp homeShow')
 
             }
 
             if ($('body').hasClass('fp-viewing-sd-every')) {                
                 $('#scroll-down').text('creative partners');
                 $('#scroll-up').text('Sunday Everyday');  
-                $('#sd-everyday-carousel').addClass('animate__animated animate__bounceInLeft')
+                $('#sd-everyday-carousel').addClass('animate__animated animate__bounceInLeft homeShow')
             }
 
             if ($('body').hasClass('fp-viewing-sd-partners')) {                
@@ -74,32 +81,50 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-fixtures')) {                
                 $('#scroll-down').text('Fixtures');
                 $('#scroll-up').text('Welcome home');
+                $('#doorstep').css('z-index', "1"); 
+                $('.showModal').click(function() { 
+                    $('#fixtures').css('z-index', "unset"); 
+                    $('#doorstep').css('z-index', "-1");               
+                })
+                $('.close').click(function() { 
+                    $('#fixtures').css('z-index', "2");
+                    $('#doorstep').css('z-index', "1");                
+                })
             }
 
             // Door step 1.
             if ($('body').hasClass('fp-viewing-sd-doorstep')) {                
                 $('#scroll-down').text('Doorstep');
-                $('#scroll-up').text('Fixtures');  
+                $('#scroll-up').text('Fixtures'); 
+                $('.doorstep-img-container-right img.first-img').addClass('animate_animated animate__fadeInUp homeShow'); 
+                $('.doorstep-img-container-right img.second-img').addClass('animate_animated animate__fadeInDown homeShow');      
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-1')) {                
                 $('#scroll-down').text('Doorstep');
                 $('#scroll-up').text('Monday to Sunday');  
+                $('.doorstep-accordion-box.right').addClass('animate__animated animate__bounceInRight homeShow');
+                $('.dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-2'))  {                
                 $('#scroll-down').text('Doorstep');
-                $('#scroll-up').text('Slow Start');  
+                $('#scroll-up').text('Slow Start'); 
+                $('.dp-container-right img').addClass('animate__animated animate__bounceInRight homeShow');
+                $('.doorstep-accordion-box.left').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-3')) {                
                 $('#scroll-down').text('Video');
                 $('#scroll-up').text('Stop By');  
+                $('#doorstep-3 .dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
+                $('#doorstep-3 .doorstep-accordion-box.right').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-video')) {                
                 $('#scroll-down').text('Map');
                 $('#scroll-up').text('Doorstep');  
+                $('#video-bg .home-modal-box').addClass('animate__animated animate__backInUp homeShow')
             }
 
             if ($('body').hasClass('fp-viewing-sd-map')) {                
@@ -118,10 +143,8 @@ $(document).ready(function () {
             
         },
 
-        onLeave: function(origin, direction){
-			// if(origin.index == 2){  
-            //     $('#sd-everyday-carousel').removeClass('animate__animated animate__bounceInLeft');
-			// }
+        onLeave: function(origin, destination, direction){
+			
 		}
     });
 

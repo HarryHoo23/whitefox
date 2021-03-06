@@ -43,6 +43,10 @@
 </head>
 
 <body>
+    <div id="loader">
+        <div id="status"></div>
+    </div>
+    
     <!-- Preloader -->
     <div id="preloader">
     </div>
@@ -763,28 +767,30 @@
                     <div class="fixture-swiper swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                <div class="ss-box showModal" data-toggle="modal" data-target="#exampleModalCenter">
                                     <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
                                     1</div>
-                                <div class="ss-box" class="btn btn-primary" data-toggle="modal"
+                                <div class="ss-box showModal" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModalCenter">
                                     <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>2
                                 </div>
-                                <div class="ss-box">
+                                <div class="ss-box showModal" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModalCenter">
                                     <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>3
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">1</div>
-                                <div class="ss-box" class="btn btn-primary" data-toggle="modal"
+                                <div class="ss-box showModal" data-toggle="modal" data-target="#exampleModalCenter">1</div>
+                                <div class="ss-box showModal" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModalCenter">2</div>
-                                <div class="ss-box">3</div>
+                                <div class="ss-box showModal">3</div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">1</div>
-                                <div class="ss-box" class="btn btn-primary" data-toggle="modal"
+                                <div class="ss-box showModal" data-toggle="modal" data-target="#exampleModalCenter">1</div>
+                                <div class="ss-box showModal" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModalCenter">2</div>
-                                <div class="ss-box">3</div>
+                                <div class="ss-box showModal" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModalCenter">3</div>
                             </div>
                         </div>
                         <!-- Add Pagination -->
@@ -793,13 +799,13 @@
                 </div>
 
                 <div class="col-md-3 vertical-fx-img">
-                    <div class="vfx-img-div text-center" style="margin-bottom: 1rem;" data-toggle="modal"
+                    <div class="vfx-img-div text-center showModal" style="margin-bottom: 1rem;" data-toggle="modal"
                         data-target="#exampleModalCenter">
                         <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
                         <img src="./assets/img/Layer 1.png" alt="chandliers">
                     </div>
 
-                    <div class="vfx-img-div vfx-div-second" data-toggle="modal" data-target="#exampleModalCenter">
+                    <div class="vfx-img-div vfx-div-second showModal" data-toggle="modal" data-target="#exampleModalCenter">
                         <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
                         <img src="./assets/img/showerhead.png" alt="showerhead">
                     </div>

@@ -11,8 +11,30 @@ body {
     --animate-delay: 0.5s;
   }
 
+#loader {
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#status {
+    background-image: url('../assets/img/icons/preloader/loader.svg');
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+}
+
 #preloader {
-    background-color: #8C968F;
+    background-color: rgb(157, 167, 160);
     position: fixed;
     height: 100%;
     width: 0px;
@@ -94,11 +116,13 @@ p {
 .sunday-navbar {
     position: fixed;
     height: 0%;
+    transition: all 300ms ease;
 }
 
 .sunday-navbar-active {
     height: 45%;
     background-color: #fff;
+    transition: all 300ms ease;
 }
 
 .menu-box {
@@ -226,7 +250,7 @@ ul.nav li:last-child .nav-link {
     position: fixed;
     top: 0;
     height: 5rem;
-    z-index: 2;
+    z-index: 5;
     display: block;
 }
 
@@ -449,6 +473,8 @@ ul.nav li:last-child .nav-link {
     overflow: hidden;
     mix-blend-mode: multiply;
     background: #8C968F;
+    display: none;
+    animation-duration: 1.5s;
 }
 
 #home-page {
@@ -470,7 +496,11 @@ ul.nav li:last-child .nav-link {
 
 .overlay_home img{
     display: none;
-    animation-duration: 2s;
+}
+
+.animate__animated.animate__bounceInRight,
+.animate__animated.animate__bounceInLeft {
+    animation-duration: 3s;
 }
 
 .homeShow {
@@ -489,6 +519,7 @@ ul.nav li:last-child .nav-link {
     right: 5rem;
     background-color: rgba(141, 151, 144, 0.94);
     text-align: center;
+    display: none;
 }
 
 .home-modal-content {
@@ -611,6 +642,7 @@ p.home-modal-title::before {
 
 #sd-everyday-carousel {
     animation-duration: 2s;
+    display: none;
 }
 
 #sd-everyday-carousel .expand-icon{
@@ -1231,9 +1263,9 @@ p.home-modal-title::before {
 
 /* Doorstep section */
 #doorstep,
-#doorstep1
-#doorstep2
-#doorstep3 {
+#doorstep-1
+#doorstep-2
+#doorstep-3 {
     background-color: #FAFAFA;
     height: 100vh !important;
 }
@@ -1277,8 +1309,7 @@ p.home-modal-title::before {
     height: 10vh;
 }
 
-.doorstep-img-container-right,
-.doorstep-img-container-left {
+.doorstep-img-container-right {
     position: relative;
     display: flex;
     height: 100vh;
@@ -1287,10 +1318,8 @@ p.home-modal-title::before {
 .doorstep-img-container-right .first-img {
     position: absolute;
     right: 0;
-}
-
-.doorstep-img-container-right img.first-img,
-.doorstep-img-container-left img.first-img {
+    display: none;
+    animation-duration: 2s;
     height: 100%;
 }
 
@@ -1300,6 +1329,8 @@ p.home-modal-title::before {
     border-right: 15px solid #FAFAFA;
     border-bottom: 15px solid #FAFAFA;
     padding-right: 0px;
+    animation-duration: 2s;
+    display: none;
 }
 
 .doorstep-img-container-left .first-img {
@@ -1315,7 +1346,6 @@ p.home-modal-title::before {
 
 .dp-container-left,
 .dp-container-right {
-    margin-top: 5rem;
     position: relative;
     display: flex;
     align-items: flex-start;
@@ -1327,6 +1357,11 @@ p.home-modal-title::before {
     z-index: 2;
     object-fit: cover;
     height: 80vh;
+    display: none;
+}
+
+#doorstep-3 .dp-container-left img {
+    display: none;
 }
 
 .dp-container-left .greybox,
@@ -1340,29 +1375,39 @@ p.home-modal-title::before {
     z-index: 1;
 }
 
+.doorstep-container-mid {
+    padding: 5rem 0;
+}
+
 .dp-container-right .greybox {
     right: unset;
-    left: -3rem;
+    left: -2rem;
+    top: -2.5rem;
+    height: 150px;
 }
 
 .doorstep-accordion-box.right {
     margin-right: 5rem;
-    margin-top: 13rem;
     padding-top: 1.5rem;
     border-top: 1px solid #DDDFDD;
     margin-left: 2rem;
+    position: absolute;
+    bottom: 0;
+    display: none;
 }
 
-.doorstep-accordion-box.right:last-child {
-    margin-top: 15rem;
+#doorstep-3 .doorstep-accordion-box.right {
+    display: none;
 }
 
 .doorstep-accordion-box.left {
     margin-left: 5rem;
-    margin-top: 13rem;
     padding-top: 1.5rem;
     border-top: 1px solid #DDDFDD;
     margin-right: 2rem;
+    position: absolute;
+    bottom: 0;
+    display: none;
 }
 
 .dp-container-title {
