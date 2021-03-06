@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/raq7xgr.css">
     <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"> -->
 
     <!-- Swiper -->
@@ -27,10 +28,6 @@
 
 
     <link rel="manifest" href="/manifest.json">
-    <!-- <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-touch-icon-76x76.png"> -->
     <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicons/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicons/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicons/apple-touch-icon-144x144.png">
@@ -46,6 +43,10 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+    </div>
+
     <div id="menubar-overlay"></div>
     <header>
         <nav class="sunday-navbar fixed-bottom">
@@ -54,36 +55,45 @@
                     <div id="mobile-nav-content" class="col-md-7">
                         <label class="menu-title" href="#home">Navigation</label>
                         <ul class="nav navbar-nav">
-                            <li><a class="nav-link" href="#sd-every">1. Sunday, Every day</a></li>
-                            <li><a class="nav-link" href="#sd-partners">2. Creative partners</a></li>
-                            <li><a class="nav-link" href="#sd-welcomeHome">3. Welcome home</a></li>
-                            <li><a class="nav-link" href="#sd-doorstep">4. On your doorstep</a></li>
-                            <li><a class="nav-link" href="#sd-map">5. Out and about</a></li>
-                            <li><a class="nav-link nav-link-no-border" href="#sd-floorplans">6. Residencies</a></li>
-                            <li><a class="nav-link nav-link-no-border" href="#sd-contact-us">7. Contact Us</a></li>
+                            <li><a class="nav-link" href="#sd-home">Home</a></li>
+                            <li><a class="nav-link" href="#sd-every">Sunday, Every day</a></li>
+                            <li><a class="nav-link" href="#sd-partners">Creative partners</a></li>
+                            <li><a class="nav-link" href="#sd-welcomeHome">Welcome home</a></li>
+                            <li><a class="nav-link" href="#sd-floorplans">Residencies</a></li>
+                            <li><a class="nav-link" href="#sd-doorstep">On your doorstep</a></li>
+                            <li><a class="nav-link nav-link-no-border" href="#sd-map">Out and about</a></li>
+                            <li><a class="nav-link nav-link-no-border" href="#sd-contact-us">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2 empty-box"></div>
 
-                    <div class="swiper-container menu-carousel-container col-md-3" style="height: 100%; width: 100%;">
+                    <div class="swiper-container menu-carousel-container col-md-3">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="First slide" />
-                                <div class="carousel-caption">
-                                    <h5>Studio</h5>
-                                </div>
+                                <a href="#sd-floorplans">
+                                    <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="First slide" />
+                                    <div class="carousel-caption">
+                                        <h5>Residencies</h5>
+                                    </div>
+                                </a>
+
                             </div>
                             <div class="swiper-slide">
-                                <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="Second slide" />
-                                <div class="carousel-caption">
-                                    <h5>Outdoor</h5>
-                                </div>
+                                <a href="#sd-map">
+                                    <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="Second slide" />
+                                    <div class="carousel-caption">
+                                        <h5>Out and about</h5>
+                                    </div>
+                                </a>
                             </div>
                             <div class="swiper-slide">
-                                <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="Third slide" />
-                                <div class="carousel-caption">
-                                    <h5>Duplex</h5>
-                                </div>
+                                <a href="#sd-doorstep">
+                                    <img class="d-block w-100" src="./assets/img/20029_202_LR.png" alt="Third slide" />
+                                    <div class="carousel-caption">
+                                        <h5>On your doorstep</h5>
+                                    </div>
+                                </a>
+
                             </div>
                         </div>
                         <!-- Add Pagination -->
@@ -160,16 +170,18 @@
         <!-- Navbar top only show after section 2 -->
         <div class="nav-wrapper-top">
             <div class="nav-top-row">
-                <div class="btn-left-box scroll-up">                    
+                <div class="btn-left-box scroll-up">
                     <span id="scroll-up">Video</span>
-                    <svg id="menu-arrow-down" xmlns="http://www.w3.org/2000/svg" width="23.917" height="13.438"
-                        viewBox="0 0 23.917 13.438">
-                        <g id="Arrow" transform="translate(-708.002 -808.173)">
-                            <path id="Fill_62" data-name="Fill 62"
-                                d="M731.92,809.209a1.056,1.056,0,0,0-.3-.733.976.976,0,0,0-1.415,0l-10.25,10.631-10.25-10.631a.976.976,0,0,0-1.415,0,1.065,1.065,0,0,0,0,1.466l10.96,11.365a.97.97,0,0,0,1.41,0l10.96-11.365a1.057,1.057,0,0,0,.3-.733"
-                                fill="#fff" />
-                        </g>
-                    </svg>
+                    <div id="menu-arrow-down-box">
+                        <svg id="menu-arrow-down" xmlns="http://www.w3.org/2000/svg" width="23.917" height="13.438"
+                            viewBox="0 0 23.917 13.438">
+                            <g id="Arrow" transform="translate(-708.002 -808.173)">
+                                <path id="Fill_62" data-name="Fill 62"
+                                    d="M731.92,809.209a1.056,1.056,0,0,0-.3-.733.976.976,0,0,0-1.415,0l-10.25,10.631-10.25-10.631a.976.976,0,0,0-1.415,0,1.065,1.065,0,0,0,0,1.466l10.96,11.365a.97.97,0,0,0,1.41,0l10.96-11.365a1.057,1.057,0,0,0,.3-.733"
+                                    fill="#fff" />
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -207,108 +219,76 @@
 
         <!-- Sunday everyday section3 -->
         <section id="sunday-everyday" class="section">
-            <div class="scrollable-content">
-                <div class="everyday-section">
-                    <div class="row sd-everyday-row">
-                        <div class="col-md-7 sunday-title">
-                            <p>Sunday, <br>every day.</p>
-                        </div>
-                        <div class="col-md-5 sunday-paragraph">
-                            <p>
-                                Fully formed, these seven luxury apartments deliver the nuances of Sunday, every day.
-                                Seamlessly
-                                balanced and beautifully proportioned, the residences communicate in a consistent
-                                language
-                                between the architecture, interiors and locale. Anchored by greenery, the building and
-                                landscape
-                                reflect those environments found in neighbouring estates — we took a peek through the
-                                wrought
-                                iron gates, just like you have, to be sure. Here at Sunday, you’ll find strength and
-                                simplicity,
-                                but also a level of detail acting as breadcrumbs — from Woodfrog Bakery, none the less —
-                                for
-                                exploration and discovery.
-                                <br>
-                                <br>
-                                It’s the beginning of a week-long Sunday, defined by ownership, security and relaxation.
-                            </p>
-
-                        </div>
-                    </div>
-                    <div id="sd-everyday-carousel" class="carousel" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#sd-everyday-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#sd-everyday-carousel" data-slide-to="1"></li>
-                            <li data-target="#sd-everyday-carousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner everyday-carousel">
-                            <div class="carousel-item active">
-                                <img class="carousel-img-everyday-first-img"
-                                    src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                <br>
-                                <div class="carousel-img-container">
-                                    <img class="carousel-img-everyday second-img" src="./assets/img/20029_103.png"
-                                        alt="First slide">
-                                    <div class="sd-third-img-box">
-                                        <a class="expand-icon" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                            data-title="Outdoor" data-gallery="floor-plan-gallery"><img
-                                                src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
-                                        <img class="carousel-img-everyday third-img"
-                                            src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                    </div>
-
-                                </div>
+            <div class="sunday-title"style="margin-top: 5rem;">
+                <p>Sunday, <br>every day.</p>
+            </div>
+            <div class="row sd-everyday-row">
+                <div class="col-md-8">
+                    <div class="swiper-container" id="sd-everyday-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a class="expand-icon" href="./assets/img/chair-bg-image.png" data-toggle="lightbox"
+                                    data-gallery="everyday-gallery">
+                                    <img src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                <img src="./assets/img/chair-bg-image.png" alt="First slide">
                             </div>
-                            <div class="carousel-item">
-                                <img class="carousel-img-everyday-first-img"
-                                    src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                <br>
-                                <div class="carousel-img-container">
-                                    <img class="carousel-img-everyday second-img" src="./assets/img/20029_103.png"
-                                        alt="First slide">
-                                    <div class="sd-third-img-box">
-                                        <a class="expand-icon" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                            data-title="Outdoor" data-gallery="floor-plan-gallery"><img
-                                                src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
-                                        <img class="carousel-img-everyday third-img"
-                                            src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                    </div>
-
-                                </div>
+                            <div class="swiper-slide">
+                                <a class="expand-icon" href="./assets/img/chair-bg-image.png" data-toggle="lightbox"
+                                    data-gallery="everyday-gallery">
+                                    <img src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                <img src="./assets/img/chair-bg-image.png" alt="First slide">
                             </div>
-                            <div class="carousel-item">
-                                <img class="carousel-img-everyday-first-img"
-                                    src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                <br>
-                                <div class="carousel-img-container">
-                                    <img class="carousel-img-everyday second-img" src="./assets/img/20029_103.png"
-                                        alt="First slide">
-                                    <div class="sd-third-img-box">
-                                        <a class="expand-icon" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                            data-title="Outdoor" data-gallery="floor-plan-gallery"><img
-                                                src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
-                                        <img class="carousel-img-everyday third-img"
-                                            src="./assets/img/3luxury-bathrooms-vanities.png" alt="First slide">
-                                    </div>
-
-                                </div>
+                            <div class="swiper-slide">
+                                <a class="expand-icon" href="./assets/img/chair-bg-image.png" data-toggle="lightbox"
+                                    data-gallery="everyday-gallery">
+                                    <img src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                <img src="./assets/img/chair-bg-image.png" alt="First slide">
+                            </div>
+                            <div class="swiper-slide">
+                                <a class="expand-icon" href="./assets/img/chair-bg-image.png" data-toggle="lightbox"
+                                    data-gallery="everyday-gallery">
+                                    <img src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                <img src="./assets/img/chair-bg-image.png" alt="First slide">
                             </div>
                         </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next sd-next"></div>
+                        <div class="swiper-button-prev sd-prev"></div>
+
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
+                <div class="col-md-4 sunday-paragraph">
+                    <p>
+                        Fully formed, these seven luxury apartments deliver the nuances of Sunday, every day.
+                        Seamlessly
+                        balanced and beautifully proportioned, the residences communicate in a consistent
+                        language
+                        between the architecture, interiors and locale. Anchored by greenery, the building and
+                        landscape
+                        reflect those environments found in neighbouring estates — we took a peek through the
+                        wrought
+                        iron gates, just like you have, to be sure. Here at Sunday, you’ll find strength and
+                        simplicity,
+                        but also a level of detail acting as breadcrumbs — from Woodfrog Bakery, none the less —
+                        for
+                        exploration and discovery.
+                        <br>
+                        <br>
+                        It’s the beginning of a week-long Sunday, defined by ownership, security and relaxation.
+                    </p>
 
-
-
+                </div>
             </div>
         </section>
 
         <!-- Sunday partners section4 -->
         <section id="sunday-partners" class="section">
-            <div class="scrollable-content creative-section">
+            <div class="creative-section">
 
                 <div class="row creative-top-box">
                     <div class="col-md-5 sunday-title">
-                        <p>Creative, <br>partners.</p>
+                        <p data-wow-duration="1s" data-wow-delay="2s">Creative, <br>partners.</p>
                     </div>
                     <div class="col-md-7 creative-content-box-right">
                         <p>
@@ -330,119 +310,146 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="partner-tabs" data-widget="tab-slider">
-                    <div class="nav flex-column nav-pills col-md-5" id="v-pills-tab" role="tablist"
-                        aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
-                            role="tab" aria-controls="v-pills-home" aria-selected="true">
-                            <div class="partner-box">
-                                <p class="partner-title">Avian</p>
-                                <div class="slide-progress-bar">
-                                    <div class="progress-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <p class="partner-job-title">Developer</p>
+        <section id="sunday-partners-2" class="section">
+            <div class="partner-tabs" data-widget="tab-slider">
+                <div class="nav flex-column nav-pills col-md-5" id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                        aria-controls="v-pills-home" aria-selected="true">
+                        <div class="partner-box">
+                            <p class="partner-title">Avian</p>
+                            <div class="slide-progress-bar">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
                             </div>
-                        </a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-                            role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                            <div class="partner-box">
-                                <p class="partner-title">DKO Architecture </p>
-                                <div class="slide-progress-bar">
-                                    <div class="progress-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <p class="partner-job-title">Architect</p>
+                            <p class="partner-job-title">Developer</p>
+                        </div>
+                    </a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
+                        aria-controls="v-pills-profile" aria-selected="false">
+                        <div class="partner-box">
+                            <p class="partner-title">DKO Architecture </p>
+                            <div class="slide-progress-bar">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
                             </div>
-                        </a>
-                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages"
-                            role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                            <div class="partner-box">
-                                <p class="partner-title">Mim Design</p>
-                                <div class="slide-progress-bar">
-                                    <div class="progress-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <p class="partner-job-title">Interior designer</p>
+                            <p class="partner-job-title">Architect</p>
+                        </div>
+                    </a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false">
+                        <div class="partner-box">
+                            <p class="partner-title">Mim Design</p>
+                            <div class="slide-progress-bar">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
                             </div>
-                        </a>
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
-                            role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                            <div class="partner-box">
-                                <p class="partner-title">Eckersley Garden Architecture </p>
-                                <div class="slide-progress-bar">
-                                    <div class="progress-bar-fill" style="width: 0%;"></div>
-                                </div>
-                                <p class="partner-job-title">Landscape architecture</p>
+                            <p class="partner-job-title">Interior designer</p>
+                        </div>
+                    </a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab"
+                        aria-controls="v-pills-settings" aria-selected="false">
+                        <div class="partner-box">
+                            <p class="partner-title">Eckersley Garden Architecture </p>
+                            <div class="slide-progress-bar">
+                                <div class="progress-bar-fill" style="width: 0%;"></div>
                             </div>
+                            <p class="partner-job-title">Landscape architecture</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="tab-content col-md-7" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="row">
+                            <div class="col-md-6 partners-tab-content">Defined by those who they work alongside,
+                                AVIAN understand that the difference
+                                between another development and another level altogether comes down to an
+                                unwillingness to compromise.
+                            </div>
+                            <div class="col-md-6 partners-tab-content">
+                                Which is why AVIAN proudly acknowledges the
+                                world-class team collaborating on these luxury apartments.
+                                When asked to define what sets Sunday apart from its neighbours, AVIAN said: “The
+                                team.” This, and quality over quantity. Always.
+                            </div>
+                        </div>
+                        <a class="expand-icon" data-toggle="modal" data-target="#videoModal3">
+                            <img src="./assets/img/icons/video.svg" alt="video">
                         </a>
                     </div>
-                    <div class="tab-content col-md-7" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                            aria-labelledby="v-pills-home-tab">
-                            <div class="row">
-                                <div class="col-md-6 partners-tab-content">Defined by those who they work alongside,
-                                    AVIAN understand that the difference
-                                    between another development and another level altogether comes down to an
-                                    unwillingness to compromise.
-                                </div>
-                                <div class="col-md-6 partners-tab-content">
-                                    Which is why AVIAN proudly acknowledges the
-                                    world-class team collaborating on these luxury apartments.
-                                    When asked to define what sets Sunday apart from its neighbours, AVIAN said: “The
-                                    team.” This, and quality over quantity. Always.
-                                </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div class="row">
+                            <div class="col-md-6 partners-tab-content">At the heart of your home? Connection: to the
+                                space, locality and
+                                lifestyle. Which is exactly what DKO have been doing since the turn of the
+                                millennium. </div>
+                            <div class="col-md-6 partners-tab-content">
+                                As smart devices increasingly replace having the smarts, DKO haven’t
+                                lost sight of their most fundamental value: to design spaces for people.
+                                Which bodes well for you when your home is
+                                full of them come
+                                Sunday morning or Thursday night for that matter — cheers. </div>
+                        </div>
+                        <a class="expand-icon" data-toggle="modal" data-target="#videoModal3">
+                            <img src="./assets/img/icons/video.svg" alt="video">
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+                        <div class="row">
+                            <div class="col-md-6 partners-tab-content">Whilst flipping through a design magazine at
+                                Kanteen, takeaway
+                                coffee en route, you’ll notice the prolific influence of Mim Design on their
+                                industry. </div>
+                            <div class="col-md-6 partners-tab-content">It’s what others nationally, and
+                                internationally, have been publishing,
+                                and awarding, for the last 20 years — creativity, high-end finishes and attention to
+                                detail. Which is exactly what you’ll be coming home
+                                to, latte in hand,
+                                here at Sunday. </div>
+                        </div>
+                        <a class="expand-icon" data-toggle="modal" data-target="#videoModal3">
+                            <img src="./assets/img/icons/video.svg" alt="video">
+                        </a>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                        aria-labelledby="v-pills-settings-tab">
+                        <div class="row">
+                            <div class="col-md-6 partners-tab-content">Much like Sunday itself, the gardens
+                                established by iconic
+                                designer Rick Eckersley are relaxed — adopting a less structured approach to
+                                landscape, whilst still maintaining a strong sense of purpose.</div>
+                            <div class="col-md-6 partners-tab-content">You won’t find rows of box hedges at
+                                Eckersley, just plenty of
+                                dirt under their fingers — so yours can carefully turn the pages of The Sunday Times
+                                bestseller, surrounded by a garden that celebrates diversity, texture and foliage.
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                            aria-labelledby="v-pills-profile-tab">
-                            <div class="row">
-                                <div class="col-md-6 partners-tab-content">At the heart of your home? Connection: to the
-                                    space, locality and
-                                    lifestyle. Which is exactly what DKO have been doing since the turn of the
-                                    millennium. </div>
-                                <div class="col-md-6 partners-tab-content">
-                                    As smart devices increasingly replace having the smarts, DKO haven’t
-                                    lost sight of their most fundamental value: to design spaces for people.
-                                    Which bodes well for you when your home is
-                                    full of them come
-                                    Sunday morning or Thursday night for that matter — cheers. </div>
-                            </div>
+                        <a class="expand-icon" data-toggle="modal" data-target="#videoModal3">
+                            <img src="./assets/img/icons/video.svg" alt="video">
+                        </a>
+                    </div>
+                    <div class="tab-pagination">
+                        <span class="tab-pagination-bullets bullets-active"></span>
+                        <span class="tab-pagination-bullets"></span>
+                        <span class="tab-pagination-bullets"></span>
+                        <span class="tab-pagination-bullets"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="videoModal3" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><img src="./assets/img/icons/close.svg" alt="close"></span>
+                        </button>
+                        <div class="modal-body">
+                            Video
                         </div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                            aria-labelledby="v-pills-messages-tab">
-                            <div class="row">
-                                <div class="col-md-6 partners-tab-content">Whilst flipping through a design magazine at
-                                    Kanteen, takeaway
-                                    coffee en route, you’ll notice the prolific influence of Mim Design on their
-                                    industry. </div>
-                                <div class="col-md-6 partners-tab-content">It’s what others nationally, and
-                                    internationally, have been publishing,
-                                    and awarding, for the last 20 years — creativity, high-end finishes and attention to
-                                    detail. Which is exactly what you’ll be coming home
-                                    to, latte in hand,
-                                    here at Sunday. </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
-                            aria-labelledby="v-pills-settings-tab">
-                            <div class="row">
-                                <div class="col-md-6 partners-tab-content">Much like Sunday itself, the gardens
-                                    established by iconic
-                                    designer Rick Eckersley are relaxed — adopting a less structured approach to
-                                    landscape, whilst still maintaining a strong sense of purpose.</div>
-                                <div class="col-md-6 partners-tab-content">You won’t find rows of box hedges at
-                                    Eckersley, just plenty of
-                                    dirt under their fingers — so yours can carefully turn the pages of The Sunday Times
-                                    bestseller, surrounded by a garden that celebrates diversity, texture and foliage.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pagination">
-                                <span class="tab-pagination-bullets bullets-active"></span>
-                                <span class="tab-pagination-bullets"></span>
-                                <span class="tab-pagination-bullets"></span>
-                                <span class="tab-pagination-bullets"></span>
-                            </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </section>
@@ -450,7 +457,7 @@
         <!-- Sunday welcome home section5 -->
         <section id="sunday-welcome-home" class="section">
             <div class="welcome-home">
-                <div class="welcome-tabs">
+                <div class="welcome-tabs row">
                     <div class="nav flex-column nav-pills col-md-4" id="welcome-pills-tab" role="tablist"
                         aria-orientation="vertical">
                         <a class="nav-link active" id="welcome-pills-home-tab" data-toggle="pill"
@@ -494,94 +501,106 @@
                         </a>
                     </div>
 
-                    <div class="sunday-title welcome-home-title">
-                        <p>Welcome <br>home.</p>
-                    </div>
-
-                    <div class="tab-content col-md-8" id="-pills-tabContent">
+                    <div class="col-md-8">
+                        <div class="sunday-title welcome-home-title">
+                            <p>Welcome <br>home.</p>
+                        </div>
                         <div class="drop-down-btn">
                             <img src="./assets/img/icons/arrow.svg" alt="arrows">
                         </div>
-                        <div class="tab-pane fade show active" id="welcome-pills-home" role="tabpanel"
-                            aria-labelledby="welcome-pills-home-tab">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>As private sanctuaries, these residences embody the feeling of filling up your
-                                        cup on a restful Sunday, allowing you to recharge your battery at any point
-                                        throughout the week. Cohesive. Authentic. Strong. In a world of disposable
-                                        trends, all aspects of Sunday work cohesively to create timeless value and
-                                        assert longevity throughout the marketplace and surrounding landscape. </p>
+                        <div class="tab-content " id="-pills-tabContent">
+                            <div class="tab-pane fade show active" id="welcome-pills-home" role="tabpanel"
+                                aria-labelledby="welcome-pills-home-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>As private sanctuaries, these residences embody the feeling of filling up
+                                            your
+                                            cup on a restful Sunday, allowing you to recharge your battery at any point
+                                            throughout the week. Cohesive. Authentic. Strong. In a world of disposable
+                                            trends, all aspects of Sunday work cohesively to create timeless value and
+                                            assert longevity throughout the marketplace and surrounding landscape. </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="welcome-pills-profile" role="tabpanel"
-                            aria-labelledby="welcome-pills-profile-tab">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Although the building is integrated seamlessly within its
-                                        treelined environment, Sunday remains ambitious. The interior is unique and
-                                        authentic — with gentle dappling of light and an inward aperture creating a
-                                        quiet
-                                        sanctuary that complements an active lifestyle and reflects its bustling
-                                        locality.
-                                        From the penthouse, with its three-sided views to South Yarra and Melbourne’s
-                                        CBD,
-                                        to ground floor garden apartments with large verdant gardens, each of the
-                                        generously
-                                        proportioned apartments at Sunday are designed with purpose and reason.</p>
+                            <div class="tab-pane fade" id="welcome-pills-profile" role="tabpanel"
+                                aria-labelledby="welcome-pills-profile-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Although the building is integrated seamlessly within its
+                                            treelined environment, Sunday remains ambitious. The interior is unique and
+                                            authentic — with gentle dappling of light and an inward aperture creating a
+                                            quiet
+                                            sanctuary that complements an active lifestyle and reflects its bustling
+                                            locality.
+                                            From the penthouse, with its three-sided views to South Yarra and
+                                            Melbourne’s
+                                            CBD,
+                                            to ground floor garden apartments with large verdant gardens, each of the
+                                            generously
+                                            proportioned apartments at Sunday are designed with purpose and reason.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="welcome-pills-messages" role="tabpanel"
-                            aria-labelledby="welcome-pills-messages-tab">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>The overarching design of Sunday is based on iconic form and
-                                        shape — such as the stepped stone island benches that have been carefully laid
-                                        alongside floors, resonating with the architecture of the building. The use of
-                                        natural stone within the kitchens and bathrooms complements natural timber
-                                        engineered floorboards and technically sound ceramic tiles. Additionally, the
-                                        timber
-                                        veneers and laminates deliver all of the finishes you would find in a
-                                        traditional
-                                        home.</p>
+                            <div class="tab-pane fade" id="welcome-pills-messages" role="tabpanel"
+                                aria-labelledby="welcome-pills-messages-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>The overarching design of Sunday is based on iconic form and
+                                            shape — such as the stepped stone island benches that have been carefully
+                                            laid
+                                            alongside floors, resonating with the architecture of the building. The use
+                                            of
+                                            natural stone within the kitchens and bathrooms complements natural timber
+                                            engineered floorboards and technically sound ceramic tiles. Additionally,
+                                            the
+                                            timber
+                                            veneers and laminates deliver all of the finishes you would find in a
+                                            traditional
+                                            home.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="welcome-pills-settings" role="tabpanel"
-                            aria-labelledby="welcome-pills-settings-tab">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>Sunday was designed to maximise the outlook from within each
-                                        apartment to the surrounding environment. Complemented by the chamfered sill and
-                                        balcony details, the mass of glazing provides an abundance of natural light
-                                        which
-                                        spills into each residence — further balancing the harmony between both inside
-                                        and
-                                        out and strengthening the affinity between Sunday and the leafy streetscape
-                                        below.
-                                    </p>
+                            <div class="tab-pane fade" id="welcome-pills-settings" role="tabpanel"
+                                aria-labelledby="welcome-pills-settings-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>Sunday was designed to maximise the outlook from within each
+                                            apartment to the surrounding environment. Complemented by the chamfered sill
+                                            and
+                                            balcony details, the mass of glazing provides an abundance of natural light
+                                            which
+                                            spills into each residence — further balancing the harmony between both
+                                            inside
+                                            and
+                                            out and strengthening the affinity between Sunday and the leafy streetscape
+                                            below.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="welcome-pills-spaces" role="tabpanel"
-                            aria-labelledby="welcome-pills-spaces-tab">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <p>
-                                        Alongside the key design philosophies is clever planning. The
-                                        spatial layout, proportion of form and size, finite detailing and aspect
-                                        planning
-                                        flatters the use of timeless materials to deliver a successful interior space.
-                                        Designed with intention, at every stage throughout the process the collaborators
-                                        have ensured that all elements of Sunday tell a story that you’d like to share
-                                        come
-                                        Monday morning.
-                                    </p>
+                            <div class="tab-pane fade" id="welcome-pills-spaces" role="tabpanel"
+                                aria-labelledby="welcome-pills-spaces-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            Alongside the key design philosophies is clever planning. The
+                                            spatial layout, proportion of form and size, finite detailing and aspect
+                                            planning
+                                            flatters the use of timeless materials to deliver a successful interior
+                                            space.
+                                            Designed with intention, at every stage throughout the process the
+                                            collaborators
+                                            have ensured that all elements of Sunday tell a story that you’d like to
+                                            share
+                                            come
+                                            Monday morning.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -591,11 +610,19 @@
             <div class="dropup residencies-dropdown">
                 <button class="btn btn-secondary dropdown-toggle rs-btn" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Duplex
+                    Choose
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#sd-floorplans">Floor Plans</a>
-                    <a class="dropdown-item" href="#sd-fixtures">Fixture</a>
+                <div class="dropdown-menu" id="floorplan-dropdown" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" id="it1">Floor Plans 1</a>
+                    <a class="dropdown-item">Floor Plans 2</a>
+                    <a class="dropdown-item">Floor Plans 3</a>
+                    <a class="dropdown-item">Floor Plans 4</a>
+                    <a class="dropdown-item">Floor Plans 5</a>
+                    <a class="dropdown-item">Floor Plans 6</a>
+                    <a class="dropdown-item">Floor Plans 7</a>
+                    <a class="dropdown-item">Floor Plans 8</a>
+                    <a class="dropdown-item">Floor Plans 9</a>
+                    <a class="dropdown-item">Floor Plans 10</a>
                 </div>
             </div>
             <div class="floor-plan-container">
@@ -605,20 +632,20 @@
                     <div class="col-md-2"></div>
                     <div class="floorplan-swiper swiper-container col-md-10">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide1">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Duplex" data-gallery="floor-plan-gallery" data-id="img-fp-1">
-                                    <a class="expand-icon"><img
-                                            src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                    data-title="Duplex" data-gallery="floor-plan-gallery">
+                                    <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
+                                            alt="expand"></a>
                                     <div class="layout">
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Duplex</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide2">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Outdoor" data-gallery="floor-plan-gallery" data-id="img-fp-2">
+                                    data-title="Outdoor" data-gallery="floor-plan-gallery" data-id="img-fp-2">
                                     <div class="layout">
                                         <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
@@ -627,10 +654,9 @@
                                     <div class="layout-type">Outdoor</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="layout-box"  href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Building" data-gallery="floor-plan-gallery"
-                                data-id="img-fp-3">
+                            <div class="swiper-slide" id="slide3">
+                                <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
+                                    data-title="Building" data-gallery="floor-plan-gallery">
                                     <div class="layout">
                                         <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
@@ -639,68 +665,64 @@
                                     <div class="layout-type">Building</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide4">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Duplex" data-gallery="floor-plan-gallery" data-id="img-fp-4">
-                                    <a class="expand-icon"><img
-                                            src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                    data-title="Duplex" data-gallery="floor-plan-gallery" data-id="img-fp-4">
+                                    <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
+                                            alt="expand"></a>
                                     <div class="layout">
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Duplex</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="layout-box"  href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Outdoor" data-gallery="floor-plan-gallery"
-                                data-id="img-fp-5">
+                            <div class="swiper-slide" id="slide5">
+                                <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
+                                    data-title="Outdoor" data-gallery="floor-plan-gallery" data-id="img-fp-5">
                                     <div class="layout">
-                                        <a class="expand-icon" ><img src="./assets/img/icons/lightbox-expand.svg"
+                                        <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Outdoor</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide6">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Building" data-gallery="floor-plan-gallery"
-                                data-id="img-fp-6">
-                                    <div class="layout" >
-                                        <a class="expand-icon" ><img src="./assets/img/icons/lightbox-expand.svg"
+                                    data-title="Building" data-gallery="floor-plan-gallery" data-id="img-fp-6">
+                                    <div class="layout">
+                                        <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Building</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide7">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Duplex" data-gallery="floor-plan-gallery" data-id="img-fp-7">
-                                    <a class="expand-icon" ><img
-                                            src="./assets/img/icons/lightbox-expand.svg" alt="expand"></a>
+                                    data-title="Duplex" data-gallery="floor-plan-gallery" data-id="img-fp-7">
+                                    <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
+                                            alt="expand"></a>
                                     <div class="layout">
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Duplex</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide8">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Outdoor" data-gallery="floor-plan-gallery"
-                                data-id="img-fp-8">
-                                    <div class="layout" >
-                                        <a class="expand-icon" ><img src="./assets/img/icons/lightbox-expand.svg"
+                                    data-title="Outdoor" data-gallery="floor-plan-gallery" data-id="img-fp-8">
+                                    <div class="layout">
+                                        <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
                                         <p>layout</p>
                                     </div>
                                     <div class="layout-type">Outdoor</div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" id="slide9">
                                 <div class="layout-box" href="./assets/img/floor-plan.png" data-toggle="lightbox"
-                                data-title="Building" data-gallery="floor-plan-gallery"
-                                data-id="img-fp-9">
+                                    data-title="Building" data-gallery="floor-plan-gallery" data-id="img-fp-9">
                                     <div class="layout">
                                         <a class="expand-icon"><img src="./assets/img/icons/lightbox-expand.svg"
                                                 alt="expand"></a>
@@ -719,15 +741,16 @@
             </div>
         </section>
 
+        <!-- Fixtures section -->
         <section id="fixtures" class="section">
             <div class="dropup residencies-dropdown">
                 <button class="btn btn-secondary dropdown-toggle rs-btn" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Duplex
+                    Choose
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#sd-floorplans">Floor Plans</a>
-                    <a class="dropdown-item" href="#sd-fixtures">Fixture</a>
+                    <a class="dropdown-item" href="#sd-floorplans">Penthouse</a>
+                    <a class="dropdown-item" href="#sd-fixtures">Property</a>
                 </div>
             </div>
             <div class="row fixtures-row">
@@ -735,19 +758,34 @@
                     <p class="floor-plan-title" style="color: #656565;">Fixtures</p>
                 </div>
 
-                <!-- Slider -->
+                <!-- Vertical Slider -->
                 <div class="col-md-3 vs-img">
                     <div class="fixture-swiper swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter"><img
-                                        src="./assets/img/showerhead.png" alt=""></div>
+                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
+                                    1</div>
+                                <div class="ss-box" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>2
+                                </div>
+                                <div class="ss-box">
+                                    <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>3
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">1</div>
                                 <div class="ss-box" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModalCenter">2</div>
                                 <div class="ss-box">3</div>
                             </div>
-                            <div class="swiper-slide"><img src="./assets/img/showerhead.png" alt=""></div>
-                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">
+                                <div class="ss-box" data-toggle="modal" data-target="#exampleModalCenter">1</div>
+                                <div class="ss-box" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModalCenter">2</div>
+                                <div class="ss-box">3</div>
+                            </div>
                         </div>
                         <!-- Add Pagination -->
                         <div class="swiper-pagination"></div>
@@ -755,17 +793,14 @@
                 </div>
 
                 <div class="col-md-3 vertical-fx-img">
-                    <div class="vfx-img-div text-center" style="margin-bottom: 1rem;">
-                        <a class="expand-icon" href="./assets/img/Layer 1.png" data-toggle="lightbox"
-                            data-title="Duplex" data-gallery="fixtures-gallery" data-id="img-fp-1"><img
-                                src="./assets/img/icons/expand.svg" alt="expand"></a>
+                    <div class="vfx-img-div text-center" style="margin-bottom: 1rem;" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                        <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
                         <img src="./assets/img/Layer 1.png" alt="chandliers">
                     </div>
 
-                    <div class="vfx-img-div">
-                        <a class="expand-icon" href="./assets/img/showerhead.png" data-toggle="lightbox"
-                            data-title="Duplex" data-gallery="fixtures-gallery" data-id="img-fp-1"><img
-                                src="./assets/img/icons/expand.svg" alt="expand"></a>
+                    <div class="vfx-img-div vfx-div-second" data-toggle="modal" data-target="#exampleModalCenter">
+                        <a class="expand-icon"><img src="./assets/img/icons/expand.svg" alt="expand"></a>
                         <img src="./assets/img/showerhead.png" alt="showerhead">
                     </div>
                 </div>
@@ -776,7 +811,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true"><img src="./assets/img/icons/close.svg" alt="close"></span>
                             </button>
                             <div class="modal-body">
                                 <div class="gallery-container">
@@ -904,7 +939,7 @@
 
         <!-- Doorstep section -->
         <section id="doorstep" class="section">
-            <div class="scrollable-content doorstep-section">
+            <div class="doorstep-section">
                 <!-- Section 1 -->
                 <div class="doorstep-container-top row">
                     <div class="col-md-4">
@@ -927,312 +962,314 @@
                         <img class="second-img" src="./assets/img/food-image.png" alt="img">
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="empty-space"></div>
+        <section id="doorstep-1" class="section">
+            <!-- Accordion on the right, section 2 -->
+            <div class="doorstep-container-mid row">
+                <div class="col-md-8 dp-container-left" id="slow-start">
+                    <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
+                    <div class="greybox"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="doorstep-accordion-box right">
+                        <div class="dp-container-title">
+                            <p>A SLOW START, OR FAST HEART RATE - <br> IT’S YOUR CHOICE</p>
+                        </div>
 
-                <!-- Accordion on the right, section 2 -->
-                <div class="doorstep-container-mid row">
-                    <div class="col-md-8 dp-container-left" id="slow-start">
-                        <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
-                        <div class="greybox"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="doorstep-accordion-box right">
-                            <div class="dp-container-title text-right">
-                                <p>A SLOW START, OR FAST HEART RATE - <br> IT’S YOUR CHOICE</p>
+                        <div id="slow-start-accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#doorstep-collapseOne" aria-expanded="true"
+                                            aria-controls="doorstep-collapseOne">
+                                            Barry’s Bootcamp
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="doorstep-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#slow-start-accordion">
+                                    <div class="card-body">
+                                        With the likes of David Beckham, Harry Styles and Jessica Alba worshiping at
+                                        its altar, Barry’s is a cult  55-minute high-intensity interval training
+                                        workout straight out of Hollywood — God help us. Dipping your toe in for the
+                                        first time? Interested in breaking a sweat without breaking the bank? Ask
+                                        for the $75.00 First Timer 3 Class Pack.
+                                    </div>
+                                </div>
                             </div>
-
-                            <div id="slow-start-accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse"
-                                                data-target="#doorstep-collapseOne" aria-expanded="true"
-                                                aria-controls="doorstep-collapseOne">
-                                                Barry’s Bootcamp
-                                            </button>
-                                        </h5>
-                                    </div>
-
-                                    <div id="doorstep-collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                        data-parent="#slow-start-accordion">
-                                        <div class="card-body">
-                                            With the likes of David Beckham, Harry Styles and Jessica Alba worshiping at
-                                            its altar, Barry’s is a cult  55-minute high-intensity interval training
-                                            workout straight out of Hollywood — God help us. Dipping your toe in for the
-                                            first time? Interested in breaking a sweat without breaking the bank? Ask
-                                            for the $75.00 First Timer 3 Class Pack.
-                                        </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#doorstep-collapseTwo" aria-expanded="false"
+                                            aria-controls="doorstep-collapseTwo">
+                                            Tivoli Road Bakery
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="doorstep-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#slow-start-accordion">
+                                    <div class="card-body">
+                                        Bread might be the name of the game at Tivoli Road Bakery, but anything from
+                                        their buttery croissants to flaky sausage rolls certainty has our name
+                                        written all over it. And as for their infamous hot cross buns, well, they
+                                        certainty can’t be missed — and to ensure that you don’t, be sure to get in
+                                        early.
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#doorstep-collapseTwo" aria-expanded="false"
-                                                aria-controls="doorstep-collapseTwo">
-                                                Tivoli Road Bakery
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="doorstep-collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#slow-start-accordion">
-                                        <div class="card-body">
-                                            Bread might be the name of the game at Tivoli Road Bakery, but anything from
-                                            their buttery croissants to flaky sausage rolls certainty has our name
-                                            written all over it. And as for their infamous hot cross buns, well, they
-                                            certainty can’t be missed — and to ensure that you don’t, be sure to get in
-                                            early.
-                                        </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#doorstep-collapseThree" aria-expanded="false"
+                                            aria-controls="doorstep-collapseThree">
+                                            Kanteen
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="doorstep-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#slow-start-accordion">
+                                    <div class="card-body">
+                                        If you know, you know — Kanteen is a veteran for pedal-pushers and
+                                        slow-strollers alike. Set amongst the Yarra’s idyllic riverside, the
+                                        indoor-outdoor café serves up delicious eats and lush views year-round.
+                                        Whilst you wait, say hello to Mark — he’s been behind the coffee machine
+                                        since he opened Kanteen in 2002, and has no intention of running out for
+                                        milk anytime soon.
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#doorstep-collapseThree" aria-expanded="false"
-                                                aria-controls="doorstep-collapseThree">
-                                                Kanteen
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="doorstep-collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#slow-start-accordion">
-                                        <div class="card-body">
-                                            If you know, you know — Kanteen is a veteran for pedal-pushers and
-                                            slow-strollers alike. Set amongst the Yarra’s idyllic riverside, the
-                                            indoor-outdoor café serves up delicious eats and lush views year-round.
-                                            Whilst you wait, say hello to Mark — he’s been behind the coffee machine
-                                            since he opened Kanteen in 2002, and has no intention of running out for
-                                            milk anytime soon.
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#doorstep-collapseFour" aria-expanded="false"
+                                            aria-controls="doorstep-collapseFour">
+                                            Lawson Grove Shop
+                                        </button>
+                                    </h5>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#doorstep-collapseFour" aria-expanded="false"
-                                                aria-controls="doorstep-collapseFour">
-                                                Lawson Grove Shop
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="doorstep-collapseFour" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#slow-start-accordion">
-                                        <div class="card-body">
-                                            Ensuring the locals remain caffeinated since 1930, this humble and historic
-                                            coffee shop has never strayed from its old fashioned values — community,
-                                            charm and cabinets of delicious food. Join sleepy neighbours for speciality
-                                            coffee to in-house baked goods to take home lasagnes. And in the months
-                                            where the local streets turn to fields of auburn, a free lemon or twelve.
-                                        </div>
+                                <div id="doorstep-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#slow-start-accordion">
+                                    <div class="card-body">
+                                        Ensuring the locals remain caffeinated since 1930, this humble and historic
+                                        coffee shop has never strayed from its old fashioned values — community,
+                                        charm and cabinets of delicious food. Join sleepy neighbours for speciality
+                                        coffee to in-house baked goods to take home lasagnes. And in the months
+                                        where the local streets turn to fields of auburn, a free lemon or twelve.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="empty-space"></div>
-                <!-- accordion on the left, section 3. -->
-                <div class="doorstep-container-mid row">
-                    <div class="col-md-4">
-                        <div class="doorstep-accordion-box left">
-                            <div class="dp-container-title text-left">
-                                <p>PLACES TO STOP BY, <br> OR STAY FOR A LITTLE WHILE</p>
+        <section id="doorstep-2" class="section">
+            <!-- accordion on the left, section 3. -->
+            <div class="doorstep-container-mid row">
+                <div class="col-md-4">
+                    <div class="doorstep-accordion-box left">
+                        <div class="dp-container-title text-left">
+                            <p>PLACES TO STOP BY, <br> OR STAY FOR A LITTLE WHILE</p>
+                        </div>
+
+                        <div id="stop-by-accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#stop-by-collapseOne" aria-expanded="true"
+                                            aria-controls="stop-by-collapseOne">
+                                            Royal Botanic Gardens
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="stop-by-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#stop-by-accordion">
+                                    <div class="card-body">
+                                        Whether it’s a lap around The Tan or lapping up the 38 hectares of pristine
+                                        garden, this lush oasis in the heart of Melbourne offers two speeds to move
+                                        your body to. Trade star-gazing for popcorn grazing in the summer months as
+                                        the Moonlight Cinema lights up the gardens at night. Don’t forget to bring
+                                        the essentials: a full-bodied red and plenty of cosy blankets.
+                                    </div>
+                                </div>
                             </div>
-
-                            <div id="stop-by-accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse"
-                                                data-target="#stop-by-collapseOne" aria-expanded="true"
-                                                aria-controls="stop-by-collapseOne">
-                                                Royal Botanic Gardens
-                                            </button>
-                                        </h5>
-                                    </div>
-
-                                    <div id="stop-by-collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                        data-parent="#stop-by-accordion">
-                                        <div class="card-body">
-                                            Whether it’s a lap around The Tan or lapping up the 38 hectares of pristine
-                                            garden, this lush oasis in the heart of Melbourne offers two speeds to move
-                                            your body to. Trade star-gazing for popcorn grazing in the summer months as
-                                            the Moonlight Cinema lights up the gardens at night. Don’t forget to bring
-                                            the essentials: a full-bodied red and plenty of cosy blankets.
-                                        </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#stop-by-collapseTwo" aria-expanded="false"
+                                            aria-controls="stop-by-collapseTwo">
+                                            Chapel Street Precinct
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="stop-by-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#stop-by-accordion">
+                                    <div class="card-body">
+                                        From The Como Centre to The Jam Factory, this famed thoroughfare is
+                                        jam-packed (pardon the pun) with shops, cafes, restaurants and bars to lose
+                                        yourself amongst new finds. Want to get lost in a local legend? Head to
+                                        Boston Sub for more than your average late night fry run. Hop in the freezer
+                                        for a taste of the tropics on Chapel.
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#stop-by-collapseTwo" aria-expanded="false"
-                                                aria-controls="stop-by-collapseTwo">
-                                                Chapel Street Precinct
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="stop-by-collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#stop-by-accordion">
-                                        <div class="card-body">
-                                            From The Como Centre to The Jam Factory, this famed thoroughfare is
-                                            jam-packed (pardon the pun) with shops, cafes, restaurants and bars to lose
-                                            yourself amongst new finds. Want to get lost in a local legend? Head to
-                                            Boston Sub for more than your average late night fry run. Hop in the freezer
-                                            for a taste of the tropics on Chapel.
-                                        </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#stop-by-collapseThree" aria-expanded="false"
+                                            aria-controls="stop-by-collapseThree">
+                                            The Stables of Como
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="stop-by-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#stop-by-accordion">
+                                    <div class="card-body">
+                                        Ideal for an aperitif after exploring the historic Como House, The Stables
+                                        brings a relaxed farmhouse feel with its sunny and secluded courtyard to
+                                        this posh Melbourne neighbourhood. Their elegant high tea is a standout, and
+                                        their subversive ‘guy tea’ has husbands digging in. A delicious win-win
+                                        indeed.
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#stop-by-collapseThree" aria-expanded="false"
-                                                aria-controls="stop-by-collapseThree">
-                                                The Stables of Como
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="stop-by-collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#stop-by-accordion">
-                                        <div class="card-body">
-                                            Ideal for an aperitif after exploring the historic Como House, The Stables
-                                            brings a relaxed farmhouse feel with its sunny and secluded courtyard to
-                                            this posh Melbourne neighbourhood. Their elegant high tea is a standout, and
-                                            their subversive ‘guy tea’ has husbands digging in. A delicious win-win
-                                            indeed.
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#stop-by-collapseFour" aria-expanded="false"
+                                            aria-controls="stop-by-collapseFour">
+                                            Prahran Market
+                                        </button>
+                                    </h5>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#stop-by-collapseFour" aria-expanded="false"
-                                                aria-controls="stop-by-collapseFour">
-                                                Prahran Market
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="stop-by-collapseFour" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#stop-by-accordion">
-                                        <div class="card-body">
-                                            A place to fill a hamper, fuel a dinner party or fix the perfect platter.
-                                            Here you’ll find everything from fresh produce to artisanal bread,
-                                            sustainable seafood to meat and poultry — all the ingredients to make every
-                                            moment (and mouthful) memorable. Visit Pino’s for perfect produce at an even
-                                            better price. Be sure to pick up their weekly $30 market box for the best in
-                                            season before they sell out.
-                                        </div>
+                                <div id="stop-by-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#stop-by-accordion">
+                                    <div class="card-body">
+                                        A place to fill a hamper, fuel a dinner party or fix the perfect platter.
+                                        Here you’ll find everything from fresh produce to artisanal bread,
+                                        sustainable seafood to meat and poultry — all the ingredients to make every
+                                        moment (and mouthful) memorable. Visit Pino’s for perfect produce at an even
+                                        better price. Be sure to pick up their weekly $30 market box for the best in
+                                        season before they sell out.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 dp-container-right" id="stop-by">
-                        <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
-                        <div class="greybox"></div>
-                    </div>
-
+                </div>
+                <div class="col-md-8 dp-container-right" id="stop-by">
+                    <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
+                    <div class="greybox"></div>
                 </div>
 
-                <!-- Accordion on the right, section 4 -->
-                <div class="empty-space"></div>
-                <div class="doorstep-container-mid row">
-                    <div class="col-md-8 dp-container-left" id="dusk-dawn">
-                        <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
-                        <div class="greybox"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="doorstep-accordion-box right">
-                            <div class="dp-container-title text-right">
-                                <p>THE MOMENTS BETWEEN <br> DUSK AND DAWN</p>
+            </div>
+        </section>
+
+        <section id="doorstep-3" class="section">
+            <!-- Accordion on the right, section 4 -->
+            <div class="doorstep-container-mid row">
+                <div class="col-md-8 dp-container-left" id="dusk-dawn">
+                    <img class="first-img" src="./assets/img/walking.png" alt="wine-img">
+                    <div class="greybox"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="doorstep-accordion-box right">
+                        <div class="dp-container-title">
+                            <p>THE MOMENTS BETWEEN <br> DUSK AND DAWN</p>
+                        </div>
+
+                        <div id="dusk-dawn-accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse"
+                                            data-target="#dusk-dawn-collapseOne" aria-expanded="true"
+                                            aria-controls="dusk-dawn-collapseOne">
+                                            Bar Carolina
+                                        </button>
+                                    </h5>
+                                </div>
+
+                                <div id="dusk-dawn-collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#dusk-dawn-accordion">
+                                    <div class="card-body">
+                                        With terrazzo floors, textual floorboards and handmade azure leadlights,
+                                        this little slice of Rome runs on Italian time — and we’ll happily adjust to
+                                        the time difference. And for a dinner and a show in one, be sure to close
+                                        off your evening with their classic Bomba Carolina — bellissimo.
+                                    </div>
+                                </div>
                             </div>
-
-                            <div id="dusk-dawn-accordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse"
-                                                data-target="#dusk-dawn-collapseOne" aria-expanded="true"
-                                                aria-controls="dusk-dawn-collapseOne">
-                                                Bar Carolina
-                                            </button>
-                                        </h5>
-                                    </div>
-
-                                    <div id="dusk-dawn-collapseOne" class="collapse show" aria-labelledby="headingOne"
-                                        data-parent="#dusk-dawn-accordion">
-                                        <div class="card-body">
-                                            With terrazzo floors, textual floorboards and handmade azure leadlights,
-                                            this little slice of Rome runs on Italian time — and we’ll happily adjust to
-                                            the time difference. And for a dinner and a show in one, be sure to close
-                                            off your evening with their classic Bomba Carolina — bellissimo.
-                                        </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#dusk-dawn-collapseTwo" aria-expanded="false"
+                                            aria-controls="dusk-dawn-collapseTwo">
+                                            Entrecôte
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="dusk-dawn-collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#dusk-dawn-accordion">
+                                    <div class="card-body">
+                                        The brief: grilled, grass-fed Black Angus porterhouse, with house sauce,
+                                        vinaigrette-drizzled garden salad and bottomless pommes frites. No time to
+                                        dine in? Keep your eye out for their local steak-frites Mitraillette
+                                        special. This go-to favourite is even better on-the-go.
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#dusk-dawn-collapseTwo" aria-expanded="false"
-                                                aria-controls="dusk-dawn-collapseTwo">
-                                                Entrecôte
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="dusk-dawn-collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                        data-parent="#dusk-dawn-accordion">
-                                        <div class="card-body">
-                                            The brief: grilled, grass-fed Black Angus porterhouse, with house sauce,
-                                            vinaigrette-drizzled garden salad and bottomless pommes frites. No time to
-                                            dine in? Keep your eye out for their local steak-frites Mitraillette
-                                            special. This go-to favourite is even better on-the-go.
-                                        </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#dusk-dawn-collapseThree" aria-expanded="false"
+                                            aria-controls="dusk-dawn-collapseThree">
+                                            Atlas Dining
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="dusk-dawn-collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#dusk-dawn-accordion">
+                                    <div class="card-body">
+                                        A culinary journey, when overseas ones are off the menu — for the time
+                                        being. Atlas’ cuisine changes every four months, and the menu weekly. Not on
+                                        the menu, but you have to ask about their take-home Atlas meal kits. Travel
+                                        the world from the comfort of your kitchen? Tickets, booked. 
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#dusk-dawn-collapseThree" aria-expanded="false"
-                                                aria-controls="dusk-dawn-collapseThree">
-                                                Atlas Dining
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="dusk-dawn-collapseThree" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#dusk-dawn-accordion">
-                                        <div class="card-body">
-                                            A culinary journey, when overseas ones are off the menu — for the time
-                                            being. Atlas’ cuisine changes every four months, and the menu weekly. Not on
-                                            the menu, but you have to ask about their take-home Atlas meal kits. Travel
-                                            the world from the comfort of your kitchen? Tickets, booked. 
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse"
+                                            data-target="#dusk-dawn-collapseFour" aria-expanded="false"
+                                            aria-controls="dusk-dawn-collapseFour">
+                                            France-Soir
+                                        </button>
+                                    </h5>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" data-toggle="collapse"
-                                                data-target="#dusk-dawn-collapseFour" aria-expanded="false"
-                                                aria-controls="dusk-dawn-collapseFour">
-                                                France-Soir
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="dusk-dawn-collapseFour" class="collapse" aria-labelledby="headingThree"
-                                        data-parent="#dusk-dawn-accordion">
-                                        <div class="card-body">
-                                            A Melbourne institution, this idyllic French bistro has been dishing up
-                                            traditional cuisine, Parisian charm and a certain je ne sais quoi since
-                                            1986. Be sure to ask for their Escargots de Bourgogne à l’ail for the
-                                            ultimate authentic experience. Bonne chance et bon appétit!
-                                        </div>
+                                <div id="dusk-dawn-collapseFour" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#dusk-dawn-accordion">
+                                    <div class="card-body">
+                                        A Melbourne institution, this idyllic French bistro has been dishing up
+                                        traditional cuisine, Parisian charm and a certain je ne sais quoi since
+                                        1986. Be sure to ask for their Escargots de Bourgogne à l’ail for the
+                                        ultimate authentic experience. Bonne chance et bon appétit!
                                     </div>
                                 </div>
                             </div>
@@ -1263,7 +1300,7 @@
         <!-- Map Section -->
         <section id="map-section" class="section">
             <div class="row h-100">
-                <div class="col-md-4">
+                <div class="col-md-4 h-100">
                     <p class="floor-plan-title">OUT AND ABOUT</p>
 
                     <div class="accordion" id="map-accordion">
@@ -1625,7 +1662,8 @@
                 <div class="row contacts">
                     <div class="col-md-6 sale-member-container">
                         <div class="sale-img-box">
-                            <img src="./assets/img/Fox.png" alt="Fox">
+                            <img src="./assets/img/icons/video.svg" class="expand-icon" alt="video">
+                            <img src="./assets/img/Fox.png" class="sale-img" alt="Fox">
                             <div class="contact-btn-container">
                                 <button class="email btn btn-outline-secondary">Email</button>
                                 <button class="call btn btn-outline-secondary">call</button>
@@ -1653,7 +1691,8 @@
                     </div>
                     <div class="col-md-6 sale-member-container">
                         <div class="sale-img-box">
-                            <img src="./assets/img/lana.png" alt="Fox">
+                            <img src="./assets/img/icons/video.svg" class="expand-icon" alt="video">
+                            <img src="./assets/img/lana.png" class="sale-img" alt="Fox">
                             <div class="contact-btn-container">
                                 <button class="email btn btn-outline-secondary">Email</button>
                                 <button class="call btn btn-outline-secondary">call</button>
