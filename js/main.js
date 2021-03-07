@@ -9,14 +9,14 @@ $(document).ready(function () {
         $('#preloader').addClass('show');
         setTimeout(function (){ 
             $('#preloader').removeClass('show');
-            $('.overlay_home img').addClass('animate__animated animate__bounceInRight homeShow')        
-
+            $('.overlay_home img').addClass('animate__animated animate__fadeInRight homeShow');        
         }, 2000);
         setTimeout(function (){ 
-            $('.overlay_home img').addClass('animate__animated animate__bounceOutLeft')        
+            $('.overlay_home img').addClass('animate__animated animate__fadeOutLeft');        
         }, 5000);
         setTimeout(function (){ 
-            $('#home-bg-video').addClass('animate__animated animate__bounceInRight homeShow')        
+            $('#home-bg-video').addClass('animate__animated animate__fadeInRight homeShow'); 
+            $('#home-bg-video')[0].play();
         }, 6000);
 
     });
@@ -35,7 +35,7 @@ $(document).ready(function () {
         scrollHorizontally: true,
         scrollingSpeed: 800,
         autoScrolling: true,
-        normalScrollElements: '.scrollable-content, .vs-img, .sale-intro',
+        normalScrollElements: '.vs-img, .sale-intro, .sunday-paragraph p',
         touchSensitivity: 15,
         fitToSectionDelay: 100,
         fitToSection: true,
@@ -55,7 +55,7 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-every')) {                
                 $('#scroll-down').text('creative partners');
                 $('#scroll-up').text('Sunday Everyday');  
-                $('#sd-everyday-carousel').addClass('animate__animated animate__bounceInLeft homeShow')
+                // $('#sd-everyday-carousel').addClass('animate__animated animate__fadeInLeft homeShow')
             }
 
             if ($('body').hasClass('fp-viewing-sd-partners')) {                
@@ -150,7 +150,7 @@ $(document).ready(function () {
 
     // Click to show menu
     // Click to Scroll down
-    $(document).on('click', '.scroll-down-box', function () {
+    $(document).on('click', '.menu-arrow-box', function () {
         fullpage_api.moveSectionDown();
     });
 
@@ -396,8 +396,8 @@ $(document).ready(function () {
           clickable: true,
         },
         navigation: {
-        nextEl: '.sd-next',
-        prevEl: '.sd-prev',
+            nextEl: '.sd-next',
+            prevEl: '.sd-prev',
         },
     })
 

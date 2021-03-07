@@ -93,7 +93,7 @@ p {
     height: 20px;
     width: 2px;
     border-radius: 0;
-    background-color: #fff;
+    background-color: #b3b3b3;
     z-index: 100;
 }
 
@@ -498,9 +498,9 @@ ul.nav li:last-child .nav-link {
     display: none;
 }
 
-.animate__animated.animate__bounceInRight,
-.animate__animated.animate__bounceInLeft {
-    animation-duration: 3s;
+.animate__animated.animate__fadeInLeft,
+.animate__animated.animate__fadeInRight {
+    animation-duration: 2s;
 }
 
 .homeShow {
@@ -564,15 +564,15 @@ p.home-modal-title::before {
 
 #sunday-everyday {
     background-color: #f8f8f8;
-    padding: 5rem 5rem 5rem 0;
+    padding: 5rem 0 5rem 5rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#sunday-everyday .sunday-title {
-    padding-left: 5rem;
+.sunday-title {
+    margin-top: 3rem;
 }
 
 .sunday-title p {
@@ -580,6 +580,8 @@ p.home-modal-title::before {
     line-height: 40px;
     color: #858E88;
     position: relative;
+    border-top: unset !important;
+    overflow: unset !important;
 }
 
 .everyday-section .sunday-title {
@@ -587,17 +589,21 @@ p.home-modal-title::before {
 }
 
 .sunday-paragraph {
+    height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sunday-paragraph p{
-    padding: 2rem 0;
+    overflow: scroll;
     border-top: 1px solid #DDDFDD;
 }
 
+
 .sd-everyday-row {
     position: relative;
+    height: 100%;
 }
 
 .sunday-title p::before {
@@ -613,36 +619,16 @@ p.home-modal-title::before {
 #sunday-everyday .sunday-title p::before {
     background-color: #858E88;
     opacity: 0.3;
+    top: -10px;
 }
 
-.scrollable-content {
-    background: #f8f8f8;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    margin: 0 auto;
-    height: 100vh;
+.sd-prev::after {
+    content: ' \2192' !important;
+    transform: rotate(180deg)
 }
 
-.everyday-section {
-    margin: 5rem;
-}
-
-/* Everyday Carousel */
-.everyday-carousel .carousel-item {
-    position: relative;
-}
-
-.carousel-img-everyday-first-img {
-    position: absolute;
-    bottom: 70%;
-    border-bottom: 15px solid #f8f8f8;
-    border-right: 15px solid #f8f8f8;
-    width: 45%;
-}
-
-#sd-everyday-carousel {
-    animation-duration: 2s;
-    display: none;
+.sd-next::after {
+    content: ' \2192' !important;
 }
 
 #sd-everyday-carousel .expand-icon{
@@ -1235,10 +1221,19 @@ p.home-modal-title::before {
 
 .vfx-img-div {
     position: relative;
+    height: 45vh;
+}
+
+.vfx-img-div img{
+    height: 100%;
 }
 
 .vfx-img-div .expand-icon {
     bottom: 1rem;
+}
+
+.vfx-div-second {
+    height: 50vh;
 }
 
 .vfx-div-second .expand-icon {
@@ -1356,7 +1351,7 @@ p.home-modal-title::before {
     width: 100%;
     z-index: 2;
     object-fit: cover;
-    height: 80vh;
+    height: 79vh;
     display: none;
 }
 
@@ -1368,10 +1363,10 @@ p.home-modal-title::before {
 .dp-container-right .greybox {
     position: absolute;
     width: 600px;
-    height: 180px;
+    height: 150px;
     background-color: #EDEDED;
-    top: -3.5rem;
-    right: -3rem;
+    top: -2.5rem;
+    right: -2rem;
     z-index: 1;
 }
 
@@ -1550,6 +1545,7 @@ p.home-modal-title::before {
 
 #map-accordion .btn-link.collapsed {
     border-bottom: 1px solid #fff;
+    border-radius: 0;
 }
 
 #map-accordion .card-body ul {
@@ -1788,7 +1784,7 @@ ul.sale-contact li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left: 300px;
+    left: 280px;
     top: unset;
 }
 
@@ -1851,8 +1847,8 @@ ul.sale-contact li a {
     position: absolute;
     right: 1.5rem;
     top: 1.25rem;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     z-index: 200;
     opacity: none;
 }
