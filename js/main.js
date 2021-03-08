@@ -48,7 +48,7 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-intro')) {                           
                 $('#scroll-down').text('sunday every day');
                 $('#scroll-up').text('home');
-                $('.home-modal-box').addClass('animate__animated animate__backInUp homeShow')
+                // $('.home-modal-box').addClass('animate__animated animate__fadeInUp homeShow');
 
             }
 
@@ -96,35 +96,34 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-doorstep')) {                
                 $('#scroll-down').text('Doorstep');
                 $('#scroll-up').text('Fixtures'); 
-                $('.doorstep-img-container-right img.first-img').addClass('animate_animated animate__fadeInUp homeShow'); 
-                $('.doorstep-img-container-right img.second-img').addClass('animate_animated animate__fadeInDown homeShow');      
+                $('.doorstep-img-container-right img.first-img').addClass('animate_animated animate__fadeInRight homeShow'); 
+                $('.doorstep-img-container-right img.second-img').addClass('animate_animated animate__fadeInLeft homeShow');      
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-1')) {                
                 $('#scroll-down').text('Doorstep');
                 $('#scroll-up').text('Monday to Sunday');  
-                $('.doorstep-accordion-box.right').addClass('animate__animated animate__bounceInRight homeShow');
-                $('.dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
+                // $('.doorstep-accordion-box.right').addClass('animate__animated animate__bounceInRight homeShow');
+                // $('.dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-2'))  {                
                 $('#scroll-down').text('Doorstep');
                 $('#scroll-up').text('Slow Start'); 
-                $('.dp-container-right img').addClass('animate__animated animate__bounceInRight homeShow');
-                $('.doorstep-accordion-box.left').addClass('animate__animated animate__bounceInLeft homeShow');
+                // $('.dp-container-right img').addClass('animate__animated animate__bounceInRight homeShow');
+                // $('.doorstep-accordion-box.left').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-3')) {                
                 $('#scroll-down').text('Video');
                 $('#scroll-up').text('Stop By');  
-                $('#doorstep-3 .dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
-                $('#doorstep-3 .doorstep-accordion-box.right').addClass('animate__animated animate__bounceInLeft homeShow');
+                // $('#doorstep-3 .dp-container-left img').addClass('animate__animated animate__bounceInLeft homeShow');
+                // $('#doorstep-3 .doorstep-accordion-box.right').addClass('animate__animated animate__bounceInLeft homeShow');
             }
 
             if ($('body').hasClass('fp-viewing-sd-video')) {                
                 $('#scroll-down').text('Map');
                 $('#scroll-up').text('Doorstep');  
-                $('#video-bg .home-modal-box').addClass('animate__animated animate__backInUp homeShow')
             }
 
             if ($('body').hasClass('fp-viewing-sd-map')) {                
