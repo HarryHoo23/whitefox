@@ -164,13 +164,19 @@ $(document).ready(function () {
         $('#menubar-overlay').toggleClass("nav-open");
     })
 
-    $('.sunday-navbar a').click(function () { 
+    $('.menu-box a').click(function () { 
         setTimeout(() => {
             $('.sunday-navbar').toggleClass("sunday-navbar-active");
             $('#menubar-overlay').toggleClass("nav-open");
         }, 200);
     })
 
+    $('#phone-btn').click(function () { 
+        if ($('.sunday-navbar').hasClass('sunday-navbar-active')) {
+            $('.sunday-navbar').toggleClass("sunday-navbar-active");
+            $('#menubar-overlay').toggleClass("nav-open");                    
+        }
+    })
     $(document).mouseup(function (e) {
         // if the target of the click isn't the container nor a descendant of the container
         if ($('.sunday-navbar').hasClass('sunday-navbar-active')) {
@@ -178,6 +184,7 @@ $(document).ready(function () {
                 $('.sunday-navbar').toggleClass("sunday-navbar-active");  
                 $('#menubar-overlay').toggleClass("nav-open");                    
             }
+            
         }        
     });
 
