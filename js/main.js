@@ -8,17 +8,16 @@ $(document).ready(function () {
         $('#loader').delay(350).fadeOut('slow');
         $('#preloader').addClass('show');
         setTimeout(function (){ 
-            $('#preloader').removeClass('show');
-            $('.overlay_home img').addClass('animate__animated animate__fadeInRight homeShow');        
+            $('#preloader img').addClass('fadeIn');        
         }, 2000);
         setTimeout(function (){ 
-            $('.overlay_home img').addClass('animate__animated animate__fadeOutLeft');        
+            $('#preloader').removeClass('show');
+            $('#preloader img').addClass('fadeOut');  
         }, 5000);
         setTimeout(function (){ 
             $('#home-bg-video').addClass('animate__animated animate__fadeInRight homeShow'); 
-            $('#home-bg-video')[0].play();
-        }, 6000);
-
+            $('#home-bg-video').trigger('play');
+        }, 5000);
     });
     // hello();
 
@@ -43,13 +42,15 @@ $(document).ready(function () {
         afterLoad: function (anchorLink, index) {             
             if ($('body').hasClass('fp-viewing-sd-home')) {                                
                 $('#scroll-down').text('scroll');
+                // $('#home-bg-video').one('play');
             }
             
             if ($('body').hasClass('fp-viewing-sd-intro')) {                           
                 $('#scroll-down').text('sunday every day');
                 $('#scroll-up').text('home');
-                // $('.home-modal-box').addClass('animate__animated animate__fadeInUp homeShow');
-
+                $('#home-modal-container').addClass('show');                
+                $('.home-modal-box').addClass('show');
+                $('.home-modal-content').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-every')) {                
@@ -96,8 +97,8 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-doorstep')) {                
                 $('#scroll-down').text('Doorstep');
                 $('#scroll-up').text('Fixtures'); 
-                $('.doorstep-img-container-right img.first-img').addClass('animate_animated animate__fadeInRight homeShow'); 
-                $('.doorstep-img-container-right img.second-img').addClass('animate_animated animate__fadeInLeft homeShow');      
+                // $('.doorstep-img-container-right img.first-img').addClass('animate_animated animate__fadeInRight homeShow'); 
+                // $('.doorstep-img-container-right img.second-img').addClass('animate_animated animate__fadeInLeft homeShow');      
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-1')) {                
@@ -161,6 +162,13 @@ $(document).ready(function () {
     $('#nav-open-btn').click(function () {
         $('.sunday-navbar').toggleClass("sunday-navbar-active");
         $('#menubar-overlay').toggleClass("nav-open");
+    })
+
+    $('.sunday-navbar a').click(function () { 
+        setTimeout(() => {
+            $('.sunday-navbar').toggleClass("sunday-navbar-active");
+            $('#menubar-overlay').toggleClass("nav-open");
+        }, 200);
     })
 
     $(document).mouseup(function (e) {
@@ -354,10 +362,29 @@ $(document).ready(function () {
     clickAccordion("stop-by-accordion");
     clickAccordion("dusk-dawn-accordion");
 
-    
+    $('a#welcome-pills-home-tab').click(function() {
+        $('#counter-number').html('1');
+    })
+
+    $('a#welcome-pills-profile-tab').click(function() {
+        $('#counter-number').html('2');
+    })
+
+    $('a#welcome-pills-messages-tab').click(function() {
+        $('#counter-number').html('3');
+    })
+
+    $('a#welcome-pills-settings-tab').click(function() {
+        $('#counter-number').html('4');
+    })
+
+    $('a#welcome-pills-spaces-tab').click(function() {
+        $('#counter-number').html('5');
+    })
 
     $('.drop-down-btn').click(function () {
         $('.welcome-tabs .tab-content').toggleClass("welcome-tab-content-hidden");
+        $('.counter').toggleClass('counter-hidden');
 
         if ($('.welcome-tabs .tab-content').hasClass('welcome-tab-content-hidden')) {
             $('.drop-down-btn').css({"bottom" : "2.5rem","transform" : "rotate(180deg)"});

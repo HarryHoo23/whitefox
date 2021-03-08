@@ -5,6 +5,7 @@ body {
     font-style: normal;
     font-weight: 400;
     overflow: hidden !important;
+    /* background-color: #858E88; */
 }
 
 :root {
@@ -40,14 +41,29 @@ body {
     width: 0px;
     z-index: 9999;
     transition: all 2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#preloader img{
+    transition: 1s all ease;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+#preloader .fadeIn {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+#preloader .fadeOut {
+    transform: translateY(0px);
+    opacity: 0;
 }
 
 #preloader.show {
     width: 100%;
-}
-
-@keyframes slide {
-    100% { transform: translateX(0); }
 }
 
 #menubar-overlay {
@@ -116,23 +132,25 @@ p {
 .sunday-navbar {
     position: fixed;
     height: 0%;
-    transition: all 300ms ease;
+    transition: all 800ms ease;
 }
 
 .sunday-navbar-active {
     height: 45%;
     background-color: #fff;
-    transition: all 300ms ease;
+    transition: all 500ms ease;
 }
 
 .menu-box {
     margin: auto 5rem;
+    opacity: 0;
 }
 
 .sunday-navbar-active .menu-box {
     height: calc(100% - 5rem);
     display: flex;
     align-items: center;
+    opacity: 1;
 }
 
 #mobile-nav {
@@ -442,18 +460,7 @@ ul.nav li:last-child .nav-link {
 
 
 
-
-
-#home-modal {
-    height: 100vh;
-    width: 100%;
-    background:  url("../assets/img/Bg\ Image.png");
-    background-color: #8C968F;
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
+/* Section 1 & 2 */
 .home-video {
     height: 100%;
     width: 100%;
@@ -483,7 +490,7 @@ ul.nav li:last-child .nav-link {
     align-items: center;
 }
 
-.overlay_home {
+/* .overlay_home {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -492,43 +499,70 @@ ul.nav li:last-child .nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.overlay_home img{
-    display: none;
-}
 
-.animate__animated.animate__fadeInLeft,
-.animate__animated.animate__fadeInRight {
-    animation-duration: 2s;
-}
 
 .homeShow {
     display: block !important;
 }
 
 #home-modal {
+    height: 100vh;    
+    background-color: #8C968F;
+    background-blend-mode: multiply;
+}
+
+#home-modal-container {
+    width: 0%;
+    height: 100%;
+    background:  url("../assets/img/Bg\ Image.png");
+    background-color: #8C968F;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
+    background-position: center center;
+    transform: scale(1.1);
+    transition: width 2s 0s ease, transform 3s 2s ease;
+}
+
+#home-modal-container.show {
+    transform: scale(1);
+    width: 100%;
 }
 
 .home-modal-box {
+    opacity: 0;
     position: absolute;
     text-align: center;
     left: 5rem;
     right: 5rem;
     background-color: rgba(141, 151, 144, 0.94);
     text-align: center;
-    height: calc(100vh - 10rem);
+    height: 0;
     bottom: 5rem;
+    transition: height 1.5s 3s ease, opacity 1.5s 3s ease;
+}
+
+.home-modal-box.show {
+    height: calc(100vh - 10rem);
+    opacity: 1;
 }
 
 .home-modal-content {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
+    transform: translateY(calc(-50% + 50px));
     padding-left: 5rem;
     padding-right: 5rem;
+    opacity: 0;
+    transition: transform 1.5s 4s ease, opacity 1.5s 4s ease;
+}
+
+.home-modal-content.show {
+    opacity: 1;
+    transform: translateY(-50%);
 }
 
 .home-modal-content p {
@@ -554,7 +588,7 @@ p.home-modal-title::before {
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    bottom: -2rem;
+    margin-top: 4rem;
 }
 
 .home-modal-content strong {
@@ -981,6 +1015,20 @@ p.home-modal-title::before {
     width: 20px;
 }
 
+.counter {
+    position: absolute;
+    color: #fff;
+    bottom: 35vh;
+    left: -40px;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.counter-hidden {
+    bottom: 5vh;
+}
+
+/* Floor plan */
+
 #floor-plan {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/chair-bg-image.png") no-repeat;
     background-size: cover;
@@ -1195,6 +1243,14 @@ p.home-modal-title::before {
     padding-left: calc(5rem + 15px);
 }
 
+.fx-type {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 .vs-img {
     max-height: 100%;
 }
@@ -1380,10 +1436,7 @@ p.home-modal-title::before {
     width: 100%;
     z-index: 2;
     object-fit: cover;
-    height: calc(79vh + 1px);
-}
-
-#doorstep-3 .dp-container-left img {
+    height: calc(100vh - 10rem);
 }
 
 .dp-container-left .greybox,
@@ -1700,7 +1753,7 @@ ul.sale-contact li a {
     flex: 1 1 auto;
     border-color: #8C968F;
     border-radius: 0px;
-    padding: 0.4rem 0.75rem;
+    padding: 0.35rem 0.75rem 0.4rem 0.75rem;
 }
 
 .email:hover {
