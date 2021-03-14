@@ -786,7 +786,7 @@ function initMap() {
         })
         const zoomInBtns = document.querySelectorAll('.zoomIn');
         zoomInBtns[i].addEventListener('click', () => {
-            map.setZoom(20);
+            map.setZoom(15);
             map.setCenter(marker.getPosition());
         })
     }
