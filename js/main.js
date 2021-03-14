@@ -502,7 +502,7 @@ function initMap() {
             type: cafeMarker,
         },
         {
-            position: new google.maps.LatLng(-37.8473438, 144.999243),
+            position: new google.maps.LatLng(-37.8474801, 144.9987007),
             type: cafeMarker,
         },
         {
@@ -645,7 +645,7 @@ function initMap() {
             type: shopMarker,
         },
         {
-            position: new google.maps.LatLng(-37.83712,	144.99609),
+            position: new google.maps.LatLng(-37.83712,	144.99629),
             type: shopMarker,
         },
         {
