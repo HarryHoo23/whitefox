@@ -504,22 +504,22 @@ ul.nav li:last-child .nav-link {
 }
 
 #home-modal-container {
-    width: 0%;
+    width: 100%;
     height: 100%;
     background:  url("../assets/img/Bg\ Image.png");
     background-color: #8C968F;
     background-blend-mode: multiply;
-    background-size: cover;
+    background-size: auto 110%;
     background-repeat: no-repeat;
     position: relative;
     background-position: center center;
-    transform: scale(1.1, 1.1);
-    transition: width 3s 0s ease, transform 3s 3s ease;
+    transform: translateX(-100%);
+    transition: background-size 3s 2.5s ease, transform 3s 0s ease;
 }
 
 #home-modal-container.show {
-    transform: scale(1, 1);
-    width: 100%;
+    transform: translateX(0);
+    background-size: auto 100%;
 }
 
 .home-modal-box {
@@ -667,8 +667,12 @@ p.home-modal-title::before {
 }
 
 #sd-everyday-carousel {
-    /* transform: translateX(100%);
-    transition: all 2s slide; */
+    transform: translateX(100%);
+    transition: all 2s ease;
+}
+
+#sunday-everyday .swiper-container.show {
+    transform: translateX(0);
 }
 
 @keyframes slide {
@@ -1385,23 +1389,40 @@ p.home-modal-title::before {
 .doorstep-img-container-right .first-img {
     position: absolute;
     right: 0;
-    animation-duration: 2s;
     height: 100%;
-    transition: 2s all ease;
+    display: none;
 }
 
-/* .doorstep-img-container-right .second-img.show {
-    transform: translateX(-100%);
-} */
+.doorstep-img-container-right .first-img.show {
+    display: block;
+    animation: animFirst 3s ease;
+}
+
+@keyframes animFirst{
+    0% { transform: translateX(100%); }
+    50% {transform: translate(0); }  
+    100% { transform: translateX(0); }
+}
+
 
 .doorstep-img-container-right .second-img {
     position: absolute;
     top: -7rem;
     border-right: 15px solid #FAFAFA;
     border-bottom: 15px solid #FAFAFA;
-    padding-right: 0px;
-    animation-duration: 2s;
-    transition: 2s all ease;
+    padding-right: 0px;    
+    display: none;
+}
+
+.doorstep-img-container-right .second-img.show {
+    animation: anim1 3s ease;
+    display: block;
+}
+
+@keyframes anim1{
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }  
+    100% { transform: translateY(0); }
 }
 
 .doorstep-img-container-left .first-img {
@@ -1422,35 +1443,34 @@ p.home-modal-title::before {
     align-items: flex-start;
 }
 
-.dp-container-left img,
-.dp-container-right img {
+.dp-container-left,
+.dp-container-right{
     width: 100%;
     z-index: 2;
     object-fit: cover;
     height: calc(100vh - 10rem);
+    background-position: 50%;
+    background: url('../assets/img/walking.png');
+    background-size: auto 110%;
+    transform: translateX(-100%);
+    transition: transform 2.5s 0s ease, background-size 2.5s 1s ease;
 }
 
-.dp-container-left .greybox,
-.dp-container-right .greybox {
-    position: absolute;
-    width: 600px;
-    height: 150px;
-    background-color: #EDEDED;
-    top: -2.5rem;
-    right: -2rem;
-    z-index: 1;
+.dp-container-right {
+    transform: translateX(100%);
 }
+
+.dp-container-left.show,
+.dp-container-right.show {
+    background-size: auto 100%;
+    transform: translateX(0);
+}
+
 
 .doorstep-container-mid {
     padding: 5rem 0;
 }
 
-.dp-container-right .greybox {
-    right: unset;
-    left: -2rem;
-    top: -2.5rem;
-    height: 150px;
-}
 
 .doorstep-accordion-box.right {
     margin-right: 5rem;
@@ -1461,10 +1481,6 @@ p.home-modal-title::before {
     bottom: 0;
 }
 
-#doorstep-3 .doorstep-accordion-box.right {
-    
-}
-
 .doorstep-accordion-box.left {
     margin-left: 5rem;
     padding-top: 20px;
@@ -1472,8 +1488,37 @@ p.home-modal-title::before {
     margin-right: 2rem;
     position: absolute;
     bottom: 0;
+}
+
+.doorstep-container-top .col-md-4 {
+    transform: translateX(-100%);
+    transition: 2s all ease;
+}
+
+.doorstep-container-mid .col-md-4 {
+    transform: translateX(100%);
+    transition: 2s all ease;
+}
+
+.doorstep-container-mid .col-md-4.show,
+.doorstep-container-top .col-md-4.show {
+    transform: translateX(0);
+}
+
+.doorstep-container-mid .col-md-4:nth-child(1) {
+    transform: translateX(-100%);
+    transition: 2s all ease;
+}
+
+.doorstep-container-mid .col-md-4:nth-child(1).show {
+    transform: translateX(0);
+}
+
+#doorstep-3 .doorstep-accordion-box.right {
     
 }
+
+
 
 .dp-container-title {
     font-weight: 600;
@@ -1538,8 +1583,13 @@ button.btn.btn-link[aria-expanded='true'] {
 #video-bg .home-modal-box {
     background-color: #ccc8c2;
     opacity: 0.95;
-    height: unset;
-    top: 5rem;
+    height: 0;
+    bottom: 5rem;
+    transition: 2s all ease;
+}
+
+#video-bg .home-modal-box.show {
+    height: calc(100% - 10rem);
 }
 
 #video-bg .home-modal-title::before {
@@ -1549,9 +1599,15 @@ button.btn.btn-link[aria-expanded='true'] {
 #video-bg .home-modal-content {
     padding-left: 8rem;
     padding-right: 8rem;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 50px));
+    opacity: 0;
+    transition: all 2s ease;
+    transition-delay: 1.5s;
+}
+
+#video-bg .home-modal-content.show {
     opacity: 1;
-    transition: unset;
+    transform: translateY(-50%);
 }
 
 #video-bg .home-modal-content p {
@@ -1949,4 +2005,8 @@ ul.sale-contact li a {
 
 .dropup.show .dropdown-toggle::after {
     transform: rotate(0deg);
+}
+
+.gm-style-iw-d > div {
+    text-align: center;
 }
