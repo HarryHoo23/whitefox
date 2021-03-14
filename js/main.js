@@ -48,9 +48,9 @@ $(document).ready(function () {
             if ($('body').hasClass('fp-viewing-sd-intro')) {                           
                 $('#scroll-down').text('sunday every day');
                 $('#scroll-up').text('home');
-                $('#home-modal-container').addClass('show');                
-                $('.home-modal-box').addClass('show');
-                $('.home-modal-content').addClass('show');
+                $('#home-modal #home-modal-container').addClass('show');                
+                $('#home-modal .home-modal-box').addClass('show');
+                $('#home-modal .home-modal-content').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-every')) {                
@@ -446,22 +446,19 @@ function initMap() {
     const melbourne = { lat: -37.8142176, lng: 144.9631608 };
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
+        center: melbourne,
     });
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function (position) {
-               var initializedPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                map.setCenter(initializedPosition);
-            },
-            function errorCallback(error) {
-                console.log(error)
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 8,
-                    center: melbourne,
-                });
-            }
-        );
-    }
+    // if (navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(
+    //         function (position) {
+    //            var initializedPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    //             map.setCenter(initializedPosition);
+    //         },
+    //     );
+    // } else {
+    //     console.log('denied');
+    //     handleLocationError(false, infoWindow, map.getCenter());
+    // }
 
 
     var cafeMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/marker.svg?alt=media&token=cd4f760a-2182-4e93-bf2b-3eace89f0dc1';
