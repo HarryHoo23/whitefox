@@ -514,7 +514,7 @@ ul.nav li:last-child .nav-link {
     position: relative;
     background-position: center center;
     transform: translateX(-100%);
-    transition: background-size 2.5s 4s ease, transform 2.5s 0s ease;
+    transition: background-size 2.5s 2s ease, transform 2.5s 0s ease;
 }
 
 #home-modal-container.show {
@@ -532,7 +532,7 @@ ul.nav li:last-child .nav-link {
     text-align: center;
     height: 0;
     bottom: 5rem;
-    transition: height 1.5s 5s ease, opacity 1.5s 5s ease;
+    transition: height 2s 4.5s ease, opacity 2s 4.5s ease;
 }
 
 .home-modal-box.show {
@@ -547,7 +547,7 @@ ul.nav li:last-child .nav-link {
     padding-left: 5rem;
     padding-right: 5rem;
     opacity: 0;
-    transition: transform 1.5s 6.5s ease, opacity 1.5s 6.5s ease;
+    transition: transform 1.5s 6s ease, opacity 1.5s 6s ease;
 }
 
 .home-modal-content.show {

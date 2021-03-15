@@ -443,11 +443,16 @@ $(document).ready(function () {
 
 
 function initMap() {
-    const melbourne = { lat: -37.8142176, lng: 144.9631608 };
-    var map = new google.maps.Map(document.getElementById('map'), {
+    // const melbourne = { lat: -37.8142176, lng: 144.9631608 };
+
+    var mapOptions = {
         zoom: 10,
-        center: melbourne,
-    });
+        center: new google.maps.LatLng(-37.8142176, 144.9631608),
+        style: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+    }
+
+    var mapElement = document.getElementById('map');
+    var map = new google.maps.Map(mapElement, mapOptions);
     // if (navigator.geolocation) {
     //     navigator.geolocation.getCurrentPosition(
     //         function (position) {
@@ -786,7 +791,7 @@ function initMap() {
         })
         const zoomInBtns = document.querySelectorAll('.zoomIn');
         zoomInBtns[i].addEventListener('click', () => {
-            map.setZoom(15);
+            map.setZoom(18);
             map.setCenter(marker.getPosition());
         })
     }
@@ -948,3 +953,4 @@ var locationsAddress = [
         "677 Punt Rd, South Yarra VIC 3141",
         "1 Morrison St, Hawthorn VIC 3122"
 ];
+
