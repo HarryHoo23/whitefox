@@ -504,7 +504,7 @@ ul.nav li:last-child .nav-link {
 }
 
 #home-modal-container {
-    width: 100%;
+    width: 0;
     height: 100%;
     background:  url("../assets/img/Bg\ Image.png");
     background-color: #8C968F;
@@ -513,12 +513,11 @@ ul.nav li:last-child .nav-link {
     background-repeat: no-repeat;
     position: relative;
     background-position: center center;
-    transform: translateX(-100%);
-    transition: background-size 2.5s 2s ease, transform 2.5s 0s ease;
+    transition: background-size 2.5s 2s ease, width 2.5s 0s ease;
 }
 
 #home-modal-container.show {
-    transform: translateX(0);
+    width: 100%;
     background-size: auto 100%;
 }
 
@@ -667,16 +666,24 @@ p.home-modal-title::before {
 }
 
 #sd-everyday-carousel {
-    transform: translateX(100%);
-    transition: all 2s ease;
+    /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); */
+    opacity: 0;
 }
+
+@keyframes reveal {
+    from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+    to { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
+}
+
+@keyframes revealToRight {
+    from { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    to { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
+}
+
 
 #sunday-everyday .swiper-container.show {
-    transform: translateX(0);
-}
-
-@keyframes slide {
-    100% { transform: translateX(0); }
+    opacity: 1;
+    animation: 2s ease reveal;
 }
 
 
@@ -1452,18 +1459,24 @@ p.home-modal-title::before {
     background-position: 50%;
     background: url('../assets/img/walking.png');
     background-size: auto 110%;
-    transform: translateX(-100%);
-    transition: transform 2.5s 0s ease, background-size 2.5s 1s ease;
+    transition: background-size 2.5s 1s ease;
+    opacity: 0;
 }
 
-.dp-container-right {
-    transform: translateX(100%);
+@keyframes toLeft {
+    from { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+    to { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
 }
 
 .dp-container-left.show,
 .dp-container-right.show {
+    opacity: 1;
     background-size: auto 100%;
-    transform: translateX(0);
+    animation: 2.5s ease revealToRight;
+}
+
+.dp-container-right.show {
+    animation: 2.5s ease reveal !important;
 }
 
 
@@ -2010,3 +2023,49 @@ ul.sale-contact li a {
 .gm-style-iw-d > div {
     text-align: center;
 }
+
+
+.custom-clustericon {
+    background: var(--cluster-color);
+    color: #fff;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-clustericon::before,
+  .custom-clustericon::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: var(--cluster-color);
+    opacity: 0.2;
+    border-radius: 100%;
+  }
+
+  .custom-clustericon::before {
+    padding: 7px;
+  }
+
+  .custom-clustericon::after {
+    padding: 14px;
+  }
+
+  .custom-clustericon-1 {
+    --cluster-color: #858E88;
+  }
+
+  .custom-clustericon-2 {
+    --cluster-color: #858E88;
+  }
+
+  .custom-clustericon-3 {
+    --cluster-color: #858E88;
+  }
