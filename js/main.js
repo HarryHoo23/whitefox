@@ -100,7 +100,7 @@ $(document).ready(function () {
                 $('.doorstep-img-container-right img.first-img').addClass('show'); 
                 setTimeout(function () { 
                     $('.doorstep-img-container-right img.second-img').addClass('show');      
-                 }, 1000);
+                 }, 700);
                 $('.doorstep-container-top .col-md-4').addClass('show');
             }
 

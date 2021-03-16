@@ -509,11 +509,11 @@ ul.nav li:last-child .nav-link {
     background:  url("../assets/img/Bg\ Image.png");
     background-color: #8C968F;
     background-blend-mode: multiply;
-    background-size: auto 110%;
+    background-size: auto 120%;
     background-repeat: no-repeat;
     position: relative;
     background-position: center center;
-    transition: background-size 2.5s 2s ease, width 2.5s 0s ease;
+    transition: background-size 4s 0s ease, width 2s 0s ease;
 }
 
 #home-modal-container.show {
@@ -531,7 +531,7 @@ ul.nav li:last-child .nav-link {
     text-align: center;
     height: 0;
     bottom: 5rem;
-    transition: height 2s 4.5s ease, opacity 2s 4.5s ease;
+    transition: height 2s 3.5s ease, opacity 2s 3.5s ease;
 }
 
 .home-modal-box.show {
@@ -546,7 +546,7 @@ ul.nav li:last-child .nav-link {
     padding-left: 5rem;
     padding-right: 5rem;
     opacity: 0;
-    transition: transform 1.5s 6s ease, opacity 1.5s 6s ease;
+    transition: transform 1.5s 4.5s ease, opacity 1.5s 4.5s ease;
 }
 
 .home-modal-content.show {
@@ -683,7 +683,7 @@ p.home-modal-title::before {
 
 #sunday-everyday .swiper-container.show {
     opacity: 1;
-    animation: 2s ease reveal;
+    animation: 1.1s ease reveal;
 }
 
 
@@ -1378,7 +1378,7 @@ p.home-modal-title::before {
 
 .doorstep-content-box {
     padding-top: 20px;
-    padding-right: 5rem;
+    padding-right: 3rem;
     margin-left: 5rem;
     border-top: 1px solid #e0e0e0;
     margin-top: 8rem;
@@ -1397,20 +1397,13 @@ p.home-modal-title::before {
     position: absolute;
     right: 0;
     height: 100%;
-    display: none;
+    opacity: 0;
 }
 
 .doorstep-img-container-right .first-img.show {
-    display: block;
-    animation: animFirst 3s ease;
+    opacity: 1;
+    animation: toLeft 1s ease;
 }
-
-@keyframes animFirst{
-    0% { transform: translateX(100%); }
-    50% {transform: translate(0); }  
-    100% { transform: translateX(0); }
-}
-
 
 .doorstep-img-container-right .second-img {
     position: absolute;
@@ -1418,18 +1411,17 @@ p.home-modal-title::before {
     border-right: 15px solid #FAFAFA;
     border-bottom: 15px solid #FAFAFA;
     padding-right: 0px;    
-    display: none;
+    opacity: 0;
 }
 
 .doorstep-img-container-right .second-img.show {
-    animation: anim1 3s ease;
-    display: block;
+    animation: toBottom 1s ease;
+    opacity: 1;
 }
 
-@keyframes anim1{
-    0% { transform: translateY(-100%); }
-    50% { transform: translateY(0); }  
-    100% { transform: translateY(0); }
+@keyframes toBottom{
+    from { clip-path: polygon(100% 0, 0 0, 0 0, 100% 0); }
+    to { clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); }
 }
 
 .doorstep-img-container-left .first-img {
@@ -1458,8 +1450,8 @@ p.home-modal-title::before {
     height: calc(100vh - 10rem);
     background-position: 50%;
     background: url('../assets/img/walking.png');
-    background-size: auto 110%;
-    transition: background-size 2.5s 1s ease;
+    background-size: auto 120%;
+    transition: background-size 3s ease;
     opacity: 0;
 }
 
@@ -1472,11 +1464,11 @@ p.home-modal-title::before {
 .dp-container-right.show {
     opacity: 1;
     background-size: auto 100%;
-    animation: 2.5s ease revealToRight;
+    animation: 0.7s ease revealToRight;
 }
 
 .dp-container-right.show {
-    animation: 2.5s ease reveal !important;
+    animation: 0.7s ease reveal !important;
 }
 
 
@@ -1488,7 +1480,6 @@ p.home-modal-title::before {
 .doorstep-accordion-box.right {
     margin-right: 5rem;
     padding-top: 20px;
-    border-top: 1px solid #DDDFDD;
     margin-left: 2rem;
     position: absolute;
     bottom: 0;
@@ -1497,7 +1488,6 @@ p.home-modal-title::before {
 .doorstep-accordion-box.left {
     margin-left: 5rem;
     padding-top: 20px;
-    border-top: 1px solid #DDDFDD;
     margin-right: 2rem;
     position: absolute;
     bottom: 0;
@@ -1526,11 +1516,6 @@ p.home-modal-title::before {
 .doorstep-container-mid .col-md-4:nth-child(1).show {
     transform: translateX(0);
 }
-
-#doorstep-3 .doorstep-accordion-box.right {
-    
-}
-
 
 
 .dp-container-title {
@@ -1615,7 +1600,7 @@ button.btn.btn-link[aria-expanded='true'] {
     transform: translateY(calc(-50% + 50px));
     opacity: 0;
     transition: all 2s ease;
-    transition-delay: 1.5s;
+    transition-delay: 1s;
 }
 
 #video-bg .home-modal-content.show {
@@ -2068,4 +2053,14 @@ ul.sale-contact li a {
 
   .custom-clustericon-3 {
     --cluster-color: #858E88;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 2px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(143, 143, 143, 0.43);
   }
