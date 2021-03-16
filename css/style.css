@@ -1289,8 +1289,17 @@ p.home-modal-title::before {
     position: relative;
 }
 
+.ss-box:hover {
+    background-color: #fff;
+}
+
+.ss-box:hover .expand-icon {
+    filter: none;
+}
+
 .ss-box .expand-icon {
     bottom: 1rem;
+    filter: brightness(0) invert(1);
 }
 
 .vertical-fx-img div {
@@ -1300,6 +1309,10 @@ p.home-modal-title::before {
 
 .vertical-fx-img div:hover {
     background-color: #ffffff;
+}
+
+.vertical-fx-img div:hover .expand-icon {
+    filter: none;
 }
 
 .vfx-img-div {
@@ -1313,6 +1326,7 @@ p.home-modal-title::before {
 
 .vfx-img-div .expand-icon {
     bottom: 1rem;
+    filter: brightness(0) invert(1);    
 }
 
 .vfx-div-second {
