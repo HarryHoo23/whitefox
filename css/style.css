@@ -659,8 +659,6 @@ p.home-modal-title::before {
 }
 
 .modal-logo-container .row .col-md-8 {
-    display: flex;
-    flex-direction: column;
     padding: 0px;
     padding-top: 15px;
 }
