@@ -39,8 +39,6 @@ $(document).ready(function () {
 
         afterLoad: function (anchorLink, index) {             
             if ($('body').hasClass('fp-viewing-sd-home')) {                                
-                $('#scroll-down').text('scroll');
-                // $('#home-bg-video').one('play');
             }
             
             if ($('body').hasClass('fp-viewing-sd-intro')) {                           
