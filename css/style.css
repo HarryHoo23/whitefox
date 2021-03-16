@@ -692,7 +692,7 @@ p.home-modal-title::before {
 .modal-logo-div {
     background-image: url('../assets/logo/avian.svg');
     background-size: contain;
-    height: 50px;
+    height: 30px;
     background-repeat: no-repeat;
     margin-bottom: 16px;
 }
