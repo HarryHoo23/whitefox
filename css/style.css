@@ -690,6 +690,10 @@ p.home-modal-title::before {
     background-image: url('../assets/logo/e.svg');
 }
 
+#logoModal1 button.close, #logoModal2 button.close, #logoModal3 button.close, #logoModal4 button.close {
+    top: 3rem;
+    right: 3rem;
+}
 
 .title-box {
     padding-top: 10px;
