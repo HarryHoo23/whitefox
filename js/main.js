@@ -1,4 +1,3 @@
-// import { hello } from './layout.js';
 $(document).ready(function () {
     "use strict";
 
@@ -19,11 +18,10 @@ $(document).ready(function () {
             $('#home-bg-video').trigger('play');
         }, 5000);
     });
-    // hello();
 
     var myFullpage = new fullpage('#fullpage', {
         navigation: true,
-        anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-partners-2', 'sd-welcomeHome', 'sd-floorplans',
+        anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-doorstep-1', 'sd-doorstep-2',
             'sd-doorstep-3', 'sd-video', 'sd-map', 'sd-contact-us'
         ],
@@ -34,7 +32,7 @@ $(document).ready(function () {
         scrollHorizontally: true,
         scrollingSpeed: 800,
         autoScrolling: true,
-        normalScrollElements: '.vs-img, .sale-intro, .sunday-paragraph p, #map',
+        normalScrollElements: '.vs-img, .sale-intro, #map',
         touchSensitivity: 15,
         fitToSectionDelay: 100,
         fitToSection: true,
