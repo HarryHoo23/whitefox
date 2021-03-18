@@ -23,7 +23,7 @@ $(document).ready(function () {
         navigation: true,
         anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-doorstep-1', 'sd-doorstep-2',
-            'sd-doorstep-3', 'sd-video', 'sd-map', 'sd-contact-us'
+            'sd-doorstep-3', 'sd-video', 'sd-map', 'sd-contact-us', 'sd-disclaimer'
         ],
         slidesNavigation: false,
         scrollBar: true,
@@ -51,33 +51,29 @@ $(document).ready(function () {
 
             if ($('body').hasClass('fp-viewing-sd-every')) {                
                 $('#scroll-down').text('creative partners');
-                $('#scroll-up').text('Sunday Everyday');  
+                $('#scroll-up').text('Sunday Every day');  
                 $('#sd-everyday-carousel').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-partners')) {                
-                $('#scroll-down').text('creative partners');
-                $('#scroll-up').text('Sunday Everyday');                
+                $('#scroll-down').text('Residences');
+                $('#scroll-up').text('Creative partners');                
             }
 
-            if ($('body').hasClass('fp-viewing-sd-partners-2')) {                
-                $('#scroll-down').text('Welcome home');
-                $('#scroll-up').text('Sunday Partners');                
-            }
 
             if ($('body').hasClass('fp-viewing-sd-welcomeHome')) {                
                 $('#scroll-down').text('Floor plans');
-                $('#scroll-up').text('Sunday Partners');  
+                $('#scroll-up').text('Welcome Home');  
             }
 
             if ($('body').hasClass('fp-viewing-sd-floorplans')) {                
-                $('#scroll-down').text('Fixtures');
-                $('#scroll-up').text('Welcome home');  
+                $('#scroll-down').text('Fixtures & finishes');
+                $('#scroll-up').text('Residences');  
             }
 
             if ($('body').hasClass('fp-viewing-sd-fixtures')) {                
-                $('#scroll-down').text('Fixtures');
-                $('#scroll-up').text('Welcome home');
+                $('#scroll-down').text('On your Doorstep');
+                $('#scroll-up').text('Fixtures & finishes');
                 $('#doorstep').css('z-index', "1"); 
                 $('.showModal').click(function() { 
                     $('#fixtures').css('z-index', "unset"); 
@@ -91,8 +87,8 @@ $(document).ready(function () {
 
             // Door step 1.
             if ($('body').hasClass('fp-viewing-sd-doorstep')) {                
-                $('#scroll-down').text('Doorstep');
-                $('#scroll-up').text('Fixtures'); 
+                $('#scroll-down').text('On your Doorstep');
+                $('#scroll-up').text('ON YOUR DOORSTEP'); 
                 $('.doorstep-img-container-right img.first-img').addClass('show'); 
                 setTimeout(function () { 
                     $('.doorstep-img-container-right img.second-img').addClass('show');      
@@ -101,45 +97,41 @@ $(document).ready(function () {
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-1')) {                
-                $('#scroll-down').text('Doorstep');
-                $('#scroll-up').text('Monday to Sunday');  
+                $('#scroll-down').text('ON YOUR DOORSTEP');
+                $('#scroll-up').text('ON YOUR DOORSTEP');  
                 $('#doorstep-1 .dp-container-left').addClass('show');
                 $('#doorstep-1 .doorstep-container-mid .col-md-4').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-2'))  {                
-                $('#scroll-down').text('Doorstep');
-                $('#scroll-up').text('Slow Start'); 
+                $('#scroll-down').text('ON YOUR DOORSTEP');
+                $('#scroll-up').text('ON YOUR DOORSTEP'); 
                 $('#doorstep-2 .dp-container-right').addClass('show');
                 $('#doorstep-2 .doorstep-container-mid .col-md-4').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-doorstep-3')) {                
-                $('#scroll-down').text('Video');
-                $('#scroll-up').text('Stop By');  
+                $('#scroll-down').text('ON YOUR DOORSTEP');
+                $('#scroll-up').text('ON YOUR DOORSTEP');  
                 $('#doorstep-3 .dp-container-left').addClass('show');
                 $('#doorstep-3 .doorstep-container-mid .col-md-4').addClass('show');                
             }
 
             if ($('body').hasClass('fp-viewing-sd-video')) {                
-                $('#scroll-down').text('Map');
-                $('#scroll-up').text('Doorstep'); 
+                $('#scroll-down').text('Out and about');
+                $('#scroll-up').text('ON YOUR DOORSTEP'); 
                 $('#video-bg .home-modal-box').addClass('show'); 
                 $('#video-bg .home-modal-content').addClass('show');
             }
 
             if ($('body').hasClass('fp-viewing-sd-map')) {                
-                $('#scroll-down').text('Contact us');
-                $('#scroll-up').text('Video'); 
+                $('#scroll-down').text('Contact');
+                $('#scroll-up').text('Out and about'); 
             }
 
             if ($('body').hasClass('fp-viewing-sd-contact-us')) {                                
-                $('#scroll-up').text('Map');  
-            }
-        
-            if ($('body').hasClass('fp-viewing-sd-floorplans')) {           
-                $('#scroll-down').text('Fixtures');
-                $('#scroll-up').text('Welcome home'); 
+                $('#scroll-up').text('Contact');  
+                $('#scroll-down').text('Disclaimer');
             }
             
         },
@@ -155,7 +147,7 @@ $(document).ready(function () {
         fullpage_api.moveSectionDown();
     });
 
-    $(document).on('click', '.scroll-up', function () {
+    $(document).on('click', '#menu-arrow-down-box', function () {
         fullpage_api.moveSectionUp();
     });
 
@@ -242,72 +234,208 @@ $(document).ready(function () {
     var des = $('.floorplan-swiper #slide1 .layout-box');
     // var newdes = des.attr('data-gallery', 'data-gallery2');
 
+
+    // show different property function
     function clickDropdownItem(n) {
-            switch (n) {
-                case 0:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        $('.floorplan-swiper .swiper-wrapper #slide1').html(`0`);
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;
-                case 1:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {    
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;
-                case 2:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('3');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;
-                case 3:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('4');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;
+        var dropdownBtn = $('#floorplan-dropdown .dropdown-item');
+        var modalImg = $('#floorplanModal .modal-body img');
+        var modalPlateImg = $('#floorplateModal .modal-body img');
+        var modalTitle = $('#floorplanModal .modal-body .floorplan-modal-title');
+        dropdownBtn.click(function () {             
+            $('#original-content').css('display', 'none');
+            $('#replaced-content').css('display', 'flex');
+            propertySwiper.update();
+         })
+        switch (n) {
+            case 0:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.G01 | Ground Level');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
 
-                case 4:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('5');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;
-                case 5:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('6');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;    
-                    
-                case 6:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('7');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;   
+                    <ul class="info-area">
+                        <li>Internal: 141 sqm</li>
+                        <li>External: 65 sqm</li>
+                        <li>Total: 206 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/1.jpg');
+                    modalTitle.html("APT.G01 | Ground Level");
+                })
+                break;
+            case 1:
+                dropdownBtn.eq(n).click(function () {                      
+                    $('#replaced-content .sunday-title p').html('APT.G02 | Ground Level');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
 
-                case 7:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('8');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;   
-                case 8:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('9');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;  
-                case 9:
-                    $("#floorplan-dropdown .dropdown-item").eq(n).click(function () {
-                        alert('10');
-                        $('#floor-plan').css("background", `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/Bg Image.png") no-repeat center center / cover`);
-                    })
-                    break;  
-            }
+                    <ul class="info-area">
+                        <li>Internal: 161 sqm</li>
+                        <li>External: 123 sqm</li>
+                        <li>Total: 284 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/2.jpg');
+                    modalTitle.html("APT.G02 | Ground Level");
+
+                })
+                break;
+            case 2:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.103 | Level One');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
+
+                    <ul class="info-area">
+                        <li>Internal: 156 sqm</li>
+                        <li>External: 14 sqm</li>
+                        <li>Total: 170 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/3.jpg');  
+                    modalTitle.html("APT.103 | Level One");
+
+                })
+                break;
+            case 3:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.104 | Level One');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
+
+                    <ul class="info-area">
+                        <li>Internal: 154 sqm</li>
+                        <li>External: 14 sqm</li>
+                        <li>Total: 168 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/4.jpg');
+                    modalTitle.html("APT.104 | Level One");
+
+                })
+                break;
+
+            case 4:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.205 | Level Two');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
+
+                    <ul class="info-area">
+                        <li>Internal: 156 sqm</li>
+                        <li>External: 14 sqm</li>
+                        <li>Total: 170 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/5.jpg');
+                    modalTitle.html("APT.205 | Level Two");
+
+
+                })
+                break;
+            case 5:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.206 | Level Two');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
+
+                    <ul class="info-area">
+                        <li>Internal: 154 sqm</li>
+                        <li>External: 14 sqm</li>
+                        <li>Total: 168 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/6.jpg');
+                    modalTitle.html("APT.206 | Level Two");
+
+                })
+                break;    
+                
+            case 6:
+                dropdownBtn.eq(n).click(function () {                    
+                    $('#replaced-content .sunday-title p').html('APT.307 - Penthouse | Level Three');
+                    $('.property-info').html(`<ul class="info-list">
+                        <li>Bedroom: 3</li>
+                        <li>Bathroom: 2</li>
+                        <li>Car: 2</li>
+                    </ul>
+
+                    <ul class="info-area">
+                        <li>Internal: 199 sqm</li>
+                        <li>External: 211 sqm</li>
+                        <li>Total: 410 sqm</li>
+                    </ul>`)
+                    modalImg.attr('src', './assets/img/floorplan/7.jpg');
+                    modalTitle.html("APT.307 - Penthouse | Level Three");
+                })
+                break;    
+        }
     }
+
+
+    // show different Fixture function
+    function clickFixtureDropdownItem(n) {
+        var dropdownBtn = $('#fixture-list li');
+        var bathroomSwiper = $('#bathroom-swiper');
+        var kitchenSwiper = $('#kitchen-swiper');
+        var penthouseSwiper = $('#penthouse-swiper');    
+        switch (n) {
+            case 0:
+                dropdownBtn.eq(n).click(function () {  
+                    dropdownBtn.removeClass('active');
+                    dropdownBtn.eq(n).addClass('active');                  
+                    bathroomSwiper.css('display','none');
+                    kitchenSwiper.css('display', 'block');
+                    penthouseSwiper.css('display', 'none');  
+                    kitchen_Swiper.update();
+                    console.log('clicked');                  
+                })
+                break;
+            case 1:
+                dropdownBtn.eq(n).click(function () { 
+                    dropdownBtn.removeClass('active');
+                    dropdownBtn.eq(n).addClass('active');                     
+                    bathroomSwiper.css('display','block');
+                    kitchenSwiper.css('display', 'none');
+                    penthouseSwiper.css('display', 'none');
+                    bathroom_Swiper.update();
+                    console.log('2');
+                })
+                break;
+            case 2:
+                dropdownBtn.eq(n).click(function () {  
+                    dropdownBtn.removeClass('active');
+                    dropdownBtn.eq(n).addClass('active');                  
+                    bathroomSwiper.css('display','none');
+                    kitchenSwiper.css('display', 'none');
+                    penthouseSwiper.css('display', 'block');
+                    penthouse_Swiper.update();
+                })
+                break;            
+
+        }
+    }
+    
+    function callFixtureDropdownFunction() {
+        var list = $("#fixture-list li");
+        for (var i =0; i < list.length; i++) {
+            clickFixtureDropdownItem(i);
+        }
+    }
+    callFixtureDropdownFunction();
+
 
     function callDropdownFunction() {
         var list = $("#floorplan-dropdown .dropdown-item");
@@ -320,46 +448,46 @@ $(document).ready(function () {
     function clickAccordion(id) {
         var accordionBtn = $('#'+ id + " " + '.btn');   
         switch (id) {
-            case "stop-by-accordion":
-                accordionBtn.eq(0).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});        
-                })
-                accordionBtn.eq(1).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                   
-                })
-                accordionBtn.eq(2).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                   
-                })
-                accordionBtn.eq(3).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                   
-                })
-                break;
             case "slow-start-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});  
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/abacus.jpg')", "background-size" : "cover"});                                    
+                })
+                break;
+            case "stop-by-accordion":
+                accordionBtn.eq(0).click(function() {
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/botanic-gardens.jpg')", "background-size" : "cover"});        
+                })
+                accordionBtn.eq(1).click(function() {
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});                                   
+                })
+                accordionBtn.eq(2).click(function() {
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
+                })
+                accordionBtn.eq(3).click(function() {
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
                 })
                 break;
             case "dusk-dawn-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/carolina.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/entrecote.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/atlas.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/Bg Image.png')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/fawkner-park.jpg')", "background-size" : "cover"});                            
                 })
                 break;
         }
@@ -370,22 +498,31 @@ $(document).ready(function () {
 
     $('a#welcome-pills-home-tab').click(function() {
         $('#counter-number').html('1');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/welcome-home.jpg")');
     })
 
     $('a#welcome-pills-profile-tab').click(function() {
         $('#counter-number').html('2');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+
     })
 
     $('a#welcome-pills-messages-tab').click(function() {
         $('#counter-number').html('3');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+
     })
 
     $('a#welcome-pills-settings-tab').click(function() {
         $('#counter-number').html('4');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+
     })
 
     $('a#welcome-pills-spaces-tab').click(function() {
         $('#counter-number').html('5');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+
     })
 
     $('.drop-down-btn').click(function () {
@@ -399,6 +536,43 @@ $(document).ready(function () {
         }
     })
 
+
+    // First Swiper
+    const bathroom_Swiper = new Swiper('#bathroom-swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+        spaceBetween: 30,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+    });
+
+    const kitchen_Swiper = new Swiper('#kitchen-swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+        spaceBetween: 30,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+    });
+
+    const penthouse_Swiper = new Swiper('#penthouse-swiper', {
+        // Optional parameters
+        direction: 'vertical',
+        loop: true,
+        spaceBetween: 30,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+    });
 
     // Floorplan swiper
     var swiper = new Swiper('.floorplan-swiper', {
@@ -431,16 +605,32 @@ $(document).ready(function () {
             nextEl: '.sd-next',
             prevEl: '.sd-prev',
         },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    })
+
+    var propertySwiper = new Swiper ('#property-carousel', {
+        loop: false,
+        navigation: {
+            nextEl: '.sd-property-next',
+            prevEl: '.sd-property-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
     })
 
 });
 
 
 function initMap() {
-    const melbourne = { lat: -37.8142176, lng: 144.9631608 };
+    const sunday = { lat: -37.84075, lng: 145.00199 };
     const map = new google.maps.Map(document.getElementById('map'), {
-        center: melbourne,
-        zoom: 10,
+        center: sunday,
+        zoom: 16,
         styles: [
             {
                 "featureType": "all",
@@ -621,6 +811,14 @@ function initMap() {
             }
         ],
     })
+
+    var sundayMarker = new google.maps.Marker({
+        position: sunday,
+        title: "Sunday Hawksburn",
+        icon: "./assets/img/icons/map-sunday.svg"
+    });
+
+    sundayMarker.setMap(map);
     // if (navigator.geolocation) {
     //     navigator.geolocation.getCurrentPosition(
     //         function (position) {
@@ -635,10 +833,10 @@ function initMap() {
 
 
     var cafeMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/marker.svg?alt=media&token=cd4f760a-2182-4e93-bf2b-3eace89f0dc1';
-    var foodMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/foodMarker.svg?alt=media&token=5c8a6983-eba6-4605-beda-c2452d7aa167';
-    var bookMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/bookLibrary.svg?alt=media&token=4ac5f2be-3533-4372-b4d8-4f5f61d4c919';
-    var shopMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/shopMarker.svg?alt=media&token=134f84f7-e2d2-4022-8b0f-f7bf34762ac7';
-    var movingMarker = 'https://firebasestorage.googleapis.com/v0/b/neat-vent-254802.appspot.com/o/movingMarker.svg?alt=media&token=394e72fe-5b58-4b33-8f0c-15191f56e923';
+    var foodMarker = './assets/img/icons/foodMarker.svg';
+    var bookMarker = './assets/img/icons/bookLibrary.svg';
+    var shopMarker = './assets/img/icons/shopMarker.svg';
+    var movingMarker = './assets/img/icons/movingMarker.svg';
 
 
     const locations = [
