@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/raq7xgr.css">
     <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"> -->
 
     <!-- Swiper -->
@@ -74,7 +75,7 @@
                     <div class="swiper-container menu-carousel-container col-md-3">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/1.jpg" alt="First slide" />
                                     <div class="carousel-caption">
                                         <h5>G01</h5>
@@ -83,7 +84,7 @@
 
                             </div>
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/2.jpg" alt="Second slide" />
                                     <div class="carousel-caption">
                                         <h5>G02</h5>
@@ -91,7 +92,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/3.jpg" alt="Third slide" />
                                     <div class="carousel-caption">
                                         <h5>103</h5>
@@ -99,7 +100,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/4.jpg" alt="Third slide" />
                                     <div class="carousel-caption">
                                         <h5>104</h5>
@@ -107,7 +108,7 @@
                                 </a>
                             </div>
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/5.jpg" alt="Third slide" />
                                     <div class="carousel-caption">
                                         <h5>205</h5>
@@ -116,7 +117,7 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/6.jpg" alt="Third slide" />
                                     <div class="carousel-caption">
                                         <h5>206</h5>
@@ -125,7 +126,7 @@
                             </div>
 
                             <div class="swiper-slide">
-                                <a href="#sd-floorplans">
+                                <a class="floorplan-links" href="#sd-floorplans">
                                     <img class="d-block w-100" src="./assets/img/floorplan/7.jpg" alt="Third slide" />
                                     <div class="carousel-caption">
                                         <h5>The Penthouse</h5>
@@ -157,7 +158,7 @@
 
                     </div>
                     <div class="btn-right-box">
-                        <a id="phone-btn" href="facetime-audio:albert.samuels@c2capital.com">
+                        <a id="phone-btn" href="facetime-audio:lana@windfallbrands.com">
                             <span id="nav-phone-btn">
                                 <svg id="_8" data-name="8" xmlns="http://www.w3.org/2000/svg" width="19.063"
                                     height="19.021" viewBox="0 0 19.063 19.021">
@@ -238,7 +239,7 @@
         
                                                     <div class="form-group col-md-6">               
                                                         <label>Contact number</label>
-                                                        <input id="form_email" type="tel" name="phone" class="form-control" placeholder required="required" data-error="Valid phone number is required.">
+                                                        <input id="form_contact_number" type="tel" name="phone" class="form-control" placeholder required="required" data-error="Valid phone number is required.">
                                                         <div class="form-control-border"></div>
                                                         <div class="help-block with-errors"></div>
                                                     </div>
@@ -246,7 +247,6 @@
                                                     <div class="input-groups col-md-6">                                                        
                                                         <label>Choose residence</label>
                                                         <select class="custom-select" id="inputGroupSelect01">
-                                                            <option selected>Choose...</option>                                                            
                                                             <option value="APT. G01">APT. G01</option>
                                                             <option value="APT. G02">APT. G02</option>
                                                             <option value="APT. 103">APT. 103</option>
@@ -260,7 +260,6 @@
                                                     <div class="input-groups col-md-6">                                                              
                                                         <label>Celebratory beverage</label>
                                                         <select class="custom-select" id="inputGroupSelect02">
-                                                            <option selected>Choose...</option>
                                                             <option value="French Champagne">French Champagne</option>
                                                             <option value="Wine">Wine</option>
                                                             <option value="Non-alcoholic">Non-alcoholic</option>
@@ -278,7 +277,7 @@
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
-                                            <input type="submit" class="button btn-send" value="Send">
+                                            <input type="submit" class="button btn-send">
                                         </div>
                                     </form>
                             </div>
@@ -786,7 +785,7 @@
                             <a data-toggle="modal" data-target="#floorplateModal">View Floorplate</a>
                         </div>
                         <div class="property-intro">                            
-                            <button class="property-contact-btn btn btn-secondary" data-toggle="modal" data-target="#contactModal">Enquiry</button>
+                            <button class="property-contact-btn btn btn-secondary" aria-hidden="true" data-toggle="modal" data-target="#contactModal">Enquiry</button>
                         </div>
                     </div>
                     <div class="col-md-9 property-img-box">
@@ -1762,7 +1761,7 @@
                             <img src="./assets/img/lana.jpg" class="sale-img" alt="Fox">
                             <div class="contact-btn-container">
                                 <button class="email btn btn-outline-secondary" data-toggle="modal" data-target="#contactModal">Message</button>
-                                <button class="call btn btn-outline-secondary"><a href="facetime-audio:lana@whitefoxrealestate.com.au">Facetime</a></button>
+                                <button class="call btn btn-outline-secondary"><a href="facetime-audio:lana@windfallbrands.com">Facetime</a></button>
                             </div>
                         </div>
                         <div class="sale-info">

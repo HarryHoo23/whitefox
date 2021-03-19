@@ -133,6 +133,15 @@ $(document).ready(function () {
                 $('#scroll-up').text('Contact');  
                 $('#scroll-down').text('Disclaimer');
             }
+
+            if ($('body').hasClass('fp-viewing-sd-disclaimer')) {                                
+                $('#scroll-up').text('Disclaimer');  
+                $('#scroll-down').text('Backpage');
+            }
+
+            if ($('body').hasClass('fp-viewing-sd-backpage')) {                                
+                $('#scroll-up').text('Backpage');  
+            }
             
         },
 
@@ -239,8 +248,167 @@ $(document).ready(function () {
         $('#replaced-content').css('display', 'none');
     })
 
+
+    var floorplan_links = $('.floorplan-links');
+
+    function callclickFloorplanLinksFunction() {
+        for (var i =0; i < floorplan_links.length; i++) {
+            clickFloorplanLinks(i);
+        }
+    }
+    callclickFloorplanLinksFunction();
+
+    function clickFloorplanLinks(n) { 
+        var modalImg = $('#floorplanModal .modal-body img');
+        var modalTitle = $('#floorplanModal .modal-body .floorplan-modal-title');
+        var modalPlateImg = $('#floorplateModal .modal-body img');
+        floorplan_links.eq(n).click(function () { 
+            $('#original-content').css('display', 'none');
+            $('#replaced-content').css('display', 'flex');
+            propertySwiper.update();
+            switch (n) {
+                case 0:
+                                       
+                        $('#replaced-content .sunday-title p').html('APT.G01 | Ground Level');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom:<span> 3</span></li>
+                            <li>Bathroom:<span> 2</span></li>
+                            <li>Car:<span> 2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal:<span> 141 sqm</span></li>
+                            <li>External<span>: 65 sqm</span></li>
+                            <li>Total:<span> 206 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/1.jpg');
+                        modalTitle.html("APT.G01 | Ground Level");
+                   
+                    break;
+                case 1:
+                                         
+                        $('#replaced-content .sunday-title p').html('APT.G02 | Ground Level');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal:<span> 161 sqm</span></li>
+                            <li>External:<span> 123 sqm</span></li>
+                            <li>Total:<span> 284 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/2.jpg');
+                        modalTitle.html("APT.G02 | Ground Level");
+    
+                    
+                    break;
+                case 2:
+                                        
+                        $('#replaced-content .sunday-title p').html('APT.103 | Level One');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal: <span>156 sqm</span></li>
+                            <li>External:<span> 14 sqm</span></li>
+                            <li>Total: <span>170 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/3.jpg');  
+                        modalTitle.html("APT.103 | Level One");
+    
+                    
+                    break;
+                case 3:
+                                      
+                        $('#replaced-content .sunday-title p').html('APT.104 | Level One');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal: <span>154 sqm</span></li>
+                            <li>External:<span> 14 sqm</span></li>
+                            <li>Total: <span>168 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/4.jpg');
+                        modalTitle.html("APT.104 | Level One");
+    
+                   
+                    break;
+    
+                case 4:
+                                        
+                        $('#replaced-content .sunday-title p').html('APT.205 | Level Two');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal: <span>156 sqm</span></li>
+                            <li>External:<span> 14 sqm</span></li>
+                            <li>Total: <span>170 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/5.jpg');
+                        modalTitle.html("APT.205 | Level Two");
+    
+    
+                  
+                    break;
+                case 5:
+                                     
+                        $('#replaced-content .sunday-title p').html('APT.206 | Level Two');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal: <span>154 sqm</span></li>
+                            <li>External:<span> 14 sqm</span></li>
+                            <li>Total: <span>168 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/6.jpg');
+                        modalTitle.html("APT.206 | Level Two");
+    
+                   
+                    break;    
+                    
+                case 6:
+                                    
+                        $('#replaced-content .sunday-title p').html('APT.307 - Penthouse | Level Three');
+                        $('.property-info').html(`<ul class="info-list">
+                            <li>Bedroom: <span>3</span></li>
+                            <li>Bathroom: <span>2</span></li>
+                            <li>Car: <span>2</span></li>
+                        </ul>
+    
+                        <ul class="info-area">
+                            <li>Internal: <span>199 sqm</span></li>
+                            <li>External: <span>211 sqm</span></li>
+                            <li>Total: <span>410 sqm</span></li>
+                        </ul>`)
+                        modalImg.attr('src', './assets/img/floorplan/7.jpg');
+                        modalTitle.html("APT.307 - Penthouse | Level Three");
+
+                    break;  
+            }
+        });
+    }
+
+
     // show different property function
     function clickDropdownItem(n) {
+        console.log('')
         var dropdownBtn = $('#floorplan-dropdown .dropdown-item');
         var modalImg = $('#floorplanModal .modal-body img');
         var modalPlateImg = $('#floorplateModal .modal-body img');
@@ -542,7 +710,7 @@ $(document).ready(function () {
 
 
 
-    $('#contact-form').validator();
+    
     //Form Controls
 	$('.form-control')
 	.val('')
@@ -553,7 +721,73 @@ $(document).ready(function () {
 		if($(this).val().length === 0) {
 			$(this).parent('.form-group').removeClass('form-group-focus');
 		}
-	});
+    });
+    
+    $('#contact-form').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+          // handle the invalid form...
+        } else {
+            e.preventDefault();
+            // Contact Form Working Functions
+            var select_1 = $('#inputGroupSelect01');
+            var select_2 = $('#inputGroupSelect02');
+    
+            var residenceChoice = "";
+            var celebratoryBeverage = "";
+            select_1.on('change', function (e) { 
+                residenceChoice = $(e.target).val();
+            })
+            select_1.trigger('change');
+    
+            select_2.on('change', function (e) { 
+                celebratoryBeverage = $(e.target).val();
+            })
+            select_2.trigger('change');
+    
+            const user = $('#form_name').val();
+            const number = $('#form_contact_number').val();
+            const message = $('#form_message').val();
+    
+            const formMessage = "Hi, " + "My Name is " + user + ", " + "and here is my mobile number: " + number + ". " + "I am interested in: " + residenceChoice + ", " 
+                                + "and my choice of celebratory beverage is: " + celebratoryBeverage + ". " + "Extra message is: '" + message + "', " + "please give me a call when you are free, thank you!";
+    
+    
+            var data = {
+                service_id: 'service_qz90776',
+                template_id: 'template_ym5qrt8',
+                user_id: 'user_ePbhQ0zjSmeO3JyJIjYUV',
+                template_params: {
+                    "from_name": user + "- Sunday Hawksburn",
+                    "message_html": formMessage
+                }
+            };
+            
+            console.log(JSON.stringify(data).replace(/\\n/g, "\\n"));
+            
+            $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                type: 'POST',
+                data: JSON.stringify(data).replace(/\\n/g, "\\n"),
+                contentType: 'application/json'
+            }).done(function() {
+                alert('Your e-mail is sent!');
+                $('#contactModal').modal('hide');
+                $('#contact-form')[0].reset();
+            }).fail(function(error) {
+                alert('Oops... ' + JSON.stringify(error));            
+            });
+        }
+      })
+
+    
+
+   
+   
+    
+
+
+
+
+
 
 
     // First Swiper

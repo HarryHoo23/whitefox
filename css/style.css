@@ -210,8 +210,8 @@ ul.nav li:last-child .nav-link {
     opacity: 0.5;
 }
 
-.fp-viewing-sd-disclaimer #scroll-down,
-.fp-viewing-sd-disclaimer #menu-arrow {
+.fp-viewing-sd-backpage #scroll-down,
+.fp-viewing-sd-backpage #menu-arrow {
     display: none;
 }
 
@@ -265,6 +265,11 @@ ul.nav li:last-child .nav-link {
 
 .fp-viewing-sd-intro .nav-bottom-row {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fp-viewing-sd-map .btn-left-box .property-contact-btn,
+.fp-viewing-sd-disclaimer .btn-left-box .property-contact-btn{
+    color: #fff;
 }
 
 /* bottom row grey color */
@@ -647,7 +652,7 @@ p.home-modal-title::before {
     background-repeat: no-repeat;
     background-position: 50%;
     border-bottom: 1px solid rgb(255, 255, 255, 0.6);
-    background-position-y: 70%;
+    background-position-y: 80%;
 }
 
 .logo-row {
@@ -660,17 +665,17 @@ p.home-modal-title::before {
 
 .logo-row .col-md-4:nth-child(1) .partners-logo-container {
     background-image: url('../assets/logo/dko-1.svg');
-    background-size: 27% 27%;
+    background-size: 24% 27%;
 }
 
 .logo-row .col-md-4:nth-child(2) .partners-logo-container {
     background-image: url('../assets/logo/mim-1.svg');
-    background-size: contain;
+    background-size: 80% 20%;
 }
 
 .logo-row .col-md-4:nth-child(3) .partners-logo-container {
     background-image: url('../assets/logo/e-1.svg');
-    background-size: 30% 30%;
+    background-size: 18% 30%;
 }
 
 
@@ -877,18 +882,22 @@ a.logo-link {
     background-color: #fff;
 }
 
-.fp-viewing-sd-every .ekko-lightbox .ekko-lightbox-container {
+.fp-viewing-sd-every .ekko-lightbox .ekko-lightbox-container,
+.fp-viewing-sd-floorplans .ekko-lightbox-container {
     height: 100% !important;
     display: flex;
     align-items: center;
     margin-top: 0;
 }
 
-.fp-viewing-sd-every .ekko-lightbox-item {
+
+.fp-viewing-sd-every .ekko-lightbox-item,
+.fp-viewing-sd-floorplans .ekko-lightbox-item.show {
     height: 100%;
 }
 
-.fp-viewing-sd-every .ekko-lightbox-item img {
+.fp-viewing-sd-every .ekko-lightbox-item img,
+.fp-viewing-sd-floorplans .ekko-lightbox-item img {
     height: 100%;
     object-fit: cover;
 }
@@ -898,7 +907,8 @@ a.logo-link {
     top: 0;
 }
 
-.fp-viewing-sd-every .modal-title {
+.fp-viewing-sd-every .modal-title,
+.fp-viewing-sd-floorplans .modal-title {
     visibility: hidden;
 }
 
