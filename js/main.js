@@ -471,13 +471,13 @@ $(document).ready(function () {
                     $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/botanic-gardens.jpg')", "background-size" : "cover"});        
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/chapel.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(2).click(function() {
                     $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/stables.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/parahn.jpg')", "background-size" : "cover"});                                   
                 })
                 break;
             case "dusk-dawn-accordion":
@@ -502,30 +502,30 @@ $(document).ready(function () {
 
     $('a#welcome-pills-home-tab').click(function() {
         $('#counter-number').html('1');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/welcome-home.jpg")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/welcome-home.jpg") no-repeat center center /cover');
     })
 
     $('a#welcome-pills-profile-tab').click(function() {
         $('#counter-number').html('2');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/slide-residences-bg.jpg") no-repeat center center /cover');
 
     })
 
     $('a#welcome-pills-messages-tab').click(function() {
         $('#counter-number').html('3');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/slide-welcome-home-bg.jpg") no-repeat center center /cover');
 
     })
 
     $('a#welcome-pills-settings-tab').click(function() {
         $('#counter-number').html('4');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/slide-creative-partners-bg.jpg") no-repeat center center /cover');
 
     })
 
     $('a#welcome-pills-spaces-tab').click(function() {
         $('#counter-number').html('5');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png") no-repeat center center /cover');
 
     })
 

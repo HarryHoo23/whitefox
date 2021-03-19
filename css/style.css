@@ -1679,7 +1679,7 @@ a.logo-link {
 }
 
 #doorstep-1 .dp-container-left {
-    background: url('../assets/img/doorstep/tivoli.jpg');
+    background: url('../assets/img/doorstep/barrys.jpg');
     background-size: auto 120%;
     transition: background-size 3s ease;
 }
@@ -2728,7 +2728,7 @@ textarea.form-control:focus {
 }
 
 .backpageContainer img {
-    width: 400px;
+    width: 300px;
 }
 
 .back-btn {
