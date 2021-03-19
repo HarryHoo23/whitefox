@@ -454,7 +454,7 @@ $(document).ready(function () {
         switch (id) {
             case "slow-start-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/barrys.jpg')", "background-size" : "cover"});                                    
                 })
                 accordionBtn.eq(1).click(function() {
                     $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
@@ -474,7 +474,7 @@ $(document).ready(function () {
                     $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/stables.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(3).click(function() {
                     $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
@@ -491,7 +491,7 @@ $(document).ready(function () {
                     $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/atlas.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/fawkner-park.jpg')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/france.jpg')", "background-size" : "cover"});                            
                 })
                 break;
         }
