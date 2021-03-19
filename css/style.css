@@ -2075,9 +2075,17 @@ ul.sale-contact li a {
     color: #fff;
 }
 
+.call a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .call:hover {
     background-color: #fff;
     border-color: #8C968F;
+}
+
+.call:hover a {
     color: #8C968F;
 }
 
@@ -2597,6 +2605,8 @@ ul.sale-contact li a {
     -moz-box-shadow: none;
     box-shadow: none;
     outline: none;
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 
@@ -2683,6 +2693,7 @@ textarea.form-control:focus {
     line-height: 2.5;
     margin-top: 25px;
     width: 100%;
+    border-radius: 0;
 }
 
 .contact-us-title {
