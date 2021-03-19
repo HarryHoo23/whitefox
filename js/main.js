@@ -282,6 +282,7 @@ $(document).ready(function () {
                             <li>Total:<span> 206 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/1.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-1.jpg')
                         modalTitle.html("APT.G01 | Ground Level");
                    
                     break;
@@ -300,6 +301,7 @@ $(document).ready(function () {
                             <li>Total:<span> 284 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/2.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-1.jpg')
                         modalTitle.html("APT.G02 | Ground Level");
     
                     
@@ -318,7 +320,8 @@ $(document).ready(function () {
                             <li>External:<span> 14 sqm</span></li>
                             <li>Total: <span>170 sqm</span></li>
                         </ul>`)
-                        modalImg.attr('src', './assets/img/floorplan/3.jpg');  
+                        modalImg.attr('src', './assets/img/floorplan/3.jpg'); 
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-2.jpg')
                         modalTitle.html("APT.103 | Level One");
     
                     
@@ -338,6 +341,7 @@ $(document).ready(function () {
                             <li>Total: <span>168 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/4.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-2.jpg')
                         modalTitle.html("APT.104 | Level One");
     
                    
@@ -358,6 +362,7 @@ $(document).ready(function () {
                             <li>Total: <span>170 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/5.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-3.jpg')
                         modalTitle.html("APT.205 | Level Two");
     
     
@@ -378,6 +383,7 @@ $(document).ready(function () {
                             <li>Total: <span>168 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/6.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-3.jpg')
                         modalTitle.html("APT.206 | Level Two");
     
                    
@@ -398,6 +404,7 @@ $(document).ready(function () {
                             <li>Total: <span>410 sqm</span></li>
                         </ul>`)
                         modalImg.attr('src', './assets/img/floorplan/7.jpg');
+                        modalPlateImg.attr('src', './assets/img/floorplate/floorplate-4.jpg')
                         modalTitle.html("APT.307 - Penthouse | Level Three");
 
                     break;  
@@ -434,6 +441,7 @@ $(document).ready(function () {
                         <li>Total:<span> 206 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/1.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-1.jpg')
                     modalTitle.html("APT.G01 | Ground Level");
                 })
                 break;
@@ -452,6 +460,7 @@ $(document).ready(function () {
                         <li>Total:<span> 284 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/2.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-1.jpg')
                     modalTitle.html("APT.G02 | Ground Level");
 
                 })
@@ -470,7 +479,8 @@ $(document).ready(function () {
                         <li>External:<span> 14 sqm</span></li>
                         <li>Total: <span>170 sqm</span></li>
                     </ul>`)
-                    modalImg.attr('src', './assets/img/floorplan/3.jpg');  
+                    modalImg.attr('src', './assets/img/floorplan/3.jpg'); 
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-2.jpg') 
                     modalTitle.html("APT.103 | Level One");
 
                 })
@@ -490,6 +500,7 @@ $(document).ready(function () {
                         <li>Total: <span>168 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/4.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-2.jpg')
                     modalTitle.html("APT.104 | Level One");
 
                 })
@@ -510,6 +521,7 @@ $(document).ready(function () {
                         <li>Total: <span>170 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/5.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-3.jpg')
                     modalTitle.html("APT.205 | Level Two");
 
 
@@ -530,6 +542,7 @@ $(document).ready(function () {
                         <li>Total: <span>168 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/6.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-3.jpg')
                     modalTitle.html("APT.206 | Level Two");
 
                 })
@@ -550,6 +563,7 @@ $(document).ready(function () {
                         <li>Total: <span>410 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/7.jpg');
+                    modalPlateImg.attr('src', './assets/img/floorplate/floorplate-4.jpg')
                     modalTitle.html("APT.307 - Penthouse | Level Three");
                 })
                 break;    
