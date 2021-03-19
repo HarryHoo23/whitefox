@@ -4,7 +4,7 @@ $(document).ready(function () {
     
     $(window).on('load', function () { // makes sure that whole site is loaded
         $('#status').fadeOut();
-        $('#loader').delay(350).fadeOut('slow');
+        $('#loader').delay(250).fadeOut('slow');
         $('#preloader').addClass('show');
         setTimeout(function (){ 
             $('#preloader img').addClass('fadeIn');        
@@ -23,7 +23,7 @@ $(document).ready(function () {
         navigation: true,
         anchors: ['sd-home', 'sd-intro', 'sd-every', 'sd-partners', 'sd-welcomeHome', 'sd-floorplans',
             'sd-fixtures', 'sd-doorstep', 'sd-doorstep-1', 'sd-doorstep-2',
-            'sd-doorstep-3', 'sd-video', 'sd-map', 'sd-contact-us', 'sd-disclaimer'
+            'sd-doorstep-3', 'sd-video', 'sd-map', 'sd-contact-us', 'sd-disclaimer','sd-backpage'
         ],
         slidesNavigation: false,
         scrollBar: true,
@@ -92,7 +92,7 @@ $(document).ready(function () {
                 $('.doorstep-img-container-right img.first-img').addClass('show'); 
                 setTimeout(function () { 
                     $('.doorstep-img-container-right img.second-img').addClass('show');      
-                 }, 700);
+                 }, 1500);
                 $('.doorstep-container-top .col-md-4').addClass('show');
             }
 
@@ -234,6 +234,10 @@ $(document).ready(function () {
     var des = $('.floorplan-swiper #slide1 .layout-box');
     // var newdes = des.attr('data-gallery', 'data-gallery2');
 
+    $('.back-btn').click(function () { 
+        $('#original-content').css('display', 'block');
+        $('#replaced-content').css('display', 'none');
+    })
 
     // show different property function
     function clickDropdownItem(n) {
@@ -251,15 +255,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.G01 | Ground Level');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom:<span> 3</span></li>
+                        <li>Bathroom:<span> 2</span></li>
+                        <li>Car:<span> 2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 141 sqm</li>
-                        <li>External: 65 sqm</li>
-                        <li>Total: 206 sqm</li>
+                        <li>Internal:<span> 141 sqm</span></li>
+                        <li>External<span>: 65 sqm</span></li>
+                        <li>Total:<span> 206 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/1.jpg');
                     modalTitle.html("APT.G01 | Ground Level");
@@ -269,15 +273,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                      
                     $('#replaced-content .sunday-title p').html('APT.G02 | Ground Level');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 161 sqm</li>
-                        <li>External: 123 sqm</li>
-                        <li>Total: 284 sqm</li>
+                        <li>Internal:<span> 161 sqm</span></li>
+                        <li>External:<span> 123 sqm</span></li>
+                        <li>Total:<span> 284 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/2.jpg');
                     modalTitle.html("APT.G02 | Ground Level");
@@ -288,15 +292,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.103 | Level One');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 156 sqm</li>
-                        <li>External: 14 sqm</li>
-                        <li>Total: 170 sqm</li>
+                        <li>Internal: <span>156 sqm</span></li>
+                        <li>External:<span> 14 sqm</span></li>
+                        <li>Total: <span>170 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/3.jpg');  
                     modalTitle.html("APT.103 | Level One");
@@ -307,15 +311,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.104 | Level One');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 154 sqm</li>
-                        <li>External: 14 sqm</li>
-                        <li>Total: 168 sqm</li>
+                        <li>Internal: <span>154 sqm</span></li>
+                        <li>External:<span> 14 sqm</span></li>
+                        <li>Total: <span>168 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/4.jpg');
                     modalTitle.html("APT.104 | Level One");
@@ -327,15 +331,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.205 | Level Two');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 156 sqm</li>
-                        <li>External: 14 sqm</li>
-                        <li>Total: 170 sqm</li>
+                        <li>Internal: <span>156 sqm</span></li>
+                        <li>External:<span> 14 sqm</span></li>
+                        <li>Total: <span>170 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/5.jpg');
                     modalTitle.html("APT.205 | Level Two");
@@ -347,15 +351,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.206 | Level Two');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 154 sqm</li>
-                        <li>External: 14 sqm</li>
-                        <li>Total: 168 sqm</li>
+                        <li>Internal: <span>154 sqm</span></li>
+                        <li>External:<span> 14 sqm</span></li>
+                        <li>Total: <span>168 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/6.jpg');
                     modalTitle.html("APT.206 | Level Two");
@@ -367,15 +371,15 @@ $(document).ready(function () {
                 dropdownBtn.eq(n).click(function () {                    
                     $('#replaced-content .sunday-title p').html('APT.307 - Penthouse | Level Three');
                     $('.property-info').html(`<ul class="info-list">
-                        <li>Bedroom: 3</li>
-                        <li>Bathroom: 2</li>
-                        <li>Car: 2</li>
+                        <li>Bedroom: <span>3</span></li>
+                        <li>Bathroom: <span>2</span></li>
+                        <li>Car: <span>2</span></li>
                     </ul>
 
                     <ul class="info-area">
-                        <li>Internal: 199 sqm</li>
-                        <li>External: 211 sqm</li>
-                        <li>Total: 410 sqm</li>
+                        <li>Internal: <span>199 sqm</span></li>
+                        <li>External: <span>211 sqm</span></li>
+                        <li>Total: <span>410 sqm</span></li>
                     </ul>`)
                     modalImg.attr('src', './assets/img/floorplan/7.jpg');
                     modalTitle.html("APT.307 - Penthouse | Level Three");
@@ -450,44 +454,44 @@ $(document).ready(function () {
         switch (id) {
             case "slow-start-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                    
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});  
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});  
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-1 .dp-container-left').css({"background": "url('../assets/img/doorstep/abacus.jpg')", "background-size" : "cover"});                                    
+                    $('#doorstep-1 .dp-container-left').css({"background": "url('./assets/img/doorstep/abacus.jpg')", "background-size" : "cover"});                                    
                 })
                 break;
             case "stop-by-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/botanic-gardens.jpg')", "background-size" : "cover"});        
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/botanic-gardens.jpg')", "background-size" : "cover"});        
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/gilson.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-2 .dp-container-right').css({"background": "url('../assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
+                    $('#doorstep-2 .dp-container-right').css({"background": "url('./assets/img/doorstep/tivoli.jpg')", "background-size" : "cover"});                                   
                 })
                 break;
             case "dusk-dawn-accordion":
                 accordionBtn.eq(0).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/carolina.jpg')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/carolina.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(1).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/entrecote.jpg')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/entrecote.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(2).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/atlas.jpg')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/atlas.jpg')", "background-size" : "cover"});                            
                 })
                 accordionBtn.eq(3).click(function() {
-                    $('#doorstep-3 .dp-container-left').css({"background": "url('../assets/img/doorstep/fawkner-park.jpg')", "background-size" : "cover"});                            
+                    $('#doorstep-3 .dp-container-left').css({"background": "url('./assets/img/doorstep/fawkner-park.jpg')", "background-size" : "cover"});                            
                 })
                 break;
         }
@@ -498,30 +502,30 @@ $(document).ready(function () {
 
     $('a#welcome-pills-home-tab').click(function() {
         $('#counter-number').html('1');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/welcome-home.jpg")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/welcome-home.jpg")');
     })
 
     $('a#welcome-pills-profile-tab').click(function() {
         $('#counter-number').html('2');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
 
     })
 
     $('a#welcome-pills-messages-tab').click(function() {
         $('#counter-number').html('3');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
 
     })
 
     $('a#welcome-pills-settings-tab').click(function() {
         $('#counter-number').html('4');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
 
     })
 
     $('a#welcome-pills-spaces-tab').click(function() {
         $('#counter-number').html('5');
-        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/img/bg-Image-house.png")');
+        $('.welcome-home').css('background', 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./assets/img/bg-Image-house.png")');
 
     })
 
@@ -530,11 +534,26 @@ $(document).ready(function () {
         $('.counter').toggleClass('counter-hidden');
 
         if ($('.welcome-tabs .tab-content').hasClass('welcome-tab-content-hidden')) {
-            $('.drop-down-btn').css({"bottom" : "2.5rem","transform" : "rotate(180deg)"});
+            $('.drop-down-btn').css({"bottom" : "6.5rem","transform" : "rotate(180deg)"});
         } else {
-            $('.drop-down-btn').css({"bottom" : "35vh","transform" : "unset"});
+            $('.drop-down-btn').css({"bottom" : "45vh","transform" : "unset"});
         }
     })
+
+
+
+    $('#contact-form').validator();
+    //Form Controls
+	$('.form-control')
+	.val('')
+	.on("focusin", function(){
+		$(this).parent('.form-group').addClass('form-group-focus');
+	})
+	.on("focusout", function(){
+		if($(this).val().length === 0) {
+			$(this).parent('.form-group').removeClass('form-group-focus');
+		}
+	});
 
 
     // First Swiper

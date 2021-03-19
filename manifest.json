@@ -1,7 +1,7 @@
 {
     "name": "White Fox Sunday",
     "short_name": "Sunday",
-    "start_url": "https://sundayhawksburn.com.au/client/",
+    "start_url": "https://sundayhawksburn.com.au/client",
     "scope": "/app/",
     "display": "standalone"
   }
